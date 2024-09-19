@@ -24,3 +24,39 @@ There are three types of users:
 - *Unregistered User*: Can browse products, search for items, view product details, and create an account.
 - *Registered User*: Can create wish lists, save products, place orders, leave reviews, manage account settings, and receive notifications.
 - *Admin*: Can manage product listings, user accounts, and handle reports of violations or issues.
+---
+
+## 3. **Functional Requirements**
+
+### 3.1 Unregistered User Requirements
+1. **Browse Products**
+   - Unregistered users can view a selection of products on the homepage without logging in.
+   - Users can filter products based on categories such as electronics, fashion, home, etc.
+2. **Search for Products**
+   - Unregistered users can search for products using keywords.
+3. **View Product Details**
+   - Users can view detailed information about each product, including images, descriptions, prices, and reviews.
+4. **Sign-Up/Login**
+   - Users should have an option to create an account or log in via email, Google, or Facebook.
+
+### 3.2 Registered User Requirements
+1. **Create Wish Lists**
+   - Registered users can create wish lists to save products for future purchase.
+2. **Add Products to Cart**
+   - Registered users can add products to their shopping cart and modify quantities.
+3. **Place Orders**
+   - Registered users can place orders and enter shipping and payment information.
+4. **Leave Reviews**
+   - Registered users can leave reviews and ratings for products they have purchased.
+5. **Track Orders**
+   - Registered users can view their order history and track shipments.
+6. **Manage Account Settings**
+   - Registered users can edit their profile information, change their password, manage notification preferences, and delete their account.
+
+### 3.3 Admin Requirements
+1. **Manage Product Listings**
+   - Admins can add, update, or remove products from the catalog.
+2. **Moderate Users**
+   - Admins can ban or suspend users violating platform rules.
+3. **Monitor Transactions**
+   - Admins can oversee transactions to ensure security and compliance with regulations.
