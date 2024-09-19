@@ -34,6 +34,15 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - Content moderation tools (approve, remove products, manage users).
 - View and manage reported issues and customer inquiries.
 - Analytics to track sales and user engagement.
+
+- ### 8. Product Analytics
+- View metrics like sales, ratings, and customer reviews.
+- Insights into customer demographics and buying patterns.
+
+### 9. Notifications
+- Notifications for order updates, special offers, and recommendations.
+- Alerts for low stock on followed products.
+- 
 ## Installation
 
 ### Prerequisites
