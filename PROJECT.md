@@ -2,3 +2,9 @@
 
 ## Overview
 This is a Flipkart Clone project that replicates the core functionalities of Flipkart, allowing users to browse, search, and purchase products. The project focuses on features like user authentication, product management, order tracking, and personalized recommendations.
+## Features
+
+### 1. User Registration and Authentication
+- Sign-up and login via email or social media accounts.
+- Password reset functionality.
+- User profile management, including personal information, address, and payment methods.
