@@ -35,7 +35,7 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - View and manage reported issues and customer inquiries.
 - Analytics to track sales and user engagement.
 
-- ### 8. Product Analytics
+### 8. Product Analytics
 - View metrics like sales, ratings, and customer reviews.
 - Insights into customer demographics and buying patterns.
 
