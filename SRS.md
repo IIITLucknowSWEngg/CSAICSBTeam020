@@ -60,3 +60,61 @@ The Flipkart Clone is a web and mobile application that allows users to shop for
 - The application must be responsive and work on different screen sizes.
 - Payment processing must be secure and comply with standards (e.g., PCI DSS).
 - High-resolution product images must be optimized for fast loading.
+- ---
+
+## 3. Specific Requirements
+
+### 3.1 Functional Requirements
+
+1. User Registration and Login
+   - Users must be able to register with an email or social login.
+   - Users must be able to log in with valid credentials.
+
+2. Product Browsing and Searching
+   - Users can browse products by category or search using keywords.
+   - The system should display product details, including images, descriptions, and prices.
+
+3. Cart Management
+   - Users can add products to their cart and modify quantities.
+   - Users can view the total price and proceed to checkout.
+
+4. Order Management
+   - Users can place orders and view their order history.
+   - Users should receive notifications about order status and shipment tracking.
+
+5. User Reviews
+   - Users can leave reviews and ratings for products they have purchased.
+   - The system should allow users to edit or delete their reviews.
+
+6. Admin Panel
+   - Admin users can add, update, or delete product listings.
+   - Admins can manage user accounts and handle customer support inquiries.
+
+### 3.2 Non-Functional Requirements
+
+1. Performance
+   - The system should support thousands of simultaneous users and transactions without affecting performance.
+   - Pages, especially product listings, must load quickly.
+
+2. Scalability
+   - The platform should accommodate growing user numbers and expanding product catalogs without degradation.
+
+3. Security
+   - User data and payment information should be encrypted.
+   - Implement secure user authentication and authorization mechanisms.
+
+4. Usability
+   - The interface should be intuitive, ensuring easy navigation for all user types.
+   - Users should be able to easily search, filter, and organize products.
+
+5. Maintainability
+   - The codebase must be modular and well-documented for future scalability and maintenance.
+   - Documentation should be maintained for application code, API endpoints, and system architecture.
+
+6. *Reliability*
+   - The platform should be available 99.9% of the time, with minimal downtime for maintenance.
+   - Backup mechanisms should ensure content and user data are recoverable in case of system failure.
+
+7. *Availability*
+   - The system should be designed to be available 24/7, including during peak traffic times.
+   - Implement redundant infrastructure for critical services to ensure high availability.
