@@ -34,3 +34,50 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - Content moderation tools (approve, remove products, manage users).
 - View and manage reported issues and customer inquiries.
 - Analytics to track sales and user engagement.
+## Installation
+
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Steps to Run the Project Locally
+1. Clone the repository:
+    bash
+    git clone https://github.com/yourusername/flipkart-clone.git
+    cd flipkart-clone
+    
+
+2. Install the dependencies:
+    bash
+    npm install
+    
+
+3. Run the development server:
+    bash
+    npm start
+    
+
+4. Open your browser and navigate to:
+    
+    http://localhost:3000
+    
+
+## Technologies Used
+- *Frontend*: React, HTML5, CSS3, JavaScript
+- *Backend*: Node.js, Express.js
+- *Database*: MongoDB
+- *Authentication*: JWT (JSON Web Token)
+- *Storage*: AWS S3 (for product images)
+- *Deployment*: Heroku / Netlify (for front-end), AWS / DigitalOcean (for back-end)
+
+## Future Enhancements
+- Direct messaging between buyers and sellers.
+- Advanced search and filtering options.
+- Integration of payment gateways for enhanced checkout.
+- Loyalty programs and promotions for frequent buyers.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
