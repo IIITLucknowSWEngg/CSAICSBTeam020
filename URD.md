@@ -60,3 +60,28 @@ There are three types of users:
    - Admins can ban or suspend users violating platform rules.
 3. **Monitor Transactions**
    - Admins can oversee transactions to ensure security and compliance with regulations.
+---
+
+# Non-Functional Requirements
+
+## 4.1 Performance
+- *High Concurrency:* Support for simultaneous users interacting with the platform (browsing, ordering, reviewing).
+- *Low Latency:* Fast loading times for product images, categories, and user interactions.
+
+## 4.2 Scalability
+- *User Growth:* Handle increasing numbers of users, products, and orders efficiently.
+- *Content Volume:* Scale backend infrastructure to support a growing amount of product listings.
+
+## 4.3 Security
+- *Data Encryption:* Secure storage and transmission of user data and payment information.
+- *Authentication Protection:* Robust security measures to prevent unauthorized access and data breaches.
+
+### 4.4 Usability
+- *Intuitive Interface:* Design an easy-to-use, visually appealing interface that caters to a diverse user base. Ensure navigation is straightforward for both new and experienced users.
+- *Consistent Experience:* Provide a seamless and engaging user experience across various devices and screen sizes through responsive design.
+- *User Feedback:* Incorporate mechanisms for gathering and acting on user feedback to continuously improve the interface and user experience.
+
+### 4.5 Maintainability
+- *Clear Documentation:* Maintain comprehensive and up-to-date documentation for code, APIs, and system architecture.
+- *Best Practices:* Follow industry best practices for coding standards and project organization to facilitate updates, bug fixes, and collaboration.
+- *Testing and CI/CD:* Implement robust testing strategies and continuous integration/continuous deployment (CI/CD) pipelines to ensure code quality and streamline deployment processes.
