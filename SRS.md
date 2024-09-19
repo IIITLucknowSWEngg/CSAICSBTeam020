@@ -118,3 +118,44 @@ The Flipkart Clone is a web and mobile application that allows users to shop for
 7. *Availability*
    - The system should be designed to be available 24/7, including during peak traffic times.
    - Implement redundant infrastructure for critical services to ensure high availability.
+   - ---
+
+8. *Data Integrity*
+   - The system should ensure the accuracy and consistency of all data, especially order and inventory information.
+   - User actions should be reflected accurately and immediately across all devices.
+
+9. *Compliance*
+   - The system should comply with data privacy regulations such as GDPR for users in the EU.
+   - Business accounts must adhere to applicable local laws and regulations.
+
+10. *Localization and Internationalization*
+    - The platform should support multiple languages and currencies.
+    - All date and time formats should adapt based on user location.
+
+11. *Accessibility*
+    - The system should meet accessibility standards (e.g., WCAG 2.1) to ensure usability for users with disabilities.
+    - Provide features such as alt-text for images and keyboard navigation.
+
+12. *Extensibility*
+    - The platform should be designed to accommodate future features such as advanced analytics and promotional tools.
+    - APIs should allow third-party developers to integrate with the platform.
+
+13. *Monitoring and Logging*
+    - The system should implement real-time monitoring to track performance and identify potential issues.
+    - Logs should be maintained for critical user activities and system events.
+
+14. *Disaster Recovery*
+    - The platform must implement disaster recovery mechanisms, including regular backups of critical data.
+    - A recovery plan should be in place to restore services quickly in case of catastrophic failures.
+
+---
+
+## 4. Appendices
+
+### 4.1 Future Enhancements
+- Integration of social media sharing buttons for cross-platform promotion.
+- Support for user-generated content such as videos and tutorials.
+- Implementation of loyalty programs and discounts for repeat customers.
+- Advanced analytics tools for sellers to track product performance and sales trends.
+- Introduction of a wish list feature for users to save products for later purchase.
+- Enhancement of customer support through chatbots and live chat functionalities.
