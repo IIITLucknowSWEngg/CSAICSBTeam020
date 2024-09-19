@@ -1,0 +1,26 @@
+# Flipkart User Requirements Document (URD)
+
+## 1. *Introduction*
+
+### 1.1 Purpose
+The purpose of this document is to outline the user requirements for the development of an e-commerce platform similar to Flipkart. This platform allows users to browse, purchase, and manage products, as well as interact with sellers and other users.
+
+### 1.2 Scope
+The platform will be available as a web and mobile application, allowing users to browse products, search for items, and view deals without logging in. Registered users will have the ability to manage their accounts, create wish lists, leave reviews, and track orders. Admins will have the ability to manage products, users, and transactions. The platform will support social sharing and provide notifications for registered users.
+
+### 1.3 Definitions
+- *User*: A person who accesses the platform to browse and search for products.
+- *Registered User*: A user who has created an account and can save products, place orders, and manage their preferences.
+- *Admin*: A platform moderator who manages product listings, user accounts, and transaction integrity.
+- *Product*: An item available for sale on the platform.
+- *Cart*: A temporary storage area for selected products before checkout.
+
+---
+
+## 2. *User Requirements*
+
+### 2.1 User Categories
+There are three types of users:
+- *Unregistered User*: Can browse products, search for items, view product details, and create an account.
+- *Registered User*: Can create wish lists, save products, place orders, leave reviews, manage account settings, and receive notifications.
+- *Admin*: Can manage product listings, user accounts, and handle reports of violations or issues.
