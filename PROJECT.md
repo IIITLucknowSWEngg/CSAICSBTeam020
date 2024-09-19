@@ -24,3 +24,13 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - Place orders and track order status.
 - View order history and manage returns.
 - Rate and review products after purchase.
+- ### 6. Cart Management
+- Add, edit, and remove products from the shopping cart.
+- Save items for later purchase.
+- Apply discount codes and view total costs.
+
+### 7. Admin Panel
+- Dashboard to manage products, users, and orders.
+- Content moderation tools (approve, remove products, manage users).
+- View and manage reported issues and customer inquiries.
+- Analytics to track sales and user engagement.
