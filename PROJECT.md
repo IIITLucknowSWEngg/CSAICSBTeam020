@@ -13,3 +13,10 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - Add products to a shopping cart for easy checkout.
 - Set product availability (in stock, out of stock).
 - Organize products into categories for easier navigation.
+### 3. Personalized Feed and Discovery
+- Personalized product recommendations based on user preferences and past purchases.
+- Trending products and curated collections on the homepage.
+- Category-based filtering and sorting options.
+  ### 4. Search Functionality
+- Search for products using keywords, with filtering options (by category, price range, etc.).
+- Smart recommendations based on user interactions and popular searches.
