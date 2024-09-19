@@ -20,3 +20,7 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 ### 4. Search Functionality
 - Search for products using keywords, with filtering options (by category, price range, etc.).
 - Smart recommendations based on user interactions and popular searches.
+### 5. Order Interaction
+- Place orders and track order status.
+- View order history and manage returns.
+- Rate and review products after purchase.
