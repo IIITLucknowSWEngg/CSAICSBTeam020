@@ -47,7 +47,7 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 ### 9. Notifications
 - Notifications for order updates, special offers, and recommendations.
 - Alerts for low stock on followed products.
-- 
+ 
 ## Installation
 
 ### Prerequisites
