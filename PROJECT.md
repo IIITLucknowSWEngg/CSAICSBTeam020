@@ -8,3 +8,8 @@ This is a Flipkart Clone project that replicates the core functionalities of Fli
 - Sign-up and login via email or social media accounts.
 - Password reset functionality.
 - User profile management, including personal information, address, and payment methods.
+### 2. Product Browsing and Management
+- View a catalog of products with images, descriptions, and prices.
+- Add products to a shopping cart for easy checkout.
+- Set product availability (in stock, out of stock).
+- Organize products into categories for easier navigation.
