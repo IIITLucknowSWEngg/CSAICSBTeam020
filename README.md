@@ -7,7 +7,7 @@
 
 | NAME                          | ROLL NUMBER | BRANCH          | EMAIL ID                       | GITHUB ID          |
 |-------------------------------|-------------|------------------|---------------------------------|---------------------|
-| Pagadala Romith Chenna Kesav (TEAM LEAD)| LCI2023059  | CSAI             | lci2023059@iiitl.ac.in        | Romith-27           |
+| Pagadala Romith Chenna Kesav | LCI2023059  | CSAI             | lci2023059@iiitl.ac.in        | Romith-27           |
 | Deevi Rahul Bharadwaz        | LCI2023019  | CSAI             | rahulbharadwazdeevi@gmail.com | RahulBharadwaz     |
 | Segu Rohith Kumar             | LCI2023056  | CSAI             | rohithcodes@gmail.com          | rohithkumar2027     |
 | Ruthvik Papabattula          | LCI2023017  | CSAI             | lci2023017@iiitl.ac.in        | Ruthvik-27          |
