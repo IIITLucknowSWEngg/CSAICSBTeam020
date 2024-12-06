@@ -195,6 +195,9 @@ Uses machine learning to suggest products based on:
 
 ## 5. Database Design
 
+![database design](https://github.com/user-attachments/assets/1a4ffe93-01d7-4155-ac43-dc8307bf9104)
+
+
 ### Schema Overview:
 - **Users Table**: Stores customer and seller details.
 - **Products Table**: Stores product details, categories, and inventory levels.
@@ -205,6 +208,7 @@ Uses machine learning to suggest products based on:
 ---
 
 ## 6. Interface Design
+![api design](https://github.com/user-attachments/assets/325390b1-5d6a-4ae6-97fa-64f3be07892f)
 
 ### 6.1 API Endpoints
 
@@ -217,6 +221,10 @@ Uses machine learning to suggest products based on:
 | `/api/cart`                 | POST       | Add product to cart.            |
 | `/api/orders`               | POST       | Place an order.                 |
 | `/api/orders/{id}/status`   | GET        | Get order status.               |
+
+
+
+![notification flow digram](https://github.com/user-attachments/assets/5ef853b2-24d1-4773-b99a-4878c8266acc)
 
 ### 6.2 External Interfaces
 - **Payment Gateway**: Process payments (e.g., Razorpay, PayPal).
