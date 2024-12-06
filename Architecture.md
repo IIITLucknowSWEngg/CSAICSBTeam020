@@ -1,7 +1,8 @@
 # Flipkart Clone Architecture
 
 ## 1. System Context Diagram
-![System Context Diagram](system_context_diagram.png)
+
+![system_context_diagram](https://github.com/user-attachments/assets/e15149a9-95ef-459e-8215-83679f7d5e2f)
 
 The System Context Diagram for a Flipkart Clone provides an overview of how users and external systems interact with the application. Key external actors include:  
 - **Customers**: Browse products, place orders, and track deliveries.  
@@ -12,7 +13,8 @@ The System Context Diagram for a Flipkart Clone provides an overview of how user
 ---
 
 ## 2. Container Diagram
-![Container Diagram](Container_diagram.png)
+![Container_diagram](https://github.com/user-attachments/assets/74cb52ad-ef32-4a04-b883-8711a82101e4)
+
 
 The Container Diagram outlines the primary containers within the Flipkart Clone:  
 - **Web and Mobile Applications**: User-facing interfaces for browsing products, placing orders, and managing accounts.  
@@ -22,7 +24,8 @@ The Container Diagram outlines the primary containers within the Flipkart Clone:
 ---
 
 ## 3. Component Diagrams
-![Component Diagram](component_diagram.png)
+![component_diagram](https://github.com/user-attachments/assets/3a5d8320-a86e-420c-b918-3394d538cc2f)
+
 
 The Component Diagram focuses on core functionalities for customers, sellers, and delivery agents:  
 
@@ -44,7 +47,8 @@ The Component Diagram focuses on core functionalities for customers, sellers, an
 ---
 
 ## 4. Deployment Diagram
-![Deployment Diagram](deployment.png)
+![deployment](https://github.com/user-attachments/assets/3c1f94d3-e575-4d6c-98fe-23dbf9b3c709)
+
 
 The Deployment Diagram demonstrates the deployment architecture for the Flipkart Clone:  
 - **User Devices**: Access the platform via web browsers or mobile apps.  
