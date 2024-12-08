@@ -1,154 +1,182 @@
-# URD (User Requirements Document)
+# **User Requirements Document (URD)**
 
-## 1. Introduction
+## **1. Introduction**
 
-### 1.1 Purpose
-This document outlines the requirements for the development of a **QuickKart application**, which aims to provide users with an intuitive and seamless e-commerce platform for browsing, purchasing, and managing products. The application will support web and mobile platforms, ensuring an optimal user experience.
+### **1.1 Purpose**
+This document defines the user requirements for the development of the **QuickKart Application**, a cross-platform e-commerce solution that offers a seamless and intuitive experience for users to browse, purchase, and manage products. The app will be accessible via web and mobile devices, ensuring compatibility and optimal user experience.
 
-### 1.2 Scope
-The core features of the QuickKart application include:
-- **User Accounts**: Registration, authentication, and profile management.
-- **Product Catalog**: Advanced search and filtering for a wide range of products.
-- **Shopping Cart & Checkout**: A secure cart and checkout process.
-- **Order Management**: Track orders, manage returns, and order history.
-- **Vendor Management**: Tools for vendors to list and manage products.
-- **Admin Panel**: Admin tools to monitor users, vendors, and platform operations.
-- **Customer Support**: Chatbots and ticketing for issue resolution.
+### **1.2 Scope**
+The QuickKart application is designed to meet the needs of three primary user groups: **Customers**, **Vendors (Sellers)**, and **Admins**. The platform will provide the following key features:  
+- **User Accounts**: Registration, authentication, and profile management.  
+- **Product Catalog**: Advanced search, filtering, and browsing of products.  
+- **Shopping Cart & Checkout**: Secure cart and multi-payment checkout process.  
+- **Order Management**: Track orders, manage returns, and access order history.  
+- **Vendor (Seller) Portal**: Tools for product listing, inventory, and order management.  
+- **Admin Panel**: Administrative tools to oversee user activities and system performance.  
+- **Customer Support**: Chatbot and ticketing system for issue resolution.  
 
-The app will be available on both **web** and **mobile** platforms, ensuring compatibility with various devices.
-
-### 1.3 Definitions, Acronyms, and Abbreviations
-- **Product**: An item listed for sale on the platform.
-- **User**: A customer who browses, purchases, or manages products.
-- **Vendor**: A seller who lists products on the platform.
-- **Admin**: Platform admin responsible for overseeing operations.
-- **Cart**: A virtual basket for selected products.
-- **UI**: User Interface.
-- **UX**: User Experience.
+The app will support multiple devices (web, iOS, Android) and ensure accessibility, scalability, and security.  
 
 ---
 
-## 2. User Characteristics
-
-### 2.1 General Users (Customers)
-- **Demographics**: Individuals of all age groups and locations shopping for personal or professional needs.
-- **Technical Proficiency**: Basic knowledge of app and web navigation.
-- **Needs and Expectations**:
-  - Simple and intuitive product search.
-  - Secure and smooth checkout process.
-  - Real-time order tracking.
-  - Access to deals, discounts, and personalized recommendations.
-
-### 2.2 Vendors
-- **Responsibilities**: Listing products, managing inventory, processing orders.
-- **Technical Proficiency**: Moderate (using a dedicated vendor portal).
-- **Needs and Expectations**:
-  - Product listing and management tools.
-  - Order notifications and sales analytics.
-  - Access to customer feedback.
-
-### 2.3 Admin Users
-- **Responsibilities**: Platform operations, user activity monitoring, dispute resolution.
-- **Technical Proficiency**: Intermediate to advanced (using an admin dashboard).
-- **Needs and Expectations**:
-  - Monitoring and reporting tools.
-  - Handling disputes and escalations.
+## **2. Definitions, Acronyms, and Abbreviations**
+| **Term**     | **Definition**                                    |
+|--------------|--------------------------------------------------|
+| **Product**  | An item listed for sale on the platform.           |
+| **User**     | A customer who browses, purchases, or manages products. |
+| **Vendor (Seller)** | A business or individual who lists products for sale. |
+| **Admin**    | Platform administrator responsible for oversight. |
+| **Cart**     | A virtual basket where users add products for purchase. |
+| **UI**       | User Interface.                                  |
+| **UX**       | User Experience.                                 |
+| **GSTIN**    | Goods and Services Tax Identification Number (for vendors). |
 
 ---
 
-## 3. Functional Requirements
+## **3. User Characteristics**
 
-### 3.1 User Registration and Authentication
-- **Customer Registration**: Email/password or third-party sign-in (Google, Facebook).
-- **Vendor Registration**: Business details, GSTIN, and address.
-- **Password Recovery**: Email-based recovery.
-- **Authentication**: Secure login with two-factor authentication.
+### **3.1 Customers**
+- **Demographics**: General public of all age groups shopping for personal or professional needs.  
+- **Technical Proficiency**: Basic familiarity with mobile apps and web navigation.  
+- **Needs & Expectations**:  
+  - Intuitive product search and filters.  
+  - Secure and fast checkout.  
+  - Real-time order tracking.  
+  - Notifications for offers, discounts, and deals.  
 
-### 3.2 User Profiles
-- **Customer Profile**: Name, address, phone number, payment methods.
-- **Vendor Profile**: Business details, bank account information, and dashboard for sales tracking.
+### **3.2 Vendors (Sellers)**
+- **Responsibilities**: Listing products, managing inventory, and fulfilling orders.  
+- **Technical Proficiency**: Moderate (requires basic understanding of dashboards).  
+- **Needs & Expectations**:  
+  - Product listing, pricing, and promotional tools.  
+  - Order tracking and sales performance analytics.  
+  - Tools to manage returns, refunds, and customer queries.  
 
-### 3.3 Product Catalog
-- **Customer Features**:
-  - Browse products by category.
-  - Filter products by price, rating, brand, etc.
-  - View product details (images, descriptions, reviews).
-- **Vendor Features**:
-  - Add, update, or remove products.
-  - Offer promotional discounts.
-
-### 3.4 Shopping Cart and Checkout
-- **Customer Features**:
-  - Add/remove products, save items for later.
-  - Apply discounts and coupons.
-  - Multiple payment options: Cards, UPI, wallets, COD.
-  
-### 3.5 Order Management
-- **Customer Features**:
-  - Track order status (placed, shipped, delivered).
-  - Manage returns and exchanges.
-  - View order history.
-- **Vendor Features**:
-  - View and manage orders.
-  - Update shipping details.
-  - Sales reports.
-
-### 3.6 Admin Panel
-- **Admin Features**:
-  - Monitor customer/vendor activities.
-  - Dispute and flagged content resolution.
-  - Generate platform-wide reports (sales, user growth).
-
-### 3.7 Customer Support
-- **Support Features**:
-  - Chatbot for FAQs and basic assistance.
-  - Ticketing system for unresolved issues.
+### **3.3 Admins**
+- **Responsibilities**: Monitor user activities, resolve disputes, and oversee platform health.  
+- **Technical Proficiency**: Intermediate to advanced (admin dashboards and analytics).  
+- **Needs & Expectations**:  
+  - Real-time activity monitoring and control.  
+  - Reports on user engagement, transactions, and system performance.  
+  - Tools for handling disputes and content moderation.  
 
 ---
 
-## 4. Non-Functional Requirements
+## **4. Use Cases**
 
-### 4.1 Performance
-- **App Loading Time**: Must load within 3 seconds under normal network conditions.
-- **Concurrent Users**: Must support 50,000+ simultaneous users.
-
-### 4.2 Security
-- **Data Security**: All sensitive data must be encrypted in transit and at rest.
-- **Fraud Detection**: Implement robust fraud prevention mechanisms.
-
-### 4.3 Scalability
-- The app must be scalable to handle growing users and product listings.
-
-### 4.4 Usability
-- **Responsive Design**: Ensure mobile and desktop compatibility.
-- **Accessibility**: Provide features like screen reader support.
+### **Use Case 1: Customer Browsing Products**
+**Actor**: Customer  
+**Description**: Customer browses products by categories, filters, and search.  
+**Precondition**: Customer is logged in or accessing the platform as a guest.  
+**Normal Flow**:  
+1. Customer opens the product catalog.  
+2. Customer applies filters (price, rating, etc.).  
+3. Customer selects a product and views its details.  
 
 ---
 
-## 5. Assumptions and Dependencies
-- **Third-Party APIs**:
-  - Payment processing (e.g., Razorpay, PayPal).
-  - Notification services (e.g., Firebase).
-  - Analytics and reporting tools.
-- **Internet**: A stable connection is required for usage.
+### **Use Case 2: Placing an Order**
+**Actor**: Customer  
+**Description**: Customer adds items to the cart and completes the purchase.  
+**Precondition**: Customer has logged in and added products to the cart.  
+**Normal Flow**:  
+1. Customer opens the cart and proceeds to checkout.  
+2. Customer selects a payment method and enters details.  
+3. Payment is processed and order confirmation is sent.  
 
 ---
 
-## 6. Acceptance Criteria
-
-### 6.1 Functional Requirements
-- All core features must be fully operational.
-
-### 6.2 Non-Functional Requirements
-- The app must meet performance, security, and scalability benchmarks.
-
-### 6.3 User Feedback
-- All critical feedback from beta testing must be addressed.
-
-### 6.4 Testing
-- Functional, usability, and security testing must pass.
+### **Use Case 3: Vendor Listing Products**
+**Actor**: Vendor (Seller)  
+**Description**: Vendor lists products for customers to view and purchase.  
+**Precondition**: Vendor has registered and logged into their vendor portal.  
+**Normal Flow**:  
+1. Vendor logs into the platform.  
+2. Vendor adds product details (name, price, description, etc.).  
+3. Vendor submits product for review/approval.  
 
 ---
 
-## 7. Conclusion
-This document provides a detailed overview of the **Quickkart Application**'s requirements, ensuring alignment with user needs and business goals. By adhering to these requirements, the development team will deliver a high-quality, scalable, and secure application.
+### **Use Case 4: Admin Managing Disputes**
+**Actor**: Admin  
+**Description**: Admin resolves disputes between customers and vendors.  
+**Precondition**: Dispute raised by a customer.  
+**Normal Flow**:  
+1. Admin views dispute details.  
+2. Admin contacts involved parties.  
+3. Admin resolves the dispute and updates system logs.  
+
+---
+
+## **5. Functional Requirements**
+
+### **5.1 User Registration & Authentication**
+- **Customer**: Email/Password, Google, or Facebook login.  
+- **Vendor (Seller)**: Business details, GSTIN, and KYC verification.  
+- **Admin**: Admin credentials with two-factor authentication (2FA).  
+
+### **5.2 Product Catalog**
+- **Customer**: Browse, filter, and view product details.  
+- **Vendor (Seller)**: Add, edit, or remove product listings.  
+
+### **5.3 Shopping Cart & Checkout**
+- **Customer**: Add/remove items, view total price, apply coupons, choose payment methods.  
+
+### **5.4 Order Management**
+- **Customer**: View order history, cancel or return orders.  
+- **Vendor (Seller)**: View and manage customer orders.  
+
+### **5.5 Customer Support**
+- **Chatbot** for FAQs.  
+- **Ticketing System** for customer inquiries.  
+
+---
+
+ ## **6. Non-Functional Requirements**
+
+### **6.1 Performance**
+- **App Loading Time**: The app must load within **3 seconds** under normal network conditions.  
+- **Concurrent Users**: The system must support **50,000+ simultaneous users** without performance degradation.  
+
+### **6.2 Security**
+- **Data Security**: All sensitive data (e.g., passwords, payments) must be **encrypted in transit and at rest**.  
+- **Fraud Detection**: Implement **robust fraud prevention mechanisms** to detect and block suspicious activities or fraudulent transactions.  
+
+### **6.3 Scalability**
+- The system must be **scalable** to handle a growing number of users, product listings, and transactions, ensuring smooth performance even during peak usage.  
+
+### **6.4 Usability**
+- **Responsive Design**: The app must offer a **consistent user experience** on mobile, tablet, and desktop devices.  
+- **Accessibility**: Ensure the app complies with **WCAG standards**, providing features like **screen reader support** and **keyboard navigation** for users with disabilities.  
+
+
+---
+
+## **7. Assumptions & Dependencies**
+- **Third-Party APIs**: Payment gateways (Razorpay, PayPal), Firebase for notifications.  
+- **Internet**: Stable internet connection required.  
+
+---
+
+## **8. Acceptance Criteria**
+| **Requirement**     | **Acceptance Criteria** |
+|---------------------|------------------------|
+| **Registration**    | Customer/vendor can register, log in, and reset passwords. |
+| **Catalog**         | Customers can browse, search, and filter products. |
+| **Checkout**        | Customers can complete payments using multiple methods. |
+| **Order Tracking**  | Customers can track order status in real-time. |
+| **Admin Panel**     | Admin can generate reports, resolve disputes, and moderate users. |
+
+---
+
+## **9. Risks**
+| **Risk**             | **Mitigation** |
+|---------------------|----------------|
+| Data Breach         | Encryption and regular security audits. |
+| Payment Failure     | Fallback to alternative payment gateways. |
+| Vendor Abuse        | Vendor KYC checks and product listing approvals. |
+
+---
+
+## **10. Conclusion**
+This document outlines the functional and non-functional requirements for the **QuickKart Application**. By following this URD, the development team will ensure delivery of a secure, scalable, and user-friendly platform for customers, vendors (sellers), and admins. Adherence to the defined acceptance criteria will guarantee that the app meets user needs and business goals.  
