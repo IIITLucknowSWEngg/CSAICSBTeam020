@@ -176,8 +176,8 @@ The system architecture will be divided into a frontend (built with ReactJS) and
 ### 5.1 System Architecture
 The system will have a **three-tier architecture**:
 - **Frontend**: Developed using **ReactJS** to provide a responsive and dynamic user interface.
-- **Backend**: Developed using **MangoDB** to handle business logic, product catalog, and user management.
-- **Database**: A relational database (such as PostgreSQL) will be used to store user, vendor, and product data.
+- **Backend**: Developed using **Node.js** to handle business logic, product catalog, and user management.
+- **Database**: A relational database (such as MongoDB) will be used to store user, vendor, and product data.
 
 The communication between the frontend and backend will occur using **RESTful APIs**.
 
