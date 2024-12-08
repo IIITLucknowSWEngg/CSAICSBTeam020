@@ -151,7 +151,7 @@ The system architecture will be divided into a frontend (built with ReactJS) and
 ## 4. Non-Functional Requirements
 
 ### 4.1 Performance
-- The system must handle a minimum of 10,000 active users concurrently without noticeable degradation in performance.
+- The system must handle a minimum of 50,000 active users concurrently without noticeable degradation in performance.
 - Response time for user actions, such as searching for products or viewing the cart, should not exceed 2 seconds.
 
 ### 4.2 Security
