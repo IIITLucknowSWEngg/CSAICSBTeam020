@@ -151,4 +151,4 @@ The app will be available on both **web** and **mobile** platforms, ensuring com
 ---
 
 ## 7. Conclusion
-This document provides a detailed overview of the **Flipkart Clone Application**'s requirements, ensuring alignment with user needs and business goals. By adhering to these requirements, the development team will deliver a high-quality, scalable, and secure application.
+This document provides a detailed overview of the **Quickkart Application**'s requirements, ensuring alignment with user needs and business goals. By adhering to these requirements, the development team will deliver a high-quality, scalable, and secure application.
