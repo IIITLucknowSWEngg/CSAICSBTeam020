@@ -57,8 +57,6 @@ Test design for Flipkart clone, focusing on user, seller, and admin functionalit
 2. The user should be redirected to the login page.
 3. A success message should be displayed, e.g., "Registration successful."
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -95,8 +93,6 @@ describe('User Registration', function() {
 1. The user should be logged in successfully.
 2. The user should be redirected to the homepage.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -162,8 +158,7 @@ describe('View All Products', function() {
 2. The cart counter should update.
 3. A confirmation message should be displayed.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
+
 
 #### Chai.js Code:
 ```javascript
@@ -200,8 +195,6 @@ describe('Add Product to Cart', function() {
 1. The order should be placed successfully.
 2. The user should see an order confirmation message.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -241,8 +234,6 @@ describe('Place Order', function() {
 1. The seller should be registered successfully.
 2. The seller should be redirected to the seller dashboard.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -276,8 +267,6 @@ describe('Seller Registration', function() {
 1. The product should be added to the catalog.
 2. A success message should be displayed.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -310,8 +299,6 @@ describe('Seller Add Product', function() {
 #### Expected Result:
 1. The order status should be updated to "Shipped."
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -347,8 +334,7 @@ describe('Seller Manage Order', function() {
 #### Expected Result:
 1. The list of all users should be displayed.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
+
 
 #### Chai.js Code:
 ```javascript
@@ -386,8 +372,6 @@ describe('Admin Manage Users', function() {
 #### Expected Result:
 1. The delivery API should return accurate delivery details (e.g., delivery date, carrier).
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
 
 #### Chai.js Code:
 ```javascript
@@ -421,8 +405,7 @@ describe('Delivery API', function() {
 #### Expected Result:
 1. The payment API should process the payment and return a success message.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
+
 
 #### Chai.js Code:
 ```javascript
@@ -455,8 +438,7 @@ describe('Payment API', function() {
 #### Expected Result:
 1. The maps API should return correct geolocation data with latitude and longitude.
 
-#### Test Status:
-- **Pending/Pass/Fail** _(Update after execution)_
+
 
 #### Chai.js Code:
 ```javascript
