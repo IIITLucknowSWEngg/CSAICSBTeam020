@@ -1,4 +1,4 @@
-# QuickKart (Flipkart Clone)  
+# QuickKart (Flipkart Competitor)  
 
 ## Overview  
 This *QuickKart* replicates the core functionalities of Flipkart, providing a platform for users to browse, search, and purchase products seamlessly. The application includes robust features such as personalized recommendations, order tracking, advanced search capabilities, and secure checkout, delivering a comprehensive e-commerce experience.  
