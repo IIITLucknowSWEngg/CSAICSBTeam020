@@ -3,7 +3,7 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-The purpose of this document is to provide a comprehensive Software Requirements Specification (SRS) for **QuickKart**, an online e-commerce platform designed for users to browse products, place orders, and manage their profile. It also serves as a platform for vendors to list products and manage stock. The system will include an admin interface for managing products, users, and vendors. This SRS outlines the functional and non-functional requirements of the QuickKart system, ensuring that the developers, testers, and stakeholders are aligned on the project’s scope and expectations.
+The purpose of this document is to provide a comprehensive Software Requirements Specification (SRS) for **QuickKart**, an online e-commerce platform designed for users to browse products, place orders, and manage their profile. It also serves as a platform for vendors to list products and manage stock. This SRS outlines the functional and non-functional requirements of the QuickKart system, ensuring that the developers, testers, and stakeholders are aligned on the project’s scope and expectations.
 
 ### 1.2 Scope
 QuickKart is an e-commerce application that facilitates online product browsing, ordering, and payment. The platform will support:
