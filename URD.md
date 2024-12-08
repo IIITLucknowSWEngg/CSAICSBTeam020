@@ -1,4 +1,4 @@
-# Flipkart Clone Application
+# QuickKart Application
 
 ## 1. Introduction
 
