@@ -29,6 +29,10 @@ QuickKart will be hosted as a web application, with responsive design, ensuring 
 - **Cart**: A virtual container where users can add products before placing an order.
 - **Razorpay**: The third-party payment gateway used for processing payments.
 - **Firebase**: A platform used for sending push notifications to users.
+- **E-commerce**: Buying and selling of goods and services over the internet.
+- **Cart**: A virtual container for products that the user plans to purchase.
+- **Vendor**: A business that sells products on the platform.
+
 
 ---
 
@@ -207,13 +211,6 @@ The system will be considered successful if:
   
 ---
 
-## 8. Appendix
 
-### 8.1 Glossary
-- **E-commerce**: Buying and selling of goods and services over the internet.
-- **Cart**: A virtual container for products that the user plans to purchase.
-- **Vendor**: A business that sells products on the platform.
-
----
 
 This detailed SRS document captures the full scope of the QuickKart project based on the URD created. It covers the system’s functional and non-functional requirements, architecture, dependencies, and external interfaces.
