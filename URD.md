@@ -1,4 +1,4 @@
-# QuickKart Application
+# URD (User Requirements Document)
 
 ## 1. Introduction
 
