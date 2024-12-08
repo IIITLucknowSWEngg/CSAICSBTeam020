@@ -30,8 +30,7 @@ QuickKart will be hosted as a web application, with responsive design, ensuring 
 - **Razorpay**: The third-party payment gateway used for processing payments.
 - **Firebase**: A platform used for sending push notifications to users.
 - **E-commerce**: Buying and selling of goods and services over the internet.
-- **Cart**: A virtual container for products that the user plans to purchase.
-- **Vendor**: A business that sells products on the platform.
+
 
 
 ---
