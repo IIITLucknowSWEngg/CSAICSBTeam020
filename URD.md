@@ -3,7 +3,7 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-This document outlines the requirements for the development of a **Flipkart Clone application**, which aims to provide users with an intuitive and seamless e-commerce platform for browsing, purchasing, and managing products. The application will support web and mobile platforms, ensuring an optimal user experience.
+This document outlines the requirements for the development of a **QuickKart application**, which aims to provide users with an intuitive and seamless e-commerce platform for browsing, purchasing, and managing products. The application will support web and mobile platforms, ensuring an optimal user experience.
 
 ### 1.2 Scope
 The core features of the Flipkart Clone application include:
