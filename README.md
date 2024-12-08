@@ -1,7 +1,7 @@
 # CSAICSBTeam020
 **TEAM NAME:** Code Ninja
 
-**PROJECT IDEA:** Flipkart Clone
+**PROJECT IDEA:** Quickkart
 
 ## TEAM MEMBERS
 
