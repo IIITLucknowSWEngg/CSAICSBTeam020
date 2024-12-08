@@ -39,7 +39,7 @@ QuickKart is an e-commerce platform designed to be easy to use, offering a moder
 
 QuickKart will integrate with third-party services such as Razorpay for payment processing and Firebase for sending push notifications.
 
-The system architecture will be divided into a frontend (built with ReactJS) and a backend (built using Spring Boot), which will communicate using RESTful APIs.
+The system architecture will be divided into a frontend (built with ReactJS) and a backend (built using Node.js), which will communicate using RESTful APIs.
 
 ### 2.2 Product Features
 #### 2.2.1 User Features
