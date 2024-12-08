@@ -6,7 +6,7 @@
 This document outlines the requirements for the development of a **QuickKart application**, which aims to provide users with an intuitive and seamless e-commerce platform for browsing, purchasing, and managing products. The application will support web and mobile platforms, ensuring an optimal user experience.
 
 ### 1.2 Scope
-The core features of the Flipkart Clone application include:
+The core features of the QuickKart application include:
 - **User Accounts**: Registration, authentication, and profile management.
 - **Product Catalog**: Advanced search and filtering for a wide range of products.
 - **Shopping Cart & Checkout**: A secure cart and checkout process.
