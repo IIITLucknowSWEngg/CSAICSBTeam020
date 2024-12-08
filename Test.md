@@ -1,3 +1,37 @@
+# Test Plan for  QuickKart (Flipkart Clone) Project
+
+The test plan aims to ensure the Flipkart clone application meets functional, performance, and security requirements. It includes testing **User APIs** (registration, login, cart, orders, and reviews), **Seller APIs** (product management, orders, and reviews), and **Admin APIs** (user, seller, product, and order management). Testing types include **Functional Testing** (API endpoint validation), **Performance Testing** (load and stress tests), and **Security Testing** (authentication and authorization). The testing will be done using tools like **Postman** for APIs, **JMeter** for load testing, and **OWASP ZAP** for security. The testing phase will last for 4 weeks, with deliverables including detailed test cases, defect reports, performance metrics, and final approval for production deployment. The goal is to ensure the platform is stable, secure, and ready for production.
+
+# Test Design Specification for QuickKart (Flipkart Clone)
+
+## 1. Introduction
+Test design for Flipkart clone, focusing on user, seller, and admin functionality.
+
+## 2. Features to be Tested
+- **User**: Registration, login, cart, orders, reviews.
+- **Seller**: Product management, orders, reviews.
+- **Admin**: User, seller, product, order, review management.
+
+## 3. Testing Approach
+- **Unit Testing**: Individual API function testing.
+- **API Testing**: Use **Postman** for API testing.
+- **Performance Testing**: Use **JMeter** for load testing.
+
+## 4. Tools
+- **Postman**: API Testing
+- **JMeter**: Performance Testing
+
+## 5. Test Data
+- **Valid**: Expected inputs.
+- **Invalid**: Incorrect inputs.
+- **Edge Case**: Boundary value testing.
+
+## 6. Execution Flow
+1. Setup test environment.
+2. Test APIs for users, sellers, admins.
+3. Run system, performance, and security tests.
+4. Perform regression tests after fixes.
+
 # Test Case Document - QuickKart (Flipkart Clone)
 
 ## Feature: User Features
@@ -444,7 +478,7 @@ describe('Maps API', function() {
 
 ---
 
-## Brief Explanation of Test Cases
+## ALL  Test Cases
 
 | **Test Case ID**  | **Description**                                           | **Feature**             | **Purpose**                                                                                           |
 |-------------------|-----------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------|
@@ -463,4 +497,56 @@ describe('Maps API', function() {
 
 ---
 
-This document provides comprehensive test cases covering the essential functionality of **QuickKart** (Flipkart Clone). All major features, including user, seller, admin functionalities, and third-party API integrations, are tested to ensure a seamless user experience.
+# Performance Testing for QuickKart Clone with JMeter
+
+## 1. Tools
+- **JMeter**: For load testing, stress testing, and measuring performance.
+
+## 2. Types of Tests
+- **Load Testing**: Measure system performance under the expected user load (e.g., 1000 users).
+- **Stress Testing**: Evaluate system behavior under extreme load (e.g., 5000 users).
+- **Spike Testing**: Test system's response to sudden traffic spikes.
+- **Endurance Testing**: Assess system performance over extended periods (e.g., 24 hours).
+
+## 3. JMeter Test Plan Setup
+
+### 3.1. Creating Test Plan
+1. **Thread Group**: Set users (e.g., 1000 users) and ramp-up time (e.g., 60 seconds).
+2. **HTTP Request Sampler**: Define API requests to simulate:
+   - User actions (e.g., registration, login).
+   - Product browsing (search, filter).
+   - Order placement.
+   - Cart management.
+3. **Timers**: Use timers to simulate realistic user behavior (e.g., 2-second delay between actions).
+4. **Listeners**: 
+   - **View Results Tree**: Monitor response data.
+   - **Summary Report**: View overall statistics like throughput and error rate.
+   - **Graph Results**: Analyze response time graphs.
+
+### 3.2. Test Scenario Example
+- **Objective**: Test registration of 1000 users simultaneously on QuickKart.
+- **Steps**:
+  1. Set 1000 users in Thread Group.
+  2. Simulate user registration via the registration API.
+  3. Set response time assertion (e.g., ≤ 2 seconds per request).
+  4. Run the test for 10 minutes and monitor results.
+
+### 3.3. Analyzing Results
+- **Throughput**: Measure the number of requests per minute.
+- **Response Time**: Average time for each request (e.g., login, product search).
+- **Error Rate**: Percentage of failed requests.
+- **System Resources**: Monitor CPU and memory usage during the test.
+
+## 4. Execution Flow
+
+```mermaid
+graph LR
+    A[Start Test] --> B[Set up JMeter Test Plan]
+    B --> C[Run Load Test on QuickKart]
+    C --> D[Monitor Results with JMeter Listeners]
+    D --> E[Analyze Test Results: Throughput, Errors, Response Times]
+    E --> F[End Test]
+
+```
+This document provides comprehensive test cases covering the essential functionality of QuickKart (Flipkart Clone). All major features, including user, seller, admin functionalities, and third-party API integrations, are tested to ensure a seamless user experience. In addition, performance testing is conducted using JMeter to assess the system's behavior under various load conditions. This includes load testing, stress testing, spike testing, and endurance testing to ensure that QuickKart can handle both expected and extreme traffic while maintaining optimal performance.
+
