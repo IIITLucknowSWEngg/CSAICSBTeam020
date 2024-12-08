@@ -216,4 +216,4 @@ The system will be considered successful if:
 
 ---
 
-This detailed SRS document captures the full scope of the QuickKart project based on the URD you provided. It covers the system’s functional and non-functional requirements, architecture, dependencies, and external interfaces.
+This detailed SRS document captures the full scope of the QuickKart project based on the URD created. It covers the system’s functional and non-functional requirements, architecture, dependencies, and external interfaces.
