@@ -1,346 +1,466 @@
-# *Features for Flipkart Platform*
+# Test Case Document - QuickKart (Flipkart Clone)
+
+## Feature: User Features
 
 ---
 
-## *1. User Features*
+### Test Case ID: TC-REG-001
+**Description**: Verify that a user can successfully register with valid information.
 
----
+#### Precondition:
+- User is on the registration page.
 
-### *1.1 Feature: User - Sign Up*
+#### Steps:
+1. Open the registration page.
+2. Enter valid information (name, email, password).
+   - Name: "John Doe"
+   - Email: "john@example.com"
+   - Password: "password123"
+3. Submit the registration form.
 
-#### *Scenario: User signs up with email*
+#### Expected Result:
+1. The user should be successfully registered.
+2. The user should be redirected to the login page.
+3. A success message should be displayed, e.g., "Registration successful."
 
-- *Given:*
-    - The user is on the Flipkart sign-up page.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-- *When:*
-    - The user enters their email, password, and phone number.
-    - The user clicks the "Sign Up" button.
-
-- *Then:*
-    - The user should be registered successfully.
-    - The user should be redirected to the homepage.
-
-javascript
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
-const signUpPage = require('../pages/signUpPage');
+const registrationPage = require('../pages/registrationPage');
 
-describe('User - Sign Up', function () {
-    it('should register the user successfully', function () {
-        signUpPage.open();
-        signUpPage.fillRegistrationForm('user@example.com', 'securePassword123', '9876543210');
-        signUpPage.submitRegistration();
-        expect(signUpPage.getWelcomeMessage()).to.include('Welcome to Flipkart');
-        expect(browser.getUrl()).to.include('/homepage');
-    });
+describe('User Registration', function() {
+  it('should register user successfully', function() {
+    registrationPage.open();
+    registrationPage.fillRegistrationForm('John Doe', 'john@example.com', 'password123');
+    registrationPage.submitForm();
+    expect(registrationPage.getSuccessMessage()).to.equal('Registration successful');
+    expect(browser.getUrl()).to.include('/login');
+  });
 });
 
+```
 
 ---
 
-### *1.2 Feature: User - Search Products*
+### Test Case ID: TC-LOGIN-002
+**Description**: Verify that a user can log in with valid credentials.
 
-#### *Scenario: User searches for products*
+#### Precondition:
+- User is on the login page.
 
-- *Given:*
-    - The user is logged in.
-    - The user is on the Flipkart homepage.
+#### Steps:
+1. Open the login page.
+2. Enter valid email and password (e.g., email: "john@example.com", password: "password123").
+3. Submit the login form.
 
-- *When:*
-    - The user enters a search query in the search bar.
-    - The user presses Enter or clicks the search icon.
+#### Expected Result:
+1. The user should be logged in successfully.
+2. The user should be redirected to the homepage.
 
-- *Then:*
-    - Relevant products should be displayed.
-    - The search term should remain in the search bar.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-javascript
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
-const homePage = require('../pages/homePage');
+const loginPage = require('../pages/loginPage');
 
-describe('User - Search Products', function () {
-    it('should display relevant products for a search query', function () {
-        homePage.open();
-        homePage.searchForProduct('smartphone');
-        const displayedProducts = homePage.getDisplayedProducts();
-        expect(displayedProducts).to.not.be.empty;
-        expect(homePage.getSearchInputValue()).to.equal('smartphone');
-    });
+describe('User Login', function() {
+  it('should log in user successfully', function() {
+    loginPage.open();
+    loginPage.fillLoginForm('john@example.com', 'password123');
+    loginPage.submitForm();
+    expect(browser.getUrl()).to.include('/home');
+  });
 });
-
+```
 
 ---
 
-### *1.3 Feature: User - Add to Cart*
+### Test Case ID: TC-PRODUCTS-003
+**Description**: Verify that a user can view the list of all products.
 
-#### *Scenario: User adds a product to the cart*
+#### Precondition:
+- User is logged in and on the homepage.
 
-- *Given:*
-    - The user is logged in.
-    - The user is viewing a product details page.
+#### Steps:
+1. Navigate to the "Products" section.
 
-- *When:*
-    - The user clicks the "Add to Cart" button.
+#### Expected Result:
+1. A list of all products should be displayed.
 
-- *Then:*
-    - The product should be added to the cart.
-    - The cart counter should update, and a confirmation message should be displayed.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-javascript
+#### Chai.js Code:
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+const productPage = require('../pages/productPage');
+
+describe('View All Products', function() {
+  it('should display all products', function() {
+    productPage.open();
+    const products = productPage.getAllProducts();
+    expect(products.length).to.be.greaterThan(0);
+  });
+});
+```
+
+---
+
+### Test Case ID: TC-CART-004
+**Description**: Verify that a user can add products to the cart.
+
+#### Precondition:
+- User is logged in and on a product details page.
+
+#### Steps:
+1. Click the "Add to Cart" button on a product page.
+
+#### Expected Result:
+1. The product should be added to the cart.
+2. The cart counter should update.
+3. A confirmation message should be displayed.
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
 const productPage = require('../pages/productPage');
 const cartPage = require('../pages/cartPage');
 
-describe('User - Add to Cart', function () {
-    it('should add the product to the cart', function () {
-        productPage.open('product_id_123');
-        productPage.clickAddToCart();
-        expect(productPage.getCartConfirmation()).to.include('Added to Cart');
-
-        cartPage.open();
-        expect(cartPage.getCartItems()).to.include('product_id_123');
-    });
+describe('Add Product to Cart', function() {
+  it('should add product to the cart', function() {
+    productPage.open('product_id_123');
+    productPage.clickAddToCart();
+    expect(productPage.getCartConfirmation()).to.include('Added to Cart');
+    cartPage.open();
+    expect(cartPage.getCartItems()).to.include('product_id_123');
+  });
 });
-
+```
 
 ---
 
-### *1.4 Feature: User - Place an Order*
+### Test Case ID: TC-ORDER-005
+**Description**: Verify that a user can place an order.
 
-#### *Scenario: User places an order*
+#### Precondition:
+- User has added products to the cart.
 
-- *Given:*
-    - The user is logged in.
-    - The user has products in their cart.
+#### Steps:
+1. Go to the cart and click "Place Order."
+2. Enter shipping details and select payment method.
+3. Confirm the order.
 
-- *When:*
-    - The user navigates to the cart and clicks "Place Order."
-    - The user provides shipping details and payment information.
-    - The user confirms the order.
+#### Expected Result:
+1. The order should be placed successfully.
+2. The user should see an order confirmation message.
 
-- *Then:*
-    - The order should be placed successfully.
-    - The user should see an order confirmation page.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-javascript
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
-const cartPage = require('../pages/cartPage');
 const checkoutPage = require('../pages/checkoutPage');
 
-describe('User - Place an Order', function () {
-    it('should place an order successfully', function () {
-        cartPage.open();
-        cartPage.clickPlaceOrder();
-        checkoutPage.fillShippingDetails('John Doe', '123 Main St', 'City', '123456');
-        checkoutPage.selectPaymentMethod('Credit Card');
-        checkoutPage.confirmOrder();
-
-        const confirmationMessage = checkoutPage.getOrderConfirmationMessage();
-        expect(confirmationMessage).to.equal('Your order has been placed successfully!');
-    });
+describe('Place Order', function() {
+  it('should place the order successfully', function() {
+    checkoutPage.open();
+    checkoutPage.fillShippingDetails('John Doe', '123 Main St', 'City', '123456');
+    checkoutPage.selectPaymentMethod('Credit Card');
+    checkoutPage.confirmOrder();
+    const confirmationMessage = checkoutPage.getOrderConfirmationMessage();
+    expect(confirmationMessage).to.equal('Your order has been placed successfully!');
+  });
 });
-
+```
 
 ---
 
-### *1.5 Feature: User - View Order History*
+## Feature: Seller Features
 
-#### *Scenario: User views their order history*
+---
 
-- *Given:*
-    - The user is logged in.
+### Test Case ID: TC-SELLER-REGISTER-006
+**Description**: Verify that a seller can register with valid details.
 
-- *When:*
-    - The user navigates to the "Order History" section.
+#### Precondition:
+- Seller is on the registration page.
 
-- *Then:*
-    - A list of previous orders should be displayed with details like order ID, items, and status.
+#### Steps:
+1. Enter seller name, email, password, and business details.
+2. Submit the registration form.
 
-javascript
+#### Expected Result:
+1. The seller should be registered successfully.
+2. The seller should be redirected to the seller dashboard.
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
-const orderHistoryPage = require('../pages/orderHistoryPage');
+const sellerRegistrationPage = require('../pages/sellerRegistrationPage');
 
-describe('User - View Order History', function () {
-    it('should display the user\'s order history', function () {
-        orderHistoryPage.open();
-        const orders = orderHistoryPage.getOrderList();
-        expect(orders).to.be.an('array').that.is.not.empty;
-    });
+describe('Seller Registration', function() {
+  it('should register seller successfully', function() {
+    sellerRegistrationPage.open();
+    sellerRegistrationPage.fillSellerRegistrationForm('Seller A', 'seller@example.com', 'password123');
+    sellerRegistrationPage.submitForm();
+    expect(browser.getUrl()).to.include('/seller-dashboard');
+  });
 });
-
-
----
-
-## *2. Seller Features*
+```
 
 ---
 
-### *2.1 Feature: Seller - List a Product*
+### Test Case ID: TC-SELLER-ADD-PRODUCT-007
+**Description**: Verify that a seller can add a new product.
 
-#### *Scenario: Seller lists a new product*
+#### Precondition:
+- Seller is logged in and on the product listing page.
 
-- *Given:*
-    - The seller is logged in.
-    - The seller is on the product listing page.
+#### Steps:
+1. Enter product name, price, description, and upload images.
+2. Submit the product listing.
 
-- *When:*
-    - The seller enters product details (name, price, description, images).
-    - The seller clicks "Submit."
+#### Expected Result:
+1. The product should be added to the catalog.
+2. A success message should be displayed.
 
-- *Then:*
-    - The product should be added to the catalog.
-    - The seller should see the product in their inventory.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-javascript
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
 const productListingPage = require('../pages/productListingPage');
 
-describe('Seller - List a Product', function () {
-    it('should add a new product to the catalog', function () {
-        productListingPage.open();
-        productListingPage.enterProductDetails('Smartphone X', '69999', 'High-end smartphone', 'smartphone.jpg');
-        productListingPage.submitProduct();
-
-        const successMessage = productListingPage.getSuccessMessage();
-        expect(successMessage).to.include('Product listed successfully');
-    });
+describe('Seller Add Product', function() {
+  it('should add a new product to the catalog', function() {
+    productListingPage.open();
+    productListingPage.enterProductDetails('Smartphone', '49999', 'High quality smartphone', 'smartphone.jpg');
+    productListingPage.submitProduct();
+    expect(productListingPage.getSuccessMessage()).to.include('Product listed successfully');
+  });
 });
-
+```
 
 ---
 
-### *2.2 Feature: Seller - View Sales Analytics*
+### Test Case ID: TC-SELLER-MANAGE-ORDER-008
+**Description**: Verify that a seller can manage order status.
 
-#### *Scenario: Seller views sales analytics*
+#### Precondition:
+- Seller is logged in and has received an order.
 
-- *Given:*
-    - The seller is logged in.
+#### Steps:
+1. Go to the "Orders" section.
+2. Update the order status to "Shipped."
 
-- *When:*
-    - The seller navigates to the "Analytics" section.
+#### Expected Result:
+1. The order status should be updated to "Shipped."
 
-- *Then:*
-    - The seller should see metrics like total sales, top-selling products, and revenue trends.
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
 
-javascript
-const chai = require('chai');
-const expect = chai.expect;
-const analyticsPage = require('../pages/analyticsPage');
-
-describe('Seller - View Sales Analytics', function () {
-    it('should display sales analytics for the seller', function () {
-        analyticsPage.open();
-        const metrics = analyticsPage.getSalesData();
-        expect(metrics).to.have.property('totalSales').that.is.a('number');
-        expect(metrics).to.have.property('topProducts').that.is.an('array').that.is.not.empty;
-    });
-});
-
-
----
-
-### *2.3 Feature: Seller - Manage Orders*
-
-#### *Scenario: Seller manages orders*
-
-- *Given:*
-    - The seller is logged in.
-    - The seller has pending orders.
-
-- *When:*
-    - The seller navigates to the "Orders" section.
-    - The seller updates the status of an order (e.g., ships it).
-
-- *Then:*
-    - The order status should be updated successfully.
-
-javascript
+#### Chai.js Code:
+```javascript
 const chai = require('chai');
 const expect = chai.expect;
 const orderManagementPage = require('../pages/orderManagementPage');
 
-describe('Seller - Manage Orders', function () {
-    it('should allow the seller to update order status', function () {
-        orderManagementPage.open();
-        orderManagementPage.updateOrderStatus('order_id_456', 'Shipped');
-        const updatedOrderStatus = orderManagementPage.getOrderStatus('order_id_456');
-        expect(updatedOrderStatus).to.equal('Shipped');
-    });
+describe('Seller Manage Order', function() {
+  it('should update order status to Shipped', function() {
+    orderManagementPage.open();
+    orderManagementPage.updateOrderStatus('order_id_123', 'Shipped');
+    const status = orderManagementPage.getOrderStatus('order_id_123');
+    expect(status).to.equal('Shipped');
+  });
 });
-
-
----
-
-## *3. Flipkart Platform Features*
-
----
-
-### *3.1 Feature: Personalized Recommendations*
-
-#### *Scenario: User receives personalized product recommendations*
-
-- *Given:*
-    - The user is logged in.
-    - The user has browsed products or made previous purchases.
-
-- *When:*
-    - The user visits the homepage.
-
-- *Then:*
-    - The homepage should display recommended products based on user behavior.
-
-javascript
-const chai = require('chai');
-const expect = chai.expect;
-const homePage = require('../pages/homePage');
-
-describe('Platform - Personalized Recommendations', function () {
-    it('should display personalized product recommendations', function () {
-        homePage.open();
-        const recommendations = homePage.getRecommendations();
-        expect(recommendations).to.be.an('array').that.is.not.empty;
-    });
-});
-
-
----
-
-### *3.2 Feature: Flash Sales*
-
-#### *Scenario: User participates in a flash sale*
-
-- *Given:*
-    - The user is logged in.
-    - A flash sale is active.
-
-- *When:*
-    - The user adds a discounted product to their cart and completes the purchase.
-
-- *Then:*
-    - The product should be purchased at the discounted price.
-
-javascript
-const chai = require('chai');
-const expect = chai.expect;
-const flashSalePage = require('../pages/flashSalePage');
-
-describe('Platform - Flash Sales', function () {
-    it('should allow users to purchase products at discounted prices during flash sales', function () {
-        flashSalePage.open();
-        flashSalePage.addProductToCart('flash_product_123');
-        flashSalePage.checkout();
-        expect(flashSalePage.getOrderConfirmationMessage()).to.include('Discounted price applied');
-    });
-});
-
-
----
-
-This document outlines automated tests for core Flipkart features, ensuring functionality across user, seller, and platform workflows.
 ```
+
+---
+
+## Feature: Admin Features
+
+---
+
+### Test Case ID: TC-ADMIN-MANAGE-USERS-009
+**Description**: Verify that the admin can retrieve all users.
+
+#### Precondition:
+- Admin is logged in and on the "Users" page.
+
+#### Steps:
+1. Navigate to the "Users" section.
+
+#### Expected Result:
+1. The list of all users should be displayed.
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+const usersPage = require('../pages/usersPage');
+
+describe('Admin Manage Users', function() {
+  it('should retrieve all users', function() {
+    usersPage.open();
+    const users = usersPage.getUsersList();
+    expect
+
+(users.length).to.be.greaterThan(0);
+  });
+});
+```
+
+---
+
+## Feature: Third-Party APIs
+
+---
+
+### Test Case ID: TC-DELIVERY-010
+**Description**: Verify that the third-party delivery API returns correct delivery details.
+
+#### Precondition:
+- Order has been placed by the user.
+
+#### Steps:
+1. Trigger the third-party delivery API with the order details.
+2. Retrieve the delivery status from the API response.
+
+#### Expected Result:
+1. The delivery API should return accurate delivery details (e.g., delivery date, carrier).
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+const axios = require('axios');
+
+describe('Delivery API', function() {
+  it('should return correct delivery details for the order', async function() {
+    const orderId = 'order_id_123';
+    const response = await axios.get(`https://delivery-api.com/status?order_id=${orderId}`);
+    expect(response.status).to.equal(200);
+    expect(response.data).to.have.property('delivery_date');
+    expect(response.data).to.have.property('carrier');
+  });
+});
+```
+
+---
+
+### Test Case ID: TC-PAYMENT-011
+**Description**: Verify that the third-party payment API processes payment successfully.
+
+#### Precondition:
+- User has placed an order and selected a payment method.
+
+#### Steps:
+1. Trigger the payment API with the order and payment details.
+2. Verify that the payment is processed successfully.
+
+#### Expected Result:
+1. The payment API should process the payment and return a success message.
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+const axios = require('axios');
+
+describe('Payment API', function() {
+  it('should process the payment successfully', async function() {
+    const paymentDetails = { orderId: 'order_id_123', amount: 49999, method: 'Credit Card' };
+    const response = await axios.post('https://payment-api.com/charge', paymentDetails);
+    expect(response.status).to.equal(200);
+    expect(response.data).to.have.property('payment_status').and.equal('success');
+  });
+});
+```
+
+---
+
+### Test Case ID: TC-MAPS-012
+**Description**: Verify that the third-party maps API returns correct location for the user’s address.
+
+#### Precondition:
+- User has entered a shipping address during checkout.
+
+#### Steps:
+1. Trigger the maps API with the shipping address.
+2. Retrieve the geolocation and map coordinates from the API response.
+
+#### Expected Result:
+1. The maps API should return correct geolocation data with latitude and longitude.
+
+#### Test Status:
+- **Pending/Pass/Fail** _(Update after execution)_
+
+#### Chai.js Code:
+```javascript
+const chai = require('chai');
+const expect = chai.expect;
+const axios = require('axios');
+
+describe('Maps API', function() {
+  it('should return correct location for the user address', async function() {
+    const address = '123 Main St, City, Country';
+    const response = await axios.get(`https://maps-api.com/geocode?address=${encodeURIComponent(address)}`);
+    expect(response.status).to.equal(200);
+    expect(response.data).to.have.property('location');
+    expect(response.data.location).to.have.property('latitude');
+    expect(response.data.location).to.have.property('longitude');
+  });
+});
+```
+
+---
+
+## Brief Explanation of Test Cases
+
+| **Test Case ID**  | **Description**                                           | **Feature**             | **Purpose**                                                                                           |
+|-------------------|-----------------------------------------------------------|-------------------------|-------------------------------------------------------------------------------------------------------|
+| TC-REG-001        | User registration with valid details                      | User Features           | Verifies that users can successfully register with valid information.                               |
+| TC-LOGIN-002      | User login with valid credentials                         | User Features           | Ensures that users can log in successfully with the correct credentials.                             |
+| TC-PRODUCTS-003   | View list of products                                    | User Features           | Confirms that the user can view all available products.                                               |
+| TC-CART-004       | Add product to the cart                                  | User Features           | Verifies that products can be successfully added to the cart.                                        |
+| TC-ORDER-005      | Place an order                                           | User Features           | Ensures that the user can place an order after adding products to the cart.                           |
+| TC-SELLER-REGISTER-006 | Seller registration with valid details                | Seller Features         | Verifies that sellers can register successfully with valid details.                                  |
+| TC-SELLER-ADD-PRODUCT-007 | Add a product to catalog                           | Seller Features         | Confirms that the seller can add a new product to the catalog.                                       |
+| TC-SELLER-MANAGE-ORDER-008 | Manage order status                                | Seller Features         | Verifies that the seller can update order statuses.                                                  |
+| TC-ADMIN-MANAGE-USERS-009 | Admin manages user accounts                         | Admin Features          | Ensures that the admin can retrieve and manage users.                                                |
+| TC-DELIVERY-010   | Delivery API returns correct delivery details            | Third-party API         | Confirms that the delivery API provides correct shipping details.                                     |
+| TC-PAYMENT-011    | Payment API processes payment successfully               | Third-party API         | Verifies that the payment API processes payments correctly.                                          |
+| TC-MAPS-012       | Maps API returns correct location for the user address   | Third-party API         | Ensures that the maps API returns accurate geolocation information.                                   |
+
+---
+
+This document provides comprehensive test cases covering the essential functionality of **QuickKart** (Flipkart Clone). All major features, including user, seller, admin functionalities, and third-party API integrations, are tested to ensure a seamless user experience.
