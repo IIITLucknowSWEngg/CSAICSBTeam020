@@ -1,215 +1,312 @@
-# Software Requirements Specification (SRS) for QuickKart
+# 1. Software Requirements Specification (SRS)
+
+## Project Title: QuickKart
+### Version: 1.0
+
+---
 
 ## 1. Introduction
 
 ### 1.1 Purpose
-The purpose of this document is to provide a comprehensive Software Requirements Specification (SRS) for **QuickKart**, an online e-commerce platform designed for users to browse products, place orders, and manage their profile. It also serves as a platform for vendors to list products and manage stock. This SRS outlines the functional and non-functional requirements of the QuickKart system, ensuring that the developers, testers, and stakeholders are aligned on the project’s scope and expectations.
+The purpose of this SRS document is to define the functional and non-functional requirements for an e-commerce platform similar to Flipkart. The application will provide a marketplace where users can browse, search, and purchase products online, while sellers can list and manage their inventory.
 
 ### 1.2 Scope
-QuickKart is an e-commerce application that facilitates online product browsing, ordering, and payment. The platform will support:
-- **End-users** who can browse, search, and purchase products.
-- **Vendors** who can list and manage products, track inventory, and process orders.
-- **Admin users** who can manage the entire system, including users, vendors, and products.
-
-The system will have the following features:
-- User registration and login system.
-- Product catalog with detailed descriptions.
-- Cart management functionality.
-- Order placement and tracking.
-- Vendor product management.
-- Admin functionalities to manage users, products, vendors, and orders.
-  
-QuickKart will be hosted as a web application, with responsive design, ensuring accessibility across multiple devices (desktop and mobile). 
+The Flipkart Clone will provide the following key features:
+- User authentication and profile management.
+- Product browsing, searching, and filtering.
+- Shopping cart and wishlist functionalities.
+- Secure payment gateway integration.
+- Order placement, tracking, and history.
+- Seller dashboard for inventory and order management.
+- Admin panel for user, product, and order moderation.
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
-- **QuickKart**: The name of the e-commerce platform.
-- **User**: A person who can browse and purchase products on QuickKart.
-- **Vendor**: A seller who can list and manage their products on the platform.
-- **Admin**: A person with the ability to manage the entire system, including users, products, and vendors.
-- **Cart**: A virtual container where users can add products before placing an order.
-- **Razorpay**: The third-party payment gateway used for processing payments.
-- **Firebase**: A platform used for sending push notifications to users.
-- **E-commerce**: Buying and selling of goods and services over the internet.
+- SRS: Software Requirements Specification  
+- UI: User Interface  
+- UX: User Experience  
+- SKU: Stock Keeping Unit  
+- API: Application Programming Interface  
 
-
+### 1.4 References
+- [E-commerce Design Best Practices](https://www.nngroup.com/articles/ecommerce/)
+- [REST API Best Practices](https://restfulapi.net/best-practices/)
+- [Payment Gateway Integration Guide](https://developer.paypal.com/)
 
 ---
 
 ## 2. Overall Description
 
 ### 2.1 Product Perspective
-QuickKart is an e-commerce platform designed to be easy to use, offering a modern and user-friendly interface for both customers and vendors. The platform will be cloud-based and accessible via web browsers, supporting features like secure payment processing, product browsing, vendor management, and order tracking.
+The Flipkart Clone is a web and mobile application that enables users to browse, search, and purchase products. The platform will include features for product discovery, user management, order processing, and payment. Sellers will be able to list products and manage their sales, while admins will have the ability to moderate the platform.
 
-QuickKart will integrate with third-party services such as Razorpay for payment processing and Firebase for sending push notifications.
+### 2.2 Product Functions
+- *User Registration and Login*: Users can register via email, phone number, or social media accounts, and log in to their accounts.
+- *Product Discovery*: Users can search, browse, and filter products by categories, brands, prices, ratings, etc.
+- *Shopping Cart*: Users can add products to their cart and proceed to checkout.
+- *Order Placement and Tracking*: Users can place orders, track shipments, and view order history.
+- *Payment Integration*: Integration with secure payment gateways like PayPal, Stripe, or UPI for processing payments.
+- *Seller Dashboard*: Sellers can list products, manage stock, and view order history.
+- *Admin Panel*: Admins can manage users, products, and orders, and monitor platform activity.
 
-The system architecture will be divided into a frontend (built with ReactJS) and a backend (built using Node.js), which will communicate using RESTful APIs.
+### 2.3 User Classes and Characteristics
+- *Regular Users*: Individuals who browse, search, and purchase products from the platform.
+- *Sellers*: Users who list their products, manage inventory, and track sales.
+- *Admin Users*: Users who manage and moderate the platform, handle customer complaints, and monitor sales.
 
-### 2.2 Product Features
-#### 2.2.1 User Features
-- **Registration and Login**: Users can sign up and log in using their email and password. 
-- **Product Browsing**: Users can view products by category or use the search function to find specific items.
-- **Cart Management**: Users can add products to their cart, view the cart, and proceed to checkout.
-- **Order Placement and Tracking**: After checkout, users can place orders and track the status of their deliveries.
-- **User Profile Management**: Users can manage their profile, including personal information and order history.
+### 2.4 Operating Environment
+- *Client-Side*: Web browsers (Chrome, Firefox, Safari), mobile devices (iOS, Android)
+- *Server-Side*: Node.js for backend processing, AWS for cloud storage, REST APIs for communication
+- *Database*: MySQL for relational data storage (products, users, orders)
 
-#### 2.2.2 Vendor Features
-- **Product Listing**: Vendors can add new products, set product details, and manage their inventory.
-- **Order Management**: Vendors can view and manage orders placed by users for their products.
-
-#### 2.2.3 Admin Features
-- **User Management**: Admins can manage user accounts, approve or reject registration requests, and suspend accounts if necessary.
-- **Vendor Management**: Admins can approve vendor registrations, manage vendor accounts, and monitor vendor activity.
-- **Product Management**: Admins can add, edit, or remove products across the platform.
-- **Order Monitoring**: Admins can monitor orders placed by users, process refunds, and handle complaints.
-
-### 2.3 User Characteristics
-- **End Users**: Users are general customers who browse the catalog, make purchases, and track their orders. The system should be intuitive and easy to use for non-technical users.
-- **Vendors**: Vendors are business owners who will manage their own product listings, inventory, and orders. They will need access to a simple but powerful interface to manage their products.
-- **Admin Users**: Admins have full access to the system and can manage users, vendors, products, and orders. They are typically system administrators or support staff.
-
-### 2.4 Constraints
-- **Performance**: The system should be able to handle at least 50,000 concurrent users.
-- **Security**: The application must secure sensitive information such as passwords and payment details, using encryption and secure protocols.
-- **Payment Gateway**: The application must integrate with **Razorpay** to process payments securely.
-- **Web-based**: The platform must be accessible via modern web browsers and support a responsive design for mobile devices.
-
-### 2.5 Assumptions and Dependencies
-- **User Device Requirements**: Users should have a web browser to access the system. The system should support modern browsers such as Chrome, Firefox, Safari, and Edge.
-- **Payment Gateway Integration**: The system depends on **Razorpay** for payment processing, which may involve additional configuration and testing.
-- **Notifications**: The application uses **Firebase** for notifications, which will require setting up an integration with Firebase Cloud Messaging (FCM).
+### 2.5 Design and Implementation Constraints
+- The system must be mobile-responsive to accommodate users on both web and mobile devices.
+- Product images must be optimized for quick loading without compromising quality.
+- Integration with payment gateways and third-party APIs should comply with security standards.
 
 ---
 
-## 3. Functional Requirements
+## 3. Specific Requirements
 
-### 3.1 User Registration and Authentication
-#### 3.1.1 Registration
-- Users must be able to sign up using their email address and password.
-- An email confirmation will be sent to the user for verification.
-  
-#### 3.1.2 Login
-- Users must be able to log in using their registered email and password.
-- If users forget their password, they must be able to reset it via email.
+### 3.1 Functional Requirements
 
-#### 3.1.3 Profile Management
-- Users should be able to edit personal information such as name, email, and phone number.
-- Users should be able to view their order history.
+1. *User Registration and Login*
+   - Users can create accounts using email, phone number, or social media login (Google, Facebook).
+   - Users must log in with valid credentials to access the platform.
 
-### 3.2 Product Catalog
-#### 3.2.1 Browsing
-- Users must be able to browse products by categories such as electronics, clothing, groceries, etc.
-- Users must be able to view product details, including price, description, and available stock.
+2. *Product Browsing and Search*
+   - Users can browse products by category, price, ratings, and brand.
+   - A search functionality should be provided to filter products based on these criteria.
 
-#### 3.2.2 Searching
-- Users must be able to search for products using keywords, brand names, and categories.
+3. *Shopping Cart*
+   - Users can add multiple products to their shopping cart.
+   - The cart should display product details (name, price, quantity).
+   - Users can modify quantities or remove items from the cart.
 
-### 3.3 Cart Management
-#### 3.3.1 Add to Cart
-- Users must be able to add products to their cart from the product page.
-  
-#### 3.3.2 View Cart
-- Users can view the cart, which displays the product name, quantity, price, and total price.
+4. *Checkout and Payment*
+   - Users can proceed to checkout, enter shipping details, and choose a payment method.
+   - Payment gateway integration for processing payments securely.
 
-#### 3.3.3 Checkout
-- Users must be able to proceed to checkout from the cart, enter shipping information, and confirm the order.
-  
-#### 3.3.4 Order Placement
-- Users can place an order after reviewing the cart and entering payment information.
+5. *Order Management*
+   - Users can view their order history and track the status of orders.
+   - Notifications should be sent regarding order status (payment, shipment, delivery).
 
-### 3.4 Order Management
-#### 3.4.1 Order Tracking
-- After an order is placed, users should be able to track its status (e.g., processing, shipped, delivered).
+6. *Seller Dashboard*
+   - Sellers can add, edit, and remove products from their inventory.
+   - Sellers can view the status of orders and manage shipments.
 
-#### 3.4.2 Cancel or Return Orders
-- Users must be able to cancel orders if they have not yet been shipped.
-- Users can request a return for eligible items.
+7. *Admin Panel*
+   - Admins can manage user accounts, review and approve product listings, and handle disputes.
+   - Admins can view platform analytics, sales reports, and manage promotions.
 
-### 3.5 Vendor Management
-#### 3.5.1 Product Listing
-- Vendors can add new products with details such as name, description, price, and stock availability.
-  
-#### 3.5.2 Stock Management
-- Vendors can update the stock levels for their products and remove out-of-stock products.
+### 3.2 Non-Functional Requirements
 
-#### 3.5.3 Order Management
-- Vendors can view all orders for their products and mark them as shipped.
+1. *Performance*
+   - The system should support up to *50,000 concurrent users* without significant performance degradation.
+   - Product pages must load within *3 seconds*.
 
-### 3.6 Admin Panel
-#### 3.6.1 User Management
-- Admins can approve or reject new user registrations.
-- Admins can suspend user accounts for violations of terms of service.
+2. *Scalability*
+   - The platform must scale horizontally to handle increasing traffic and product listings.
+   - Database queries should be optimized for fast retrieval and response times.
 
-#### 3.6.2 Vendor Management
-- Admins can approve or reject new vendor registrations.
-- Admins can monitor vendor activities such as product listings and order fulfillment.
+3. *Security*
+   - All sensitive data, including user information and payment details, must be encrypted in transit and at rest.
+   - User authentication should use secure methods like OAuth 2.0 or JWT.
 
-#### 3.6.3 Product Management
-- Admins can add, edit, or remove products from the catalog.
+4. *Usability*
+   - The UI should be user-friendly and intuitive, ensuring a smooth shopping experience.
+   - A mobile-responsive design is required to ensure usability on all device types.
 
-#### 3.6.4 Order Management
-- Admins can view and manage all orders across the platform.
+5. *Maintainability*
+   - The system should be modular and easy to maintain, with clear documentation for future updates.
+   - API endpoints and database schemas should be documented thoroughly.
 
----
+6. *Reliability*
+   - The platform should be available 99.9% of the time, with minimal downtime for maintenance.
+   - Backup and recovery mechanisms should be in place to prevent data loss.
 
-## 4. Non-Functional Requirements
+7. *Availability*
+   - The system should be available 24/7 and able to handle peak traffic during sales events.
+   - Redundant infrastructure should be used for critical services like payment gateways.
 
-### 4.1 Performance
-- The system must handle a minimum of 50,000 active users concurrently without noticeable degradation in performance.
-- Response time for user actions, such as searching for products or viewing the cart, should not exceed 2 seconds.
+8. *Data Integrity*
+   - The system should ensure the accuracy and consistency of product data, orders, and user information.
+   - User actions (e.g., order placements, cart modifications) should be reflected immediately across devices.
 
-### 4.2 Security
-- All sensitive information, including user passwords and payment details, should be encrypted using industry-standard encryption algorithms (e.g., AES).
-- Payment transactions must be processed securely through **Razorpay**.
-- The system must support HTTPS for secure communication between users and the server.
-
-### 4.3 Usability
-- The application must be easy to navigate for both new and experienced users.
-- The user interface must be responsive, providing an optimized experience on both desktop and mobile devices.
-
-### 4.4 Availability
-- The system must have an uptime of 99.9%, with scheduled maintenance windows clearly communicated to users.
-
-### 4.5 Scalability
-- The system must be scalable to accommodate an increase in users, products, and orders. It should be capable of expanding to meet growing demands, such as additional storage or higher traffic.
+9. *Compliance*
+   - The platform must comply with local regulations on data privacy (e.g., GDPR) and consumer protection.
+   - Payment systems must adhere to PCI-DSS standards for secure transactions.
 
 ---
 
-## 5. System Design and Architecture
+## 4. Interfaces
 
-### 5.1 System Architecture
-The system will have a **three-tier architecture**:
-- **Frontend**: Developed using **ReactJS** to provide a responsive and dynamic user interface.
-- **Backend**: Developed using **Node.js** to handle business logic, product catalog, and user management.
-- **Database**: A relational database (such as MongoDB) will be used to store user, vendor, and product data.
+### 4.1 Hardware Interfaces
+- *Mobile Device Cameras*: For scanning QR codes or uploading product images by sellers.
+- *Touchscreen Interfaces*: Ensuring smooth interaction on mobile and tablet devices.
+- *Payment Terminals*: Integration with online payment gateways for processing payments.
 
-The communication between the frontend and backend will occur using **RESTful APIs**.
+### 4.2 Software Interfaces
+- *Third-Party APIs*:
+  - Payment Gateway APIs (e.g., PayPal, Stripe, UPI) for secure payment processing.
+  - Product recommendation APIs to suggest related products based on user behavior.
+
+- *Database*:
+  - MySQL for storing relational data like user accounts, products, and orders.
+
+- *Authentication Services*:
+  - OAuth 2.0 for social media logins.
+  - JWT for managing secure sessions and token-based authentication.
+
+### 4.3 Communication Interfaces
+- *HTTPS Protocol*: Ensures secure data transmission between clients and servers.
+- *WebSocket Protocol*: For real-time order updates and notifications.
+- *Push Notifications*: For order status updates, promotions, and new arrivals.
+- *REST APIs*: Facilitates communication between the front-end and back-end systems.
 
 ---
 
-## 6. External Interface Requirements
+### 5. Non-Functional Requirements (NFRs)
 
-### 6.1 User Interface
-- Users will interact with the platform via a web-based interface.
-- The interface will be responsive to support both desktop and mobile devices.
-  
-### 6.2 Hardware Interfaces
-- The system does not require any specialized hardware and will operate on standard devices with a web browser.
+#### 5.1 Performance Requirements
+- The platform should load in *3 seconds* on standard devices and networks.
+- The system should handle *50,000 concurrent users* without significant performance degradation.
 
-### 6.3 Software Interfaces
-- **Razorpay** for payment processing.
-- **Firebase** for push notifications to notify users about order status and promotions.
+#### 5.2 Security Requirements
+- All user and payment data must be encrypted using *AES-256* for data at rest and *TLS* for data in transit.
+- Implement *two-factor authentication* for user accounts and admin access.
+
+#### 5.3 Availability and Reliability
+- The platform should achieve *99.9% uptime* with automatic failover mechanisms in place for critical services.
+
+#### 5.4 Scalability
+- The system should support horizontal scaling to handle an increasing number of products, users, and orders.
+- Database queries should be optimized for speed and efficiency.
+
+#### 5.5 Usability
+- The platform should have a user-friendly, intuitive interface.
+- Support accessibility standards (WCAG 2.1) for users with disabilities.
+
+#### 5.6 Maintainability
+- The system should have a modular architecture with clear documentation to facilitate future maintenance and feature additions.
+
+#### 5.7 Compliance
+- The platform should comply with data protection laws such as *GDPR*.
+- Payment systems should adhere to *PCI-DSS* standards for secure processing.
 
 ---
 
-## 7. Acceptance Criteria
+### 6. Other Requirements
 
-The system will be considered successful if:
-- Users can register, log in, browse products, add to cart, and complete orders successfully.
-- Vendors can list products, update stock levels, and manage orders.
-- Admins can manage all aspects of the platform, including users, vendors, and products.
-  
+#### 6.1 Localization
+- The platform should support multiple languages and currencies based on the user's region.
+- Date and time formats should adapt to the user's locale.
+
+#### 6.2 Ethical Requirements
+- Implement content moderation to prevent the listing of inappropriate or illegal products.
+- Provide clear guidelines for sellers to ensure compliance with laws and regulations.
+
 ---
 
+## Appendices
 
+### Appendix A: Glossary of Terms
 
-This detailed SRS document captures the full scope of the QuickKart project based on the URD created. It covers the system’s functional and non-functional requirements, architecture, dependencies, and external interfaces.
+- *User*: An individual who browses and makes purchases on the platform.
+- *Seller*: A user who lists and sells products on the platform.
+- *Admin*: A platform administrator who manages users, products, and orders.
+
+---
+
+### Appendix B: Assumptions and Dependencies
+
+# System Architecture
+
+The architecture of the Flipkart Clone application consists of the following key components:
+
+1. *Frontend*: This component handles user interactions, including browsing products, managing the shopping cart, checking out, and tracking orders. The frontend will be built using HTML, CSS, JavaScript, and React (for the web app), or React Native (for mobile app development).
+
+2. *Backend*: The backend handles content management (product listings, user profiles, order details), API processing, and user session management. It will be built using Node.js with Express for the server-side logic, and will integrate with third-party services like payment gateways.
+
+3. *Database*: A relational database (e.g., MySQL or PostgreSQL) will store user data, product information, orders, and transactional records. The database will also manage user authentication and inventory management.
+
+4. *Payment Gateway*: The backend will integrate with payment gateways such as PayPal, Stripe, or UPI for processing secure transactions.
+
+---
+
+# Use Case Diagram
+![Usecases_diagram](https://github.com/user-attachments/assets/4cdcea50-f871-43d6-8a79-814a9e529471)
+
+The *Use Case Diagram* represents the primary interactions between actors (User, Seller, Admin) and the system.
+
+*Actors*:
+- *User*: Browses products, adds them to the cart, makes purchases, views order history, manages their account.
+- *Seller*: Adds new products, updates inventory, views sales data, processes orders.
+- *Admin*: Manages users, reviews products and orders, handles disputes, monitors platform activity.
+
+*Use Case Highlights*:
+- *Browse Products*: Users can search for and browse products.
+- *Add to Cart*: Users can add products to their cart for purchase.
+- *Place Order*: Users can proceed with checkout and make payments.
+- *Add Product*: Sellers can list new products, edit details, and manage inventory.
+- *Approve Products*: Admins can review product listings and approve or reject them.
+- *Manage Users*: Admins can manage user accounts and address issues.
+
+---
+
+# Abuse Case Diagram
+![AbuseCase_diagram](https://github.com/user-attachments/assets/47b47566-224e-4c6e-a917-c64c9d988700)
+
+The *Abuse Case Diagram* demonstrates possible misuse scenarios and how the system should mitigate them.
+
+*Potential Misuse Scenarios*:
+- *Fake Accounts*: Users creating fake accounts to take advantage of promotions or to submit fraudulent reviews.
+- *Price Manipulation*: Sellers or users exploiting the system to manipulate product prices or availability.
+- *Fake Reviews*: Users posting fraudulent or misleading product reviews to influence sales.
+
+*Mitigation Strategies*:
+- *Account Verification*: Implement multi-factor authentication (MFA) for registration and login to verify users' identities.
+- *Price Monitoring*: Automated systems to flag drastic price changes and alert admins.
+- *Review Moderation*: Use content moderation algorithms and manual review by admins to prevent fake reviews.
+
+---
+
+# Error Case Diagram
+![ErrorCase_diagram](https://github.com/user-attachments/assets/9332469b-41ac-4f3a-b4c8-b5f139a13fce)
+
+The *Error Case Diagram* illustrates various error scenarios that could occur during user interactions and system operations.
+
+*Possible Error Scenarios*:
+- *Server Unavailability*: The backend services are down, preventing users from accessing the platform.
+- *Payment Failure*: Payment gateway issues leading to a failed transaction.
+- *Out-of-Stock Products*: Users trying to purchase products that are no longer available.
+
+*System Responses*:
+- *Retry Mechanism*: Provide users with options to retry actions when failures occur, like retrying payments or server connection.
+- *Error Notifications*: Display user-friendly error messages for system failures (e.g., "The product is currently out of stock").
+- *Fallback Options*: Allow users to save their cart or purchase from alternative sellers if products are out of stock.
+
+---
+
+# Appendix C: Detailed Requirements Matrix
+
+The requirements matrix provides a comprehensive mapping of functional and non-functional requirements for the Flipkart Clone application:
+
+## 1. *User Registration and Login*:
+   - *Functional*: Users must be able to register via email, social media accounts, or phone number.
+   - *Non-Functional*: Registration and login processes should not exceed 3 seconds.
+
+## 2. *Product and Cart Management*:
+   - *Functional*: Users can browse, add, update, and delete products in the cart.
+   - *Non-Functional*: Actions should be reflected in the system within 2 seconds.
+
+## 3. *Order Placement and Payment*:
+   - *Functional*: Users can place orders, make payments, and receive confirmations.
+   - *Non-Functional*: Payment processing should not exceed 5 seconds.
+
+## 4. *Search and Discovery*:
+   - *Functional*: Users can search for products by keywords, categories, and filters.
+   - *Non-Functional*: Search results should display within 2 seconds.
+
+## 5. *Error Handling*:
+   - *Functional*: Provide meaningful error messages for failed actions (e.g., payment errors, product availability).
+   - *Non-Functional*: Log errors in real-time and notify admins for prompt resolution.
