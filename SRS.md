@@ -65,7 +65,7 @@ The system architecture will be divided into a frontend (built with ReactJS) and
 - **Admin Users**: Admins have full access to the system and can manage users, vendors, products, and orders. They are typically system administrators or support staff.
 
 ### 2.4 Constraints
-- **Performance**: The system should be able to handle at least 10,000 concurrent users.
+- **Performance**: The system should be able to handle at least 50,000 concurrent users.
 - **Security**: The application must secure sensitive information such as passwords and payment details, using encryption and secure protocols.
 - **Payment Gateway**: The application must integrate with **Razorpay** to process payments securely.
 - **Web-based**: The platform must be accessible via modern web browsers and support a responsive design for mobile devices.
