@@ -240,7 +240,7 @@ These use cases outline the steps and goals for each user group involved in the 
 
 
 
-## 8. Acceptance Criteria
+## 5. Acceptance Criteria
 
 | Requirement        | Acceptance Criteria                                     |
 |--------------------|----------------------------------------------------------|
@@ -251,7 +251,7 @@ These use cases outline the steps and goals for each user group involved in the 
 | Admin Panel        | Admins can monitor activities and resolve disputes.      |
 | Delivery Agent     | Delivery agents can update order status.                |
 
-## 9. Risks
+## 6. Risks
 
 | Risk               | Mitigation                                                 |
 |--------------------|------------------------------------------------------------|
@@ -260,5 +260,5 @@ These use cases outline the steps and goals for each user group involved in the 
 | Vendor Abuse       | Perform KYC checks for vendors.                           |
 | Delivery Delays    | Real-time tracking and notifications.                     |
 
-## 10. Conclusion
+## 7. Conclusion
 This document summarizes the QuickKart Application requirements. By following these guidelines, we will ensure that the platform meets our needs—delivering a secure, easy-to-use, and scalable solution for customers, vendors, admins, and delivery agents.
