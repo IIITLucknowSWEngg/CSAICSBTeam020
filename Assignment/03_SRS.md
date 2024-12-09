@@ -145,7 +145,7 @@ The platform will be optimized for both desktop and mobile devices, ensuring a s
 ---
 
 
-## 3 Functional Requirements
+## 3. Functional Requirements
 
 ## 3.1. Customer Use Cases:
 
