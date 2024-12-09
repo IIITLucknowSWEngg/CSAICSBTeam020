@@ -13,7 +13,7 @@
 
 The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities.
 
-## 1.2 Scope
+### 1.2 Scope
 
 The scope of the QuickKart e-commerce platform is to provide a feature-rich, user-friendly, and secure online shopping experience for customers, vendors, admins, and delivery agents. The platform aims to streamline the entire shopping process, from product browsing to payment and delivery. The key features of the system are as follows:
 
@@ -56,56 +56,91 @@ The platform will be accessible via web browsers and mobile devices, ensuring a 
 
 ---
 
-## **2. Overall Description**
+## **2.Overall Description**
 
-### **2.1 Product Perspective**
+## 2.1. Product Perspective
 
-The QuickKart system is a web and mobile application for online shopping. It allows users to browse, search, and buy products, while sellers can list and manage their products. The system will have **three types of users**:  
-1. **Users (Shoppers)**: Browse and purchase products.  
-2. **Sellers**: Add products and manage inventory.  
-3. **Admins**: Oversee platform activity, user accounts, and transactions.  
-Delivery services are entirely managed by third-party logistics providers. QuickKart will coordinate with these services to ensure proper integration and order tracking.
+This system is an **E-commerce Platform** designed to facilitate the buying and selling of products online. The system allows multiple user roles, including **customers**, **vendors**, **admins**, and **delivery agents**, to interact with the platform. The primary functionality of the platform includes browsing products, placing orders, managing inventory, processing payments, and tracking orders. The system will also allow vendors to manage their product listings and view sales analytics.
 
-### **2.2 Product Functions**
+The system will be a **web-based application** with a **responsive design**, supporting modern browsers and mobile devices. It will be developed using **ReactJS** for the frontend, **Node.js** for the backend, and **MySQL** for the database. The application will be integrated with third-party services for payment processing (e.g., Stripe, Razorpay) and cloud-based storage (e.g., AWS S3 for product images).
 
-- **User Functions**:  
-  - User registration, login, and profile management.  
-  - Product browsing, search, and filter.  
-  - Add to cart, checkout, and make payments.  
-  - View order history and track orders.  
+The system will consist of the following main modules:
+1. **Customer Module**: Enables customers to browse products, place orders, manage accounts, and track orders.
+2. **Vendor Module**: Allows vendors to add, update, and manage their products, as well as track inventory and view sales.
+3. **Admin Module**: Provides administrative functions to manage users, monitor system activities, and generate reports.
+4. **Delivery Agent Module**: Allows delivery agents to update the status of orders and manage deliveries.
 
-- **Seller Functions**:  
-  - Add, edit, and delete product listings.  
-  - Manage inventory and track orders.  
+The system will be scalable to handle multiple product listings, user accounts, and order transactions. It will be secure, with encrypted user data and payment transactions, and will be designed to comply with data protection regulations.
 
-- **Admin Functions**:  
-  - Manage users, sellers, and products.  
-  - Approve or reject seller product listings.  
-  - View platform analytics and reports.  
+## 2.2. Product Features
 
-- **Third-Party Delivery Integration**:  
-  - APIs will be used to manage order shipping and delivery updates via third-party logistics providers.  
-  - Users can track delivery statuses provided by external services.  
+The E-commerce Platform will offer the following key features:
 
-### **2.3 User Classes and Characteristics**
+- **User Management**: 
+  - Customers can create, update, and delete their accounts.
+  - Admins can manage user roles, including creating, suspending, or deleting customer and vendor accounts.
 
- **2.3.1. Users (Shoppers)**: Browse, search, and purchase products.  
- **2.3.2. Sellers**: List and manage their product inventory.  
- **2.3.3. Admins**: Manage user accounts, moderate products, and ensure compliance.  
+- **Product Management**:
+  - Customers can browse and filter products by categories, price, ratings, etc.
+  - Vendors can add new products, update existing product details, and manage inventory levels.
 
-### **2.4 Operating Environment**
+- **Order Management**:
+  - Customers can place orders, track their status, and view order history.
+  - Vendors can view orders for their products and manage the fulfillment process.
+  - Admins can process returns, handle refunds, and monitor orders across the platform.
 
-- **Frontend**: HTML, CSS, JavaScript, React (web) / React Native (mobile).  
-- **Backend**: Node.js, Express, REST APIs for business logic.  
-- **Database**: MySQL for relational data (users, products, orders).  
-- **Payment Integration**: Stripe, PayPal, and UPI.  
+- **Payment Integration**:
+  - Secure payment processing using third-party services like **Stripe** or **Razorpay**.
+  - Admins can monitor payment statuses and handle disputes if necessary.
 
-### **2.5 Design and Implementation Constraints**
+- **Sales Analytics and Reporting**:
+  - Admins can generate detailed reports on sales, customer activity, and other business metrics.
+  - Vendors can view their sales performance, including real-time tracking of orders and revenue.
 
-- Mobile responsiveness for users on all devices.  
-- Fast page load times (<3 seconds) for product pages.  
-- Secure payment processing that complies with **PCI-DSS standards**.  
-- Reliable communication with third-party delivery service APIs.  
+- **Order Tracking for Customers**:
+  - Customers can track the status of their orders, including real-time updates on shipping and delivery.
+
+- **Delivery Agent Support**:
+  - Delivery agents can view the list of orders assigned to them and update order statuses (e.g., "Shipped", "Out for Delivery", "Delivered").
+
+## 2.3. User Classes and Characteristics
+
+The system will have different types of users, each with specific roles and responsibilities:
+
+- **Customers**: 
+  - Browse products, add items to the cart, place orders, track orders, and leave product reviews.
+  - Manage their personal accounts and view order history.
+
+- **Vendors**: 
+  - Add and manage products, track inventory, view sales data, and manage order fulfillment.
+  - View orders related to their products and interact with customers for returns or refunds.
+
+- **Admins**: 
+  - Manage users (customers and vendors), handle orders, returns, refunds, and generate reports.
+  - Monitor platform performance and ensure smooth operations.
+
+- **Delivery Agents**: 
+  - Deliver products and update the order status at each stage of delivery.
+
+## 2.4. Operating Environment
+
+The platform will run in a **cloud environment**, hosted on a cloud service provider such as **AWS** or **Azure**. The frontend will be a responsive web application, compatible with the latest versions of major browsers (Chrome, Firefox, Safari, Edge). The backend will be powered by **Node.js**, and the database will be a **MySQL** instance hosted on a managed database service.
+
+The platform will be optimized for both desktop and mobile devices, ensuring a seamless experience for users on various screen sizes. The application will be built with a **RESTful API** architecture to support scalability and interoperability with third-party services.
+
+## 2.5. Constraints
+
+- **Security**: The platform must use secure communication protocols (e.g., HTTPS) for all transactions involving sensitive data. Payment processing must adhere to industry standards like **PCI-DSS**.
+- **Scalability**: The system should be capable of scaling horizontally to handle increasing user load and transaction volume, especially during high-demand periods.
+- **Compliance**: The platform should comply with data protection regulations (e.g., GDPR) for handling personal and payment data.
+- **Performance**: The platform should offer fast load times and ensure smooth interactions even with a large number of products and users.
+- **Third-Party Integrations**: The system will rely on third-party services (payment processors, email notification systems, etc.), and the integration should be robust and handle failures gracefully.
+
+## 2.6. Assumptions and Dependencies
+
+- The system assumes the availability of third-party services (e.g., payment gateways and cloud storage).
+- Vendors and delivery agents must have access to an internet connection for interacting with the platform.
+- The platform will assume that all users have access to devices with a modern web browser for accessing the system.
 
 ---
 
