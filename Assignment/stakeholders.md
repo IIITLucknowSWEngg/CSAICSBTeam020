@@ -1,4 +1,4 @@
-# Flipkart Clone Project Stakeholders
+# QuickKart (Flipkart Clone) Project Stakeholders
 
 A stakeholder is any individual, group, or organization that has an interest in or is impacted by the outcome of a project. Stakeholders can influence the project’s direction, decisions, and success, either directly or indirectly. In our **Flipkart Clone Project**, the following is the list of stakeholders:
 
@@ -29,14 +29,13 @@ These are individuals or groups outside the organization but have an interest in
 | **Stakeholder**               | **Role**                                              | **Responsibilities**                                             | **Impact**                                                    |
 |-------------------------------|------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------|
 | **End Users**                  | Customers using the Flipkart platform                | Providing feedback on usability, product selection, and features  | High - Satisfaction directly influences success and app adoption |
-| **Vendors**                    | Businesses listing products on the platform          | Listing products, managing inventory, ensuring quality            | High - Determines the variety and quality of platform offerings  |
-| **Advertisers**                | Businesses promoting their products and services     | Placing ads, driving campaigns, analyzing performance             | High - Provides revenue and enhances visibility of the platform   |
+| **Vendors ( sellers )**                    | Businesses listing products on the platform          | Listing products, managing inventory, ensuring quality            | High - Determines the variety and quality of platform offerings  |
+| **Admins**                  | Manage the platform's operations and user access        | Overseeing user accounts, managing permissions, ensuring security  | High - Critical for maintaining platform integrity and user trust |
 | **Logistics and Delivery Partners** | Handles order delivery and return management        | Ensuring timely and accurate delivery, managing reverse logistics | High - Directly impacts user satisfaction and retention          |
 | **Third-party Service Providers** | External companies offering infrastructure and services | Providing cloud hosting, payment gateways, analytics, etc.        | Medium - Supports platform scalability and reliability          |
-| **Investors**                  | Individuals or firms investing in the project        | Providing financial resources, influencing strategic decisions     | High - Affects growth, expansion, and long-term sustainability   |
 | **Government and Regulatory Bodies** | Regulates compliance and legal operations         | Monitoring adherence to consumer laws, taxation, and labor laws    | Medium - Impacts legal operations and business compliance        |
 
 ---
 
 ### Summary
-Stakeholders play a critical role in shaping the Flipkart Clone's success. Effective collaboration and alignment of their interests ensure a seamless user experience, compliance, and operational success.
+Stakeholders play a critical role in shaping the QuickKart Clone's success. Effective collaboration and alignment of their interests ensure a seamless user experience, compliance, and operational success.
