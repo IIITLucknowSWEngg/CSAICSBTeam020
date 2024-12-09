@@ -13,14 +13,32 @@
 
 The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities.
 
-### **1.2 Scope**
+## 1.2 Scope
 
-The QuickKart e-commerce platform aims to provide:  
-- **User Features:** Product browsing, filtering, and searching; shopping cart; secure payments; order tracking.  
-- **Seller Features:** Product listing, inventory management, and sales tracking.  
-- **Admin Features:** User, product, and order moderation; platform analytics and reports.  
+The scope of the QuickKart e-commerce platform is to provide a feature-rich, user-friendly, and secure online shopping experience for customers, vendors, admins, and delivery agents. The platform aims to streamline the entire shopping process, from product browsing to payment and delivery. The key features of the system are as follows:
 
-The platform will support web browsers and mobile devices, ensuring a seamless shopping experience. It will integrate secure payment gateways like **PayPal, Stripe, and UPI** for payment processing. Delivery and shipping services will be outsourced and managed by third-party providers. 
+### Customer Features:
+- **Product Browsing & Search**: Customers can browse and search for products by categories, filters, and keywords.
+- **Shopping Cart & Checkout**: Customers can add items to their cart, view their cart, and complete the checkout process securely.
+- **Order Tracking**: Customers can track the status of their orders in real-time.
+- **Product Reviews**: Customers can leave reviews and ratings on products they have purchased.
+- **Account Management**: Customers can create accounts, update personal details, and manage their preferences.
+
+### Vendor Features:
+- **Product Listing**: Vendors can list, update, and manage their products on the platform.
+- **Inventory Management**: Vendors can manage stock levels, monitor sales, and update product availability.
+- **Sales Tracking**: Vendors can track their sales and generate performance reports.
+
+### Admin Features:
+- **Order Management**: Admins can view, process, and manage customer orders, including refunds and returns.
+- **User Management**: Admins can manage user accounts, monitor activities, and resolve disputes.
+- **Product Moderation**: Admins can approve, reject, or modify product listings based on platform policies.
+- **Report Generation**: Admins can generate reports related to sales, revenue, user activities, and platform performance.
+
+### Delivery Agent Features:
+- **Order Status Update**: Delivery agents can update the status of orders and provide real-time delivery notifications to customers.
+
+The platform will be accessible via web browsers and mobile devices, ensuring a responsive and intuitive experience for all users. It will integrate secure payment gateways and external delivery services to ensure reliable transactions and timely deliveries.
 
 ### **1.3 Definitions, Acronyms, and Abbreviations**
 
