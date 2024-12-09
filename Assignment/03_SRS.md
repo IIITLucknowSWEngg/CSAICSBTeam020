@@ -89,9 +89,9 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ### **2.3 User Classes and Characteristics**
 
-1. **2.3.1. Users (Shoppers)**: Browse, search, and purchase products.  
-2. **2.3.2. Sellers**: List and manage their product inventory.  
-3. **2.3.3. Admins**: Manage user accounts, moderate products, and ensure compliance.  
+ **2.3.1. Users (Shoppers)**: Browse, search, and purchase products.  
+ **2.3.2. Sellers**: List and manage their product inventory.  
+ **2.3.3. Admins**: Manage user accounts, moderate products, and ensure compliance.  
 
 ### **2.4 Operating Environment**
 
