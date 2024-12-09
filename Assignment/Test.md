@@ -1,64 +1,74 @@
-# Test Plan for  QuickKart (Flipkart Clone) Project
+# 1.Test Plan for  QuickKart (Flipkart Clone) Project
 
 The test plan aims to ensure the Flipkart clone application meets functional, performance, and security requirements. It includes testing **User APIs** (registration, login, cart, orders, and reviews), **Seller APIs** (product management, orders, and reviews), and **Admin APIs** (user, seller, product, and order management). Testing types include **Functional Testing** (API endpoint validation), **Performance Testing** (load and stress tests), and **Security Testing** (authentication and authorization). The testing will be done using tools like **Postman** for APIs, **JMeter** for load testing, and **OWASP ZAP** for security. The testing phase will last for 4 weeks, with deliverables including detailed test cases, defect reports, performance metrics, and final approval for production deployment. The goal is to ensure the platform is stable, secure, and ready for production.
 
-# Test Design Specification for QuickKart (Flipkart Clone)
+# 2.Test Design Specification for QuickKart (Flipkart Clone)
 
-## 1. Introduction
+## 2.1. Introduction
+
 Test design for Flipkart clone, focusing on user, seller, and admin functionality.
 
-## 2. Features to be Tested
+## 2.2. Features to be Tested
+
 - **User**: Registration, login, cart, orders, reviews.
 - **Seller**: Product management, orders, reviews.
 - **Admin**: User, seller, product, order, review management.
 
-## 3. Testing Approach
+## 2.3. Testing Approach
+
 - **Unit Testing**: Individual API function testing.
 - **API Testing**: Use **Postman** for API testing.
 - **Performance Testing**: Use **JMeter** for load testing.
 
-## 4. Tools
+## 2.4. Tools
+
 - **Postman**: API Testing
 - **JMeter**: Performance Testing
 
-## 5. Test Data
+## 2.5. Test Data
+
 - **Valid**: Expected inputs.
 - **Invalid**: Incorrect inputs.
 - **Edge Case**: Boundary value testing.
 
-## 6. Execution Flow
+## 2.6. Execution Flow
+
 1. Setup test environment.
 2. Test APIs for users, sellers, admins.
 3. Run system, performance, and security tests.
 4. Perform regression tests after fixes.
 
-# Test Case Document - QuickKart (Flipkart Clone)
+# 3.Test Case Document - QuickKart (Flipkart Clone)
 
 ## Feature: User Features
 
 ---
 
 ### Test Case ID: TC-REG-001
+
 **Description**: Verify that a user can successfully register with valid information.
 
-#### Precondition:
+#### Precondition
+
 - User is on the registration page.
 
-#### Steps:
+#### Steps
+
 1. Open the registration page.
 2. Enter valid information (name, email, password).
    - Name: "John Doe"
-   - Email: "john@example.com"
+   - Email: "<john@example.com>"
    - Password: "password123"
 3. Submit the registration form.
 
-#### Expected Result:
+#### Expected Result
+
 1. The user should be successfully registered.
 2. The user should be redirected to the login page.
 3. A success message should be displayed, e.g., "Registration successful."
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -79,22 +89,26 @@ describe('User Registration', function() {
 ---
 
 ### Test Case ID: TC-LOGIN-002
+
 **Description**: Verify that a user can log in with valid credentials.
 
-#### Precondition:
+#### Precondition
+
 - User is on the login page.
 
-#### Steps:
+#### Steps
+
 1. Open the login page.
-2. Enter valid email and password (e.g., email: "john@example.com", password: "password123").
+2. Enter valid email and password (e.g., email: "<john@example.com>", password: "password123").
 3. Submit the login form.
 
-#### Expected Result:
+#### Expected Result
+
 1. The user should be logged in successfully.
 2. The user should be redirected to the homepage.
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -113,21 +127,27 @@ describe('User Login', function() {
 ---
 
 ### Test Case ID: TC-PRODUCTS-003
+
 **Description**: Verify that a user can view the list of all products.
 
-#### Precondition:
+#### Precondition
+
 - User is logged in and on the homepage.
 
-#### Steps:
+#### Steps
+
 1. Navigate to the "Products" section.
 
-#### Expected Result:
+#### Expected Result
+
 1. A list of all products should be displayed.
 
-#### Test Status:
+#### Test Status
+
 - **Pending/Pass/Fail** _(Update after execution)_
 
-#### Chai.js Code:
+#### Chai.js Code
+
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -145,22 +165,25 @@ describe('View All Products', function() {
 ---
 
 ### Test Case ID: TC-CART-004
+
 **Description**: Verify that a user can add products to the cart.
 
-#### Precondition:
+#### Precondition
+
 - User is logged in and on a product details page.
 
-#### Steps:
+#### Steps
+
 1. Click the "Add to Cart" button on a product page.
 
-#### Expected Result:
+#### Expected Result
+
 1. The product should be added to the cart.
 2. The cart counter should update.
 3. A confirmation message should be displayed.
 
+#### Chai.js Code
 
-
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -181,22 +204,26 @@ describe('Add Product to Cart', function() {
 ---
 
 ### Test Case ID: TC-ORDER-005
+
 **Description**: Verify that a user can place an order.
 
-#### Precondition:
+#### Precondition
+
 - User has added products to the cart.
 
-#### Steps:
+#### Steps
+
 1. Go to the cart and click "Place Order."
 2. Enter shipping details and select payment method.
 3. Confirm the order.
 
-#### Expected Result:
+#### Expected Result
+
 1. The order should be placed successfully.
 2. The user should see an order confirmation message.
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -221,21 +248,25 @@ describe('Place Order', function() {
 ---
 
 ### Test Case ID: TC-SELLER-REGISTER-006
+
 **Description**: Verify that a seller can register with valid details.
 
-#### Precondition:
+#### Precondition
+
 - Seller is on the registration page.
 
-#### Steps:
+#### Steps
+
 1. Enter seller name, email, password, and business details.
 2. Submit the registration form.
 
-#### Expected Result:
+#### Expected Result
+
 1. The seller should be registered successfully.
 2. The seller should be redirected to the seller dashboard.
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -254,21 +285,25 @@ describe('Seller Registration', function() {
 ---
 
 ### Test Case ID: TC-SELLER-ADD-PRODUCT-007
+
 **Description**: Verify that a seller can add a new product.
 
-#### Precondition:
+#### Precondition
+
 - Seller is logged in and on the product listing page.
 
-#### Steps:
+#### Steps
+
 1. Enter product name, price, description, and upload images.
 2. Submit the product listing.
 
-#### Expected Result:
+#### Expected Result
+
 1. The product should be added to the catalog.
 2. A success message should be displayed.
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -287,20 +322,24 @@ describe('Seller Add Product', function() {
 ---
 
 ### Test Case ID: TC-SELLER-MANAGE-ORDER-008
+
 **Description**: Verify that a seller can manage order status.
 
-#### Precondition:
+#### Precondition
+
 - Seller is logged in and has received an order.
 
-#### Steps:
+#### Steps
+
 1. Go to the "Orders" section.
 2. Update the order status to "Shipped."
 
-#### Expected Result:
+#### Expected Result
+
 1. The order status should be updated to "Shipped."
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -323,20 +362,23 @@ describe('Seller Manage Order', function() {
 ---
 
 ### Test Case ID: TC-ADMIN-MANAGE-USERS-009
+
 **Description**: Verify that the admin can retrieve all users.
 
-#### Precondition:
+#### Precondition
+
 - Admin is logged in and on the "Users" page.
 
-#### Steps:
+#### Steps
+
 1. Navigate to the "Users" section.
 
-#### Expected Result:
+#### Expected Result
+
 1. The list of all users should be displayed.
 
+#### Chai.js Code
 
-
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -360,20 +402,24 @@ describe('Admin Manage Users', function() {
 ---
 
 ### Test Case ID: TC-DELIVERY-010
+
 **Description**: Verify that the third-party delivery API returns correct delivery details.
 
-#### Precondition:
+#### Precondition
+
 - Order has been placed by the user.
 
-#### Steps:
+#### Steps
+
 1. Trigger the third-party delivery API with the order details.
 2. Retrieve the delivery status from the API response.
 
-#### Expected Result:
+#### Expected Result
+
 1. The delivery API should return accurate delivery details (e.g., delivery date, carrier).
 
+#### Chai.js Code
 
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -393,21 +439,24 @@ describe('Delivery API', function() {
 ---
 
 ### Test Case ID: TC-PAYMENT-011
+
 **Description**: Verify that the third-party payment API processes payment successfully.
 
-#### Precondition:
+#### Precondition
+
 - User has placed an order and selected a payment method.
 
-#### Steps:
+#### Steps
+
 1. Trigger the payment API with the order and payment details.
 2. Verify that the payment is processed successfully.
 
-#### Expected Result:
+#### Expected Result
+
 1. The payment API should process the payment and return a success message.
 
+#### Chai.js Code
 
-
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -426,21 +475,24 @@ describe('Payment API', function() {
 ---
 
 ### Test Case ID: TC-MAPS-012
+
 **Description**: Verify that the third-party maps API returns correct location for the user’s address.
 
-#### Precondition:
+#### Precondition
+
 - User has entered a shipping address during checkout.
 
-#### Steps:
+#### Steps
+
 1. Trigger the maps API with the shipping address.
 2. Retrieve the geolocation and map coordinates from the API response.
 
-#### Expected Result:
+#### Expected Result
+
 1. The maps API should return correct geolocation data with latitude and longitude.
 
+#### Chai.js Code
 
-
-#### Chai.js Code:
 ```javascript
 const chai = require('chai');
 const expect = chai.expect;
@@ -479,20 +531,23 @@ describe('Maps API', function() {
 
 ---
 
-# Performance Testing for QuickKart Clone with JMeter
+# 4.Performance Testing for QuickKart Clone with JMeter
 
-## 1. Tools
+## 4.1. Tools
+
 - **JMeter**: For load testing, stress testing, and measuring performance.
 
-## 2. Types of Tests
+## 4.2. Types of Tests
+
 - **Load Testing**: Measure system performance under the expected user load (e.g., 1000 users).
 - **Stress Testing**: Evaluate system behavior under extreme load (e.g., 5000 users).
 - **Spike Testing**: Test system's response to sudden traffic spikes.
 - **Endurance Testing**: Assess system performance over extended periods (e.g., 24 hours).
 
-## 3. JMeter Test Plan Setup
+## 4.3. JMeter Test Plan Setup
 
-### 3.1. Creating Test Plan
+### 4.3.1. Creating Test Plan
+
 1. **Thread Group**: Set users (e.g., 1000 users) and ramp-up time (e.g., 60 seconds).
 2. **HTTP Request Sampler**: Define API requests to simulate:
    - User actions (e.g., registration, login).
@@ -500,12 +555,13 @@ describe('Maps API', function() {
    - Order placement.
    - Cart management.
 3. **Timers**: Use timers to simulate realistic user behavior (e.g., 2-second delay between actions).
-4. **Listeners**: 
+4. **Listeners**:
    - **View Results Tree**: Monitor response data.
    - **Summary Report**: View overall statistics like throughput and error rate.
    - **Graph Results**: Analyze response time graphs.
 
-### 3.2. Test Scenario Example
+### 4.3.2. Test Scenario Example
+
 - **Objective**: Test registration of 1000 users simultaneously on QuickKart.
 - **Steps**:
   1. Set 1000 users in Thread Group.
@@ -513,13 +569,14 @@ describe('Maps API', function() {
   3. Set response time assertion (e.g., ≤ 2 seconds per request).
   4. Run the test for 10 minutes and monitor results.
 
-### 3.3. Analyzing Results
+### 4.3.3. Analyzing Results
+
 - **Throughput**: Measure the number of requests per minute.
 - **Response Time**: Average time for each request (e.g., login, product search).
 - **Error Rate**: Percentage of failed requests.
 - **System Resources**: Monitor CPU and memory usage during the test.
 
-## 4. Execution Flow
+## 4.4. Execution Flow
 
 ```mermaid
 graph LR
@@ -530,5 +587,5 @@ graph LR
     E --> F[End Test]
 
 ```
-This document provides comprehensive test cases covering the essential functionality of QuickKart (Flipkart Clone). All major features, including user, seller, admin functionalities, and third-party API integrations, are tested to ensure a seamless user experience. In addition, performance testing is conducted using JMeter to assess the system's behavior under various load conditions. This includes load testing, stress testing, spike testing, and endurance testing to ensure that QuickKart can handle both expected and extreme traffic while maintaining optimal performance.
 
+This document provides comprehensive test cases covering the essential functionality of QuickKart (Flipkart Clone). All major features, including user, seller, admin functionalities, and third-party API integrations, are tested to ensure a seamless user experience. In addition, performance testing is conducted using JMeter to assess the system's behavior under various load conditions. This includes load testing, stress testing, spike testing, and endurance testing to ensure that QuickKart can handle both expected and extreme traffic while maintaining optimal performance.
