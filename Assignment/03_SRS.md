@@ -110,120 +110,129 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 ---
 
 
-## 3. Functional Requirements
+## 3 Functional Requirements
 
-### 3.1. Customer Use Cases:
-1. **Browse Products**:
-   - **Description**: Customers must be able to search and filter products by category, price, rating, etc.
-   - **Technical Implementation**: 
-     - Implement search functionality with Elasticsearch for fast product search and filtering.
-     - Use REST APIs to retrieve product data from the backend.
-     - Frontend will use ReactJS with hooks and state management (e.g., Redux or Context API) to manage the state of the product list.
-     - Display product details with images, descriptions, and reviews using Material UI for the user interface.
+## 3.1. Customer Use Cases:
 
-2. **Place Orders**:
-   - **Description**: Customers can add products to their cart, modify quantities, and proceed to checkout.
-   - **Technical Implementation**:
-     - Implement a cart system in the frontend using ReactJS and manage the cart state locally.
-     - Backend will handle cart data via REST APIs, with user-specific sessions stored in a Redis database.
-     - The checkout process will integrate a payment gateway (e.g., Stripe or Razorpay).
-     - Order data will be stored in a PostgreSQL database, including product details, customer details, and payment status.
+### 1. Browse Products:
+- **Description**: Customers must be able to search and filter products by category, price, rating, etc.
+- **Technical Implementation**: 
+  - Implement search functionality with Elasticsearch for fast product search and filtering.
+  - Use REST APIs to retrieve product data from the backend.
+  - Frontend will use ReactJS with hooks and state management (e.g., Redux or Context API) to manage the state of the product list.
+  - Display product details with images, descriptions, and reviews using Material UI for the user interface.
 
-3. **Order Tracking**:
-   - **Description**: Customers must be able to view the status of their orders (e.g., "Placed", "Shipped", "Out for Delivery", "Delivered").
-   - **Technical Implementation**:
-     - The order status will be updated in real-time using WebSockets for live tracking.
-     - A separate table for order status will be maintained in the PostgreSQL database, and updates will be pushed via a backend service written in Java (Spring Boot).
+### 2. Place Orders:
+- **Description**: Customers can add products to their cart, modify quantities, and proceed to checkout.
+- **Technical Implementation**:
+  - Implement a cart system in the frontend using ReactJS and manage the cart state locally.
+  - Backend will handle cart data via REST APIs, with user-specific sessions stored in a Redis database.
+  - The checkout process will integrate a payment gateway (e.g., Stripe or Razorpay).
+  - Order data will be stored in a **MySQL** database, including product details, customer details, and payment status.
 
-4. **Product Reviews**:
-   - **Description**: After receiving the product, customers should be able to leave a review with a star rating and a textual description.
-   - **Technical Implementation**:
-     - Reviews will be stored in a dedicated table in PostgreSQL with foreign keys to products and customers.
-     - The frontend will use React components to allow customers to leave reviews and display the average product rating dynamically.
+### 3. Order Tracking:
+- **Description**: Customers must be able to view the status of their orders (e.g., "Placed", "Shipped", "Out for Delivery", "Delivered").
+- **Technical Implementation**:
+  - The order status will be updated in real-time using WebSockets for live tracking.
+  - A separate table for order status will be maintained in the **MySQL** database, and updates will be pushed via a backend service written in **Node.js**.
 
-5. **Account Management**:
-   - **Description**: Customers should be able to create an account, log in, update personal details, and change passwords.
-   - **Technical Implementation**:
-     - User authentication will be handled using JWT (JSON Web Tokens) and OAuth2 for secure login.
-     - Personal details will be stored in PostgreSQL, and password management will use BCrypt for encryption.
+### 4. Product Reviews:
+- **Description**: After receiving the product, customers should be able to leave a review with a star rating and a textual description.
+- **Technical Implementation**:
+  - Reviews will be stored in a dedicated table in **MySQL** with foreign keys to products and customers.
+  - The frontend will use React components to allow customers to leave reviews and display the average product rating dynamically.
 
-6. **View Offers and Discounts**:
-   - **Description**: The system should display any ongoing discounts or promotional offers on the homepage or product pages.
-   - **Technical Implementation**:
-     - Promotional offers will be stored in a PostgreSQL database.
-     - The frontend will display offers using dynamic content rendering based on API responses.
-     - Integration with third-party APIs (if needed) for tracking promotional events.
+### 5. Account Management:
+- **Description**: Customers should be able to create an account, log in, update personal details, and change passwords.
+- **Technical Implementation**:
+  - User authentication will be handled using JWT (JSON Web Tokens) and OAuth2 for secure login.
+  - Personal details will be stored in **MySQL**, and password management will use BCrypt for encryption.
 
-### 3.2. Vendor Use Cases:
-1. **List Products**:
-   - **Description**: Vendors should be able to add new products with descriptions, prices, and images.
-   - **Technical Implementation**:
-     - Vendors will use a React-based admin panel to add products.
-     - Product data will be stored in a PostgreSQL database, and image upload functionality will be handled by AWS S3 or similar cloud storage.
-
-2. **Update Product Details**:
-   - **Description**: Vendors should be able to update product details like description, price, stock availability, and images.
-   - **Technical Implementation**:
-     - Vendors can update product details through a ReactJS-based dashboard that communicates with a Spring Boot backend via REST APIs.
-     - Data validation and updates will occur in the PostgreSQL database.
-
-3. **Track Sales and Inventory**:
-   - **Description**: The system should allow vendors to view real-time sales data and track inventory levels for each product.
-   - **Technical Implementation**:
-     - Real-time sales data will be handled by the backend (Java Spring Boot) and stored in PostgreSQL.
-     - Inventory levels will be tracked in a separate inventory table, and updates will be reflected on the vendor dashboard.
-
-4. **Manage Orders**:
-   - **Description**: Vendors should be able to view all orders related to their products, including order status (e.g., pending, shipped, completed).
-   - **Technical Implementation**:
-     - Order information will be displayed to the vendor through a custom ReactJS admin interface.
-     - Data will be fetched from the backend via RESTful APIs and stored in the PostgreSQL database.
-
-### 3.3. Admin Use Cases:
-1. **Process Orders**:
-   - **Description**: Admins must be able to manage customer orders, including approving, canceling, or modifying them.
-   - **Technical Implementation**:
-     - Admins will access an admin panel built with ReactJS for real-time management of orders.
-     - The backend will handle order state transitions and maintain status history in PostgreSQL.
-
-2. **Handle Returns and Refunds**:
-   - **Description**: Admins should be able to process product returns, verify customer complaints, and initiate refunds where necessary.
-   - **Technical Implementation**:
-     - Admins will use the ReactJS interface to handle returns.
-     - Refunds will be processed via third-party payment gateways, and transaction logs will be maintained in PostgreSQL.
-
-3. **Monitor Sales and Generate Reports**:
-   - **Description**: Admins should be able to view and generate sales reports, including total revenue, sales by vendor, and overall performance.
-   - **Technical Implementation**:
-     - Reports will be generated via the backend using SQL queries and returned to the frontend via REST APIs.
-     - Admins will view reports in a custom ReactJS dashboard with data visualization tools like Chart.js or D3.js.
-
-4. **Manage Users**:
-   - **Description**: Admins should be able to create, suspend, or delete user accounts, including vendors, customers, and delivery agents.
-   - **Technical Implementation**:
-     - User management will be handled via a secure admin panel.
-     - Data will be stored in PostgreSQL, and user roles will be managed with role-based access control (RBAC) implemented in the backend.
-
-5. **Generate Reports**:
-   - **Description**: Admins must be able to generate detailed reports related to sales, orders, and user activity.
-   - **Technical Implementation**:
-     - Admins will use custom ReactJS pages to filter and view reports.
-     - Reports will be generated on the server-side and returned as downloadable files (e.g., CSV or PDF).
-
-### 3.4. Delivery Agent Use Cases:
-1. **Update Order Status**:
-   - **Description**: Delivery agents should be able to update the status of orders they are delivering.
-   - **Technical Implementation**:
-     - Delivery agents will use a mobile-friendly interface to update order statuses.
-     - Updates will be pushed to the backend and reflected in real-time on customer order tracking pages.
-
-2. **Track Deliveries**:
-   - **Description**: Delivery agents should be able to view the details of orders assigned to them, including the customer’s address and order status.
-   - **Technical Implementation**:
-     - Delivery agents will use a dedicated React Native mobile app to view and manage deliveries.
-     - Order details will be fetched from the backend via REST APIs.
+### 6. View Offers and Discounts:
+- **Description**: The system should display any ongoing discounts or promotional offers on the homepage or product pages.
+- **Technical Implementation**:
+  - Promotional offers will be stored in a **MySQL** database.
+  - The frontend will display offers using dynamic content rendering based on API responses.
+  - Integration with third-party APIs (if needed) for tracking promotional events.
 
 ---
+
+## 3.2. Vendor Use Cases:
+
+### 1. List Products:
+- **Description**: Vendors should be able to add new products with descriptions, prices, and images.
+- **Technical Implementation**:
+  - Vendors will use a React-based admin panel to add products.
+  - Product data will be stored in a **MySQL** database, and image upload functionality will be handled by AWS S3 or similar cloud storage.
+
+### 2. Update Product Details:
+- **Description**: Vendors should be able to update product details like description, price, stock availability, and images.
+- **Technical Implementation**:
+  - Vendors can update product details through a ReactJS-based dashboard that communicates with a **Node.js** backend via REST APIs.
+  - Data validation and updates will occur in the **MySQL** database.
+
+### 3. Track Sales and Inventory:
+- **Description**: The system should allow vendors to view real-time sales data and track inventory levels for each product.
+- **Technical Implementation**:
+  - Real-time sales data will be handled by the backend (**Node.js**) and stored in **MySQL**.
+  - Inventory levels will be tracked in a separate inventory table, and updates will be reflected on the vendor dashboard.
+
+### 4. Manage Orders:
+- **Description**: Vendors should be able to view all orders related to their products, including order status (e.g., pending, shipped, completed).
+- **Technical Implementation**:
+  - Order information will be displayed to the vendor through a custom ReactJS admin interface.
+  - Data will be fetched from the backend via RESTful APIs and stored in the **MySQL** database.
+
+---
+
+## 3.3. Admin Use Cases:
+
+### 1. Process Orders:
+- **Description**: Admins must be able to manage customer orders, including approving, canceling, or modifying them.
+- **Technical Implementation**:
+  - Admins will access an admin panel built with ReactJS for real-time management of orders.
+  - The backend will handle order state transitions and maintain status history in **MySQL**.
+
+### 2. Handle Returns and Refunds:
+- **Description**: Admins should be able to process product returns, verify customer complaints, and initiate refunds where necessary.
+- **Technical Implementation**:
+  - Admins will use the ReactJS interface to handle returns.
+  - Refunds will be processed via third-party payment gateways, and transaction logs will be maintained in **MySQL**.
+
+### 3. Monitor Sales and Generate Reports:
+- **Description**: Admins should be able to view and generate sales reports, including total revenue, sales by vendor, and overall performance.
+- **Technical Implementation**:
+  - Reports will be generated via the backend using SQL queries and returned to the frontend via REST APIs.
+  - Admins will view reports in a custom ReactJS dashboard with data visualization tools like Chart.js or D3.js.
+
+### 4. Manage Users:
+- **Description**: Admins should be able to create, suspend, or delete user accounts, including vendors, customers, and delivery agents.
+- **Technical Implementation**:
+  - User management will be handled via a secure admin panel.
+  - Data will be stored in **MySQL**, and user roles will be managed with role-based access control (RBAC) implemented in the backend.
+
+### 5. Generate Reports:
+- **Description**: Admins must be able to generate detailed reports related to sales, orders, and user activity.
+- **Technical Implementation**:
+  - Admins will use custom ReactJS pages to filter and view reports.
+  - Reports will be generated on the server-side and returned as downloadable files (e.g., CSV or PDF).
+
+---
+
+## 3.4. Delivery Agent Use Cases:
+
+### 1. Update Order Status:
+- **Description**: Delivery agents should be able to update the status of orders they are delivering.
+- **Technical Implementation**:
+  - Delivery agents will use a mobile-friendly interface to update order statuses.
+  - Updates will be pushed to the backend and reflected in real-time on customer order tracking pages.
+
+### 2. Track Deliveries:
+- **Description**: Delivery agents should be able to view the details of orders assigned to them, including the customer’s address and order status.
+- **Technical Implementation**:
+  - Delivery agents will use a dedicated React Native mobile app to view and manage deliveries.
+  - Order details will be fetched from the backend via REST APIs.
+
 
 ## 4. Non-Functional Requirements
 
