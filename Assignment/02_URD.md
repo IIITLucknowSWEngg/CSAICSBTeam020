@@ -251,14 +251,7 @@ These use cases outline the steps and goals for each user group involved in the 
 | Admin Panel        | Admins can monitor activities and resolve disputes.      |
 | Delivery Agent     | Delivery agents can update order status.                |
 
-## 6. Risks
 
-| Risk               | Mitigation                                                 |
-|--------------------|------------------------------------------------------------|
-| Data Breach        | Regular security audits and encryption.                   |
-| Payment Failure    | Use backup payment gateways.                              |
-| Vendor Abuse       | Perform KYC checks for vendors.                           |
-| Delivery Delays    | Real-time tracking and notifications.                     |
 
-## 7. Conclusion
+## 6. Conclusion
 This document summarizes the QuickKart Application requirements. By following these guidelines, we will ensure that the platform meets our needs—delivering a secure, easy-to-use, and scalable solution for customers, vendors, admins, and delivery agents.
