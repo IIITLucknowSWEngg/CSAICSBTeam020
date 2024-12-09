@@ -91,87 +91,233 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ---
 
-## **3. Specific Requirements**
 
-### **3.1 Functional Requirements**
+## 3. Functional Requirements
 
-**3.1.1. User Registration and Login**  
-- Users can register using email, phone number, or social media login.  
-- Passwords must be stored securely (using **bcrypt hashing**).  
-- Two-factor authentication (2FA) for added security.  
+### 3.1. Customer Use Cases:
+1. **Browse Products**:
+   - **Description**: Customers must be able to search and filter products by category, price, rating, etc.
+   - **Technical Implementation**: 
+     - Implement search functionality with Elasticsearch for fast product search and filtering.
+     - Use REST APIs to retrieve product data from the backend.
+     - Frontend will use ReactJS with hooks and state management (e.g., Redux or Context API) to manage the state of the product list.
+     - Display product details with images, descriptions, and reviews using Material UI for the user interface.
 
-**3.1.2. Product Browsing, Search, and Filter**  
-- Users can browse products by categories, price, and ratings.  
-- Users can search using a search bar with autocomplete functionality.  
+2. **Place Orders**:
+   - **Description**: Customers can add products to their cart, modify quantities, and proceed to checkout.
+   - **Technical Implementation**:
+     - Implement a cart system in the frontend using ReactJS and manage the cart state locally.
+     - Backend will handle cart data via REST APIs, with user-specific sessions stored in a Redis database.
+     - The checkout process will integrate a payment gateway (e.g., Stripe or Razorpay).
+     - Order data will be stored in a PostgreSQL database, including product details, customer details, and payment status.
 
-**3.1.3. Shopping Cart**  
-- Users can add products to the cart and update the quantity.  
-- Cart details (price, quantity) must be displayed clearly.  
+3. **Order Tracking**:
+   - **Description**: Customers must be able to view the status of their orders (e.g., "Placed", "Shipped", "Out for Delivery", "Delivered").
+   - **Technical Implementation**:
+     - The order status will be updated in real-time using WebSockets for live tracking.
+     - A separate table for order status will be maintained in the PostgreSQL database, and updates will be pushed via a backend service written in Java (Spring Boot).
 
-**3.1.4. Checkout and Payments**  
-- Users can choose shipping addresses and payment methods.  
-- Secure payments via **Stripe, PayPal, and UPI** payment gateways.  
+4. **Product Reviews**:
+   - **Description**: After receiving the product, customers should be able to leave a review with a star rating and a textual description.
+   - **Technical Implementation**:
+     - Reviews will be stored in a dedicated table in PostgreSQL with foreign keys to products and customers.
+     - The frontend will use React components to allow customers to leave reviews and display the average product rating dynamically.
 
-**3.1.5. Order Management**  
-- Users can view, cancel, and track orders.  
-- Tracking information will be updated in real-time using third-party logistics APIs.  
+5. **Account Management**:
+   - **Description**: Customers should be able to create an account, log in, update personal details, and change passwords.
+   - **Technical Implementation**:
+     - User authentication will be handled using JWT (JSON Web Tokens) and OAuth2 for secure login.
+     - Personal details will be stored in PostgreSQL, and password management will use BCrypt for encryption.
 
-**3.1.6. Seller Dashboard**  
-- Sellers can add, edit, and delete products.  
-- Sellers can track orders and view product sales data.  
+6. **View Offers and Discounts**:
+   - **Description**: The system should display any ongoing discounts or promotional offers on the homepage or product pages.
+   - **Technical Implementation**:
+     - Promotional offers will be stored in a PostgreSQL database.
+     - The frontend will display offers using dynamic content rendering based on API responses.
+     - Integration with third-party APIs (if needed) for tracking promotional events.
 
-**3.1.7. Admin Panel**  
-- Admins can manage users, sellers, products, and orders.  
-- Admins can approve or reject seller product listings.  
+### 3.2. Vendor Use Cases:
+1. **List Products**:
+   - **Description**: Vendors should be able to add new products with descriptions, prices, and images.
+   - **Technical Implementation**:
+     - Vendors will use a React-based admin panel to add products.
+     - Product data will be stored in a PostgreSQL database, and image upload functionality will be handled by AWS S3 or similar cloud storage.
 
-**3.1.8. Delivery Integration**  
-- Real-time updates for order shipping and delivery status provided by third-party services.  
+2. **Update Product Details**:
+   - **Description**: Vendors should be able to update product details like description, price, stock availability, and images.
+   - **Technical Implementation**:
+     - Vendors can update product details through a ReactJS-based dashboard that communicates with a Spring Boot backend via REST APIs.
+     - Data validation and updates will occur in the PostgreSQL database.
+
+3. **Track Sales and Inventory**:
+   - **Description**: The system should allow vendors to view real-time sales data and track inventory levels for each product.
+   - **Technical Implementation**:
+     - Real-time sales data will be handled by the backend (Java Spring Boot) and stored in PostgreSQL.
+     - Inventory levels will be tracked in a separate inventory table, and updates will be reflected on the vendor dashboard.
+
+4. **Manage Orders**:
+   - **Description**: Vendors should be able to view all orders related to their products, including order status (e.g., pending, shipped, completed).
+   - **Technical Implementation**:
+     - Order information will be displayed to the vendor through a custom ReactJS admin interface.
+     - Data will be fetched from the backend via RESTful APIs and stored in the PostgreSQL database.
+
+### 3.3. Admin Use Cases:
+1. **Process Orders**:
+   - **Description**: Admins must be able to manage customer orders, including approving, canceling, or modifying them.
+   - **Technical Implementation**:
+     - Admins will access an admin panel built with ReactJS for real-time management of orders.
+     - The backend will handle order state transitions and maintain status history in PostgreSQL.
+
+2. **Handle Returns and Refunds**:
+   - **Description**: Admins should be able to process product returns, verify customer complaints, and initiate refunds where necessary.
+   - **Technical Implementation**:
+     - Admins will use the ReactJS interface to handle returns.
+     - Refunds will be processed via third-party payment gateways, and transaction logs will be maintained in PostgreSQL.
+
+3. **Monitor Sales and Generate Reports**:
+   - **Description**: Admins should be able to view and generate sales reports, including total revenue, sales by vendor, and overall performance.
+   - **Technical Implementation**:
+     - Reports will be generated via the backend using SQL queries and returned to the frontend via REST APIs.
+     - Admins will view reports in a custom ReactJS dashboard with data visualization tools like Chart.js or D3.js.
+
+4. **Manage Users**:
+   - **Description**: Admins should be able to create, suspend, or delete user accounts, including vendors, customers, and delivery agents.
+   - **Technical Implementation**:
+     - User management will be handled via a secure admin panel.
+     - Data will be stored in PostgreSQL, and user roles will be managed with role-based access control (RBAC) implemented in the backend.
+
+5. **Generate Reports**:
+   - **Description**: Admins must be able to generate detailed reports related to sales, orders, and user activity.
+   - **Technical Implementation**:
+     - Admins will use custom ReactJS pages to filter and view reports.
+     - Reports will be generated on the server-side and returned as downloadable files (e.g., CSV or PDF).
+
+### 3.4. Delivery Agent Use Cases:
+1. **Update Order Status**:
+   - **Description**: Delivery agents should be able to update the status of orders they are delivering.
+   - **Technical Implementation**:
+     - Delivery agents will use a mobile-friendly interface to update order statuses.
+     - Updates will be pushed to the backend and reflected in real-time on customer order tracking pages.
+
+2. **Track Deliveries**:
+   - **Description**: Delivery agents should be able to view the details of orders assigned to them, including the customer’s address and order status.
+   - **Technical Implementation**:
+     - Delivery agents will use a dedicated React Native mobile app to view and manage deliveries.
+     - Order details will be fetched from the backend via REST APIs.
 
 ---
 
-### **3.2 Non-Functional Requirements**
+## 4. Non-Functional Requirements
 
-**3.2.1. Performance**  
-- The system must support up to **50,000 concurrent users**.  
-- Product pages should load in under **3 seconds**.  
+### 4.1. Performance
+- **Response Time**: The system must be able to respond to user actions (such as browsing products or placing orders) within 2 seconds under normal conditions.
+  - **Technical Specification**: 
+    - Use caching mechanisms (e.g., Redis) for frequently accessed data (product details, order statuses).
+    - Implement pagination for product listings and search results to reduce load on the server.
+    - Use a Content Delivery Network (CDN) for serving static assets (images, CSS, JS).
 
-**3.2.2. Scalability**  
-- Support horizontal scaling of the system as traffic grows.  
+- **Throughput**: The system should support thousands of concurrent users, especially during peak times such as promotions or sales events.
+  - **Technical Specification**: 
+    - Deploy the application on a scalable cloud platform (e.g., AWS, Azure) using auto-scaling features to handle traffic spikes.
+    - Implement load balancing across multiple servers.
 
-**3.2.3. Security**  
-- Use **AES-256** encryption for sensitive data at rest.  
-- Implement **two-factor authentication** for user accounts.  
+- **Scalability**: The system must be able to scale horizontally (adding more servers) to accommodate increased traffic as the user base grows.
+  - **Technical Specification**: 
+    - Use microservices architecture for scalability, enabling independent scaling of components like product catalog, order management, and user accounts.
+    - Deploy on Kubernetes for automated container management.
 
-**3.2.4. Usability**  
-- Mobile-responsive design.  
-- Intuitive user interface for all classes of users.  
+### 4.2. Availability
+- **Uptime**: The system should guarantee 99.9% uptime, excluding scheduled maintenance periods.
+  - **Technical Specification**: 
+    - Use redundant cloud infrastructure (e.g., multi-region deployment on AWS).
+    - Implement database replication for failover.
 
-**3.2.5. Reliability**  
-- Ensure **99.9% uptime** for essential services.  
-- Automated backups for disaster recovery.  
+- **Backup and Recovery**: The system should back up data daily to ensure it can be recovered in the event of a failure.
+  - **Technical Specification**: 
+    - Use cloud backup services (e.g., AWS S3) to store daily backups.
+    - Implement automated backup and restoration processes.
 
-**3.2.6. Maintainability**  
-- Use modular and maintainable code with clear documentation.  
-- Changes in one module should not affect others.  
+### 4.3. Security
+- **Data Encryption**: All sensitive data, such as passwords and payment information, must be encrypted both in transit (via HTTPS) and at rest (using AES or similar encryption standards).
+  - **Technical Specification**: 
+    - Implement SSL/TLS encryption for secure HTTP communication.
+    - Store passwords securely using bcrypt hashing.
 
-**3.2.7. Compliance**  
-- Comply with **GDPR** for user privacy and **PCI-DSS** for payments.  
+- **Authentication**: The system must implement secure authentication using JWT (JSON Web Tokens) for user login sessions.
+  - **Technical Specification**: 
+    - Implement JWT-based authentication in the Spring Boot backend for stateless user sessions.
+    - Use OAuth2 for social logins (e.g., Google, Facebook).
+
+- **Authorization**: Each user (customer, vendor, admin, delivery agent) must have access to specific areas of the platform based on their role.
+  - **Technical Specification**: 
+    - Implement role-based access control (RBAC) in the backend using Spring Security.
+    - Define roles such as `CUSTOMER`, `VENDOR`, `ADMIN`, `DELIVERY_AGENT`.
+
+### 4.4. Usability
+- **User Interface**: The platform must have an intuitive, responsive design, ensuring that users can easily navigate the website on both desktop and mobile devices.
+  - **Technical Specification**: 
+    - The frontend will be built using ReactJS with responsive design using CSS frameworks like Bootstrap or Material UI.
+    - Use React Router for single-page application (SPA) routing.
+
+- **Error Handling**: The system should display user-friendly error messages in case of failures (e.g., product not found, payment declined).
+  - **Technical Specification**: 
+    - Use error boundaries in React for graceful handling of frontend errors.
+    - Implement centralized logging (e.g., using ELK Stack or Sentry) for backend errors.
+
+- **Multi-Language Support**: The system should support multiple languages for a wider user base, especially in regions with diverse linguistic demographics.
+  - **Technical Specification**: 
+    - Use React-Intl or i18next for internationalization (i18n) in the frontend.
+    - Support language switching via a language dropdown in the UI.
+
+### 4.5. Maintainability
+- **Code Quality**: The codebase should follow standard best practices (e.g., clear documentation, proper commenting, modular design) to allow for easier maintenance and future updates.
+  - **Technical Specification**: 
+    - Follow the SOLID principles for backend code structure.
+    - Use Prettier and ESLint for frontend code formatting and linting.
+
+- **Monitoring**: The system should include tools for monitoring uptime, performance metrics, and error tracking.
+  - **Technical Specification**: 
+    - Use tools like Prometheus and Grafana for monitoring backend performance.
+    - Implement error tracking using Sentry for logging frontend and backend errors.
+
+### 4.6. Reliability
+- **Fault Tolerance**: The system must be able to recover from server crashes and continue operating with minimal disruption.
+  - **Technical Specification**: 
+    - Use cloud-native services with built-in fault tolerance (e.g., AWS RDS for databases with failover capabilities).
+    - Implement health checks and retries for critical microservices.
+
+- **Redundancy**: Critical components such as the database and application server should be configured with redundancy to prevent downtime.
+  - **Technical Specification**: 
+    - Use database replication for PostgreSQL (e.g., master-slave setup).
+    - Ensure high availability for web servers using load balancing (e.g., AWS Elastic Load Balancer).
+
+### 4.7. Compliance
+- **Data Protection**: The system should comply with relevant data protection regulations such as the **General Data Protection Regulation (GDPR)**, especially concerning user data storage and processing.
+  - **Technical Specification**: 
+    - Ensure that all user data is processed according to GDPR guidelines, including user consent management.
+    - Provide users with the option to download or delete their data.
+
+- **Payment Gateway Compliance**: Integration with payment systems should comply with **Payment Card Industry Data Security Standard (PCI DSS)** requirements to ensure secure handling of payment information.
+  - **Technical Specification**: 
+    - Integrate with PCI-compliant payment gateways such as Stripe or Razorpay.
+    - Ensure tokenization and encryption of payment information.
+
 
 ---
 
-## **4. Interfaces**
+## **5. Interfaces**
 
-### **4.1 Hardware Interfaces**
+### **5.1 Hardware Interfaces**
 
 - **Mobile Devices**: Support iOS and Android devices.  
 - **Web Browsers**: Support Chrome, Firefox, and Safari.  
 
-### **4.2 Software Interfaces**
+### **5.2 Software Interfaces**
 
 - **Payment Gateway APIs**: Integrate **Stripe, PayPal, and UPI**.  
 - **Third-party Delivery APIs**: Use logistics provider APIs for shipping and delivery updates.  
 
-### **4.3 Communication Interfaces**
+### **5.3 Communication Interfaces**
 
 - **HTTP/HTTPS** for secure web traffic.  
 - **REST APIs** for frontend-backend communication.  
@@ -179,36 +325,36 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ---
 
-## **5. System Features**
+## **6. System Features**
 
-### **5.1 Use Case Diagram**
+### **6.1 Use Case Diagram**
 
 ![usecase 1](https://github.com/user-attachments/assets/354c47fc-d734-4408-aedd-d3d946facee2)
 
-### **5.2 Abuse Case Diagram**
+### **6.2 Abuse Case Diagram**
 
 ![abuse case 1](https://github.com/user-attachments/assets/f358a3d2-a4d7-40ff-82ae-13e91443425d)
 
-### **5.3 Error Case Diagram**
+### **6.3 Error Case Diagram**
 
 ![error case diagram](https://github.com/user-attachments/assets/809a8270-2230-4e79-8fc8-69df3adac8d7)
 
 ---
 
-## **6. Other Requirements**
+## **7. Other Requirements**
 
-### **6.1 Localization**
+### **7.1 Localization**
 
 - Support for multiple languages and currencies.  
 - Display date/time based on user’s locale.  
 
-### **6.2 Ethical Requirements**
+### **7.2 Ethical Requirements**
 
 - Enforce moderation to prevent illegal/inappropriate product listings.  
 
 ---
 
-## **7. Appendices**
+## **8. Appendices**
 
 ### **Appendix A: Glossary of Terms**
 
@@ -223,7 +369,7 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ---
 
-## **8. System Architecture**
+## **9. System Architecture**
 
 ### **1. Frontend**
 
