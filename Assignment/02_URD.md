@@ -39,7 +39,7 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
 | UI                 | How the platform looks and feels to us (User Interface).     |
 | UX                 | Our overall experience while using the platform.             |
 
-## 3. User Characteristics
+## 3.Characteristics
 
 ### 3.1 Customers
 - **Who we are**: Anyone who wants to buy products for personal or business use.
@@ -51,26 +51,26 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
   - Notifications about deals and promotions.
 
 ### 3.2 Vendors (Sellers)
-- **Who they are**: Businesses or people listing products for sale.
-- **What they know**: Some experience with online tools like dashboards.
-- **What they need**:
+- **Who we are**: Businesses or people listing products for sale.
+- **What we know**: Some experience with online tools like dashboards.
+- **What we need**:
   - A simple way to list products and update details.
   - Tools to manage inventory, sales, and orders.
   - Support for managing returns and refunds.
   - Communication tools to work with delivery agents for shipping.
 
 ### 3.3 Admins
-- **Who they are**: People who monitor the platform and keep it running smoothly.
-- **What they know**: More advanced skills for managing the platform's tools and user interactions.
-- **What they need**:
+- **Who we are**: People who monitor the platform and keep it running smoothly.
+- **What we know**: More advanced skills for managing the platform's tools and user interactions.
+- **What we need**:
   - Real-time tools to monitor user activity.
   - Access to reports and system performance.
   - A way to handle disputes and moderate content.
 
 ### 3.4 Delivery Agents
-- **Who they are**: People or companies that deliver the products to customers.
-- **What they know**: Basic knowledge of delivery apps.
-- **What they need**:
+- **Who we are**: People or companies that deliver the products to customers.
+- **What we know**: Basic knowledge of delivery apps.
+- **What we need**:
   - Clear instructions for deliveries.
   - Route optimization for faster deliveries.
   - A way to update the status of deliveries.
