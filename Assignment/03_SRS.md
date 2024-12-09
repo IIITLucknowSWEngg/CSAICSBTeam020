@@ -459,3 +459,12 @@ The platform will be optimized for both desktop and mobile devices, ensuring a s
 - **Role**: Manage shipping and provide real-time tracking for users.  
 
 ---
+
+## 10. Risks
+
+| Risk               | Mitigation                                                 |
+|--------------------|------------------------------------------------------------|
+| Data Breach        | Regular security audits and encryption.                   |
+| Payment Failure    | Use backup payment gateways.                              |
+| Vendor Abuse       | Perform KYC checks for vendors.                           |
+| Delivery Delays    | Real-time tracking and notifications.                     |
