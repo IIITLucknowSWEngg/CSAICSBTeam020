@@ -71,9 +71,9 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ### **2.3 User Classes and Characteristics**
 
-1. **Users (Shoppers)**: Browse, search, and purchase products.  
-2. **Sellers**: List and manage their product inventory.  
-3. **Admins**: Manage user accounts, moderate products, and ensure compliance.  
+1. **2.3.1. Users (Shoppers)**: Browse, search, and purchase products.  
+2. **2.3.2. Sellers**: List and manage their product inventory.  
+3. **2.3.3. Admins**: Manage user accounts, moderate products, and ensure compliance.  
 
 ### **2.4 Operating Environment**
 
@@ -95,66 +95,66 @@ Delivery services are entirely managed by third-party logistics providers. Quick
 
 ### **3.1 Functional Requirements**
 
-**1. User Registration and Login**  
+**3.1.1. User Registration and Login**  
 - Users can register using email, phone number, or social media login.  
 - Passwords must be stored securely (using **bcrypt hashing**).  
 - Two-factor authentication (2FA) for added security.  
 
-**2. Product Browsing, Search, and Filter**  
+**3.1.2. Product Browsing, Search, and Filter**  
 - Users can browse products by categories, price, and ratings.  
 - Users can search using a search bar with autocomplete functionality.  
 
-**3. Shopping Cart**  
+**3.1.3. Shopping Cart**  
 - Users can add products to the cart and update the quantity.  
 - Cart details (price, quantity) must be displayed clearly.  
 
-**4. Checkout and Payments**  
+**3.1.4. Checkout and Payments**  
 - Users can choose shipping addresses and payment methods.  
 - Secure payments via **Stripe, PayPal, and UPI** payment gateways.  
 
-**5. Order Management**  
+**3.1.5. Order Management**  
 - Users can view, cancel, and track orders.  
 - Tracking information will be updated in real-time using third-party logistics APIs.  
 
-**6. Seller Dashboard**  
+**3.1.6. Seller Dashboard**  
 - Sellers can add, edit, and delete products.  
 - Sellers can track orders and view product sales data.  
 
-**7. Admin Panel**  
+**3.1.7. Admin Panel**  
 - Admins can manage users, sellers, products, and orders.  
 - Admins can approve or reject seller product listings.  
 
-**8. Delivery Integration**  
+**3.1.8. Delivery Integration**  
 - Real-time updates for order shipping and delivery status provided by third-party services.  
 
 ---
 
 ### **3.2 Non-Functional Requirements**
 
-**1. Performance**  
+**3.2.1. Performance**  
 - The system must support up to **50,000 concurrent users**.  
 - Product pages should load in under **3 seconds**.  
 
-**2. Scalability**  
+**3.2.2. Scalability**  
 - Support horizontal scaling of the system as traffic grows.  
 
-**3. Security**  
+**3.2.3. Security**  
 - Use **AES-256** encryption for sensitive data at rest.  
 - Implement **two-factor authentication** for user accounts.  
 
-**4. Usability**  
+**3.2.4. Usability**  
 - Mobile-responsive design.  
 - Intuitive user interface for all classes of users.  
 
-**5. Reliability**  
+**3.2.5. Reliability**  
 - Ensure **99.9% uptime** for essential services.  
 - Automated backups for disaster recovery.  
 
-**6. Maintainability**  
+**3.2.6. Maintainability**  
 - Use modular and maintainable code with clear documentation.  
 - Changes in one module should not affect others.  
 
-**7. Compliance**  
+**3.2.7. Compliance**  
 - Comply with **GDPR** for user privacy and **PCI-DSS** for payments.  
 
 ---
