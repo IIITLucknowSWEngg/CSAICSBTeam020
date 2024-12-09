@@ -11,7 +11,7 @@
 
 ### **1.1 Purpose**
 
-The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities. Delivery logistics are entirely managed by third-party services.
+The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities.
 
 ### **1.2 Scope**
 
