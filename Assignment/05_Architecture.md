@@ -201,46 +201,98 @@ The Component Diagram focuses on core functionalities for customers, sellers, an
 The Deployment Diagram outlines the architecture of the Flipkart  Competitor, highlighting the interaction between its components and third-party services.
 
 ## Key Components
+### Detailed Explanation of Key Components for Flipkart Clone
 
-### 1. **User, Seller, and Admin Devices**
+---
 
-- **Users**: Access via web and mobile apps to browse products, place orders, and track deliveries.  
-- **Sellers**: Use the seller app to manage product listings and orders.  
-- **Admins**: Oversee inventory, users, and analytics via the Admin Dashboard.
+#### **1. User, Seller, and Admin Devices**
+- **Users**:
+  - Access via web browsers and mobile apps.
+  - Core features: Browse products, search, view product details, add items to the cart, place orders, and track deliveries.
+  - User interface designed for seamless navigation and responsiveness.
+- **Sellers**:
+  - Manage their stores via a dedicated **Seller App**.
+  - Features include uploading product details, managing inventory, and processing orders.
+  - Integration with analytics tools to monitor sales performance.
+- **Admins**:
+  - Use an **Admin Dashboard** for operational oversight.
+  - Monitor inventory, user activities, seller compliance, and key metrics.
+  - Perform critical tasks like flagging suspicious activities or updating platform-wide configurations.
 
-### 2. **Load Balancers**
+---
 
-- Distribute user requests across backend servers for high availability and scalability.
+#### **2. Load Balancers**
+- **Purpose**: Distribute incoming requests across backend servers to ensure:
+  - High availability.
+  - Scalability.
+  - Optimal resource utilization.
+- **Implementation**:
+  - Tools like AWS Elastic Load Balancer or Nginx.
+  - Features include health checks, SSL termination, and traffic routing.
+- **Use Cases in Flipkart Clone**:
+  - Direct user traffic to the least busy server.
+  - Manage surges during sales events (e.g., "Big Billion Day").
 
-### 3. **Backend Servers**
+---
 
-- Microservices handle:
-  - **User Management**: Authentication and profile management.
-  - **Product Search**: Browse and search for items.
-  - **Order Management**: Process and update orders.
-  - **Recommendations**: Generate personalized product suggestions.
-  - **Payments**: Handle secure transactions.
+#### **3. Backend Servers**
+- **Microservices Architecture**:
+  - Separate services for user management, product search, orders, payments, and recommendations.
+  - Each service scales independently to meet demand.
+- **Core Services**:
+  - **User Management**: Authentication (e.g., OAuth/JWT), user registration, and profile updates.
+  - **Product Search**: Efficient querying using ElasticSearch for full-text search, sorting, and filtering.
+  - **Order Management**: Coordinates order placement, payment validation, and delivery tracking.
+  - **Recommendations**: AI-powered algorithms analyze user behavior to suggest products.
+  - **Payment Processing**: Secure transactions via integrated gateways like Razorpay or Stripe.
 
-### 4. **Databases**
+---
 
-- Store data for:
-  - **Users**: Profiles and account details.
-  - **Products**: Listings and pricing.
-  - **Orders**: Payment and delivery status.
-  - **Analytics**: Metrics for insights.
+#### **4. Databases**
+- **Primary Databases**:
+  - Relational DB (e.g., PostgreSQL/MySQL): Manages structured data like user accounts and orders.
+  - NoSQL DB (e.g., MongoDB/Redis): Used for caching and handling unstructured data.
+- **Data Storage**:
+  - **Users**: Stores profiles, order history, and saved addresses.
+  - **Products**: Catalogs with categories, inventory levels, and pricing.
+  - **Orders**: Tracks status (pending, shipped, delivered), payment details, and delivery estimates.
+  - **Analytics**: Logs user interactions for business insights.
 
-### 5. **Third-Party Services**
+---
 
-- **Payment Gateway**: For secure payments.  
-- **Logistics API**: To handle shipping and delivery.  
-- **Social Media APIs**: For marketing and sharing deals.  
-- **Cloud Storage**: For static assets like product images.
+#### **5. Third-Party Services**
+- **Payment Gateway**:
+  - Ensures secure, real-time payment processing.
+  - Supports multiple payment methods (credit cards, UPI, wallets).
+- **Logistics API**:
+  - Manages delivery via courier partners.
+  - Tracks shipments and updates users on delivery status.
+- **Social Media APIs**:
+  - Facilitates sharing deals and product links.
+  - Enables login via platforms like Google or Facebook.
+- **Cloud Storage**:
+  - Stores static assets (e.g., images, CSS, videos).
+  - Examples: AWS S3 or Google Cloud Storage.
 
-### 6. **Content Delivery Network (CDN)**
+---
 
-- Speeds up delivery of static assets for a seamless user experience.
+#### **6. Content Delivery Network (CDN)**
+- **Purpose**: Accelerates content delivery and minimizes server load by caching assets closer to users.
+- **Key Features**:
+  - **Edge Servers**: Serve static files (CSS, JavaScript, product images) from regional servers.
+  - **Origin Server**: Central repository for static and dynamic content.
+  - **Cache Management**: Configures time-to-live (TTL) for frequently accessed resources.
+  - **Load Balancing**: Routes user requests to the nearest edge server.
+  - **Security Enhancements**: Protects against DDoS attacks and enforces secure connections.
+- **Use Case in Flipkart Clone**:
+  - Improves loading times for users accessing the platform from various locations.
+  - Reduces latency during high-traffic periods, such as festive sales.
 
-## Summary
+---
 
-The architecture ensures scalability, reliability, and seamless operations for users, sellers, and admins, with efficient integrations for payments, logistics, and content delivery.
-
+### **Summary**
+The architecture is designed to ensure:
+1. **Scalability**: Microservices and load balancers adapt to traffic surges.
+2. **Reliability**: Redundant systems and real-time monitoring mitigate failures.
+3. **Seamless User Experience**: CDNs and responsive design enhance accessibility and speed.
+4. **Efficient Operations**: Well-defined roles for users, sellers, and admins streamline functionality. 
