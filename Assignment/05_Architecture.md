@@ -213,7 +213,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Features include uploading product details, managing inventory, and processing orders.
   - Integration with analytics tools to monitor sales performance.
 - **Admins**:
-  - Use an **Admin Dashboard** for operational oversight.
+  - Use an Admin Dashboard for operational oversight.
   - Monitor inventory, user activities, seller compliance, and key metrics.
   - Perform critical tasks like flagging suspicious activities or updating platform-wide configurations.
 
