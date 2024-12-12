@@ -1,16 +1,16 @@
-# Flipkart Clone Architecture
+# Flipkart Competitor Architecture
 
 ## 1. System Context Diagram
 
 ```plantuml
 @startuml
-title System Context Diagram - Flipkart Clone
+title System Context Diagram - Flipkart Competitor
 
 actor "Users" as U
 actor "Sellers" as S
 actor "Delivery Agents" as D
 
-package "Flipkart Clone" {
+package "Flipkart Competitor" {
   rectangle "Web & Mobile Application" as App
 }
 
@@ -46,17 +46,17 @@ The System Context Diagram provides an overview of how users and external system
 
 ## 2. Container Diagram  
 
-The Container Diagram outlines the primary containers within the Flipkart Clone, divided into **User**, **Seller**, and **Admin** roles:  
+The Container Diagram outlines the primary containers within the Flipkart Competitor, divided into **User**, **Seller**, and **Admin** roles:  
 
 ### **User**
 ```plantuml
 @startuml
-title Flipkart Clone System
+title Flipkart  Competitor System
 
 actor User
 actor Admin
 
-package "Flipkart Clone System" {
+package "Flipkart  Competitor System" {
   rectangle "«Application» Mobile App" as MobileApp
   rectangle "«Application» Web App" as WebApp
   rectangle "«API» User API Gateway" as APIGateway
@@ -107,7 +107,7 @@ APIGateway --> AnalyticsService : Track User Activities
 !define RECTANGLE rect
 skinparam componentStyle rectangle
 
-title Flipkart Clone System - Seller Module
+title Flipkart  Competitor System - Seller Module
 
 actor Seller
 actor Admin
@@ -141,7 +141,7 @@ Admin --> "«API»\nSeller API Gateway" : Monitor Seller Activities
 !define RECTANGLE rect
 skinparam componentStyle rectangle
 
-title Flipkart Clone System - Admin Module
+title Flipkart  Competitor System - Admin Module
 
 actor Admin
 
@@ -198,7 +198,7 @@ The Component Diagram focuses on core functionalities for customers, sellers, an
 
 ![deployement 1](https://github.com/user-attachments/assets/f3c20f37-d96a-4e34-a2ac-15479fea8f7a)
 
-The Deployment Diagram outlines the architecture of the Flipkart Clone, highlighting the interaction between its components and third-party services.
+The Deployment Diagram outlines the architecture of the Flipkart  Competitor, highlighting the interaction between its components and third-party services.
 
 ## Key Components
 
