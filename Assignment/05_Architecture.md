@@ -201,7 +201,6 @@ The Component Diagram focuses on core functionalities for customers, sellers, an
 The Deployment Diagram outlines the architecture of the Flipkart  Competitor, highlighting the interaction between its components and third-party services.
 
 ## Key Components
-### Detailed Explanation of Key Components for Flipkart Clone
 
 #### **1. User, Seller, and Admin Devices**
 - **Users**:
