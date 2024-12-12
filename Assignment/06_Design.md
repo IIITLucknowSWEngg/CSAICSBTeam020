@@ -83,7 +83,7 @@ The Flipkart Competitor system is an e-commerce platform that enables users to b
 
 ### 3.3 Databases
 
-- **PostgreSQL**:
+- **SQL**:
   Stores structured data such as user profiles, products, orders, and transactions. Optimize database queries and use indexing to handle large volumes of read and write operations efficiently.
 
 - **Redis**:
