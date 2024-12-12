@@ -1,4 +1,4 @@
-## **Cross-reference Matrix** for the **QuickKart (Flipkart Clone)**
+## **Cross-reference Matrix** for the **QuickKart (Flipkart Competitor)**
 
 ### Stakeholder Requirements Mapping
 
