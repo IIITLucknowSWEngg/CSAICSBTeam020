@@ -1,6 +1,6 @@
 # QuickKart (Flipkart Clone) Project Stakeholders
 
-A stakeholder is any individual, group, or organization that has an interest in or is impacted by the outcome of a project. Stakeholders can influence the project’s direction, decisions, and success, either directly or indirectly. In our **Flipkart Clone Project**, the following is the list of stakeholders:
+
 
 ---
 
@@ -37,5 +37,4 @@ These are individuals or groups outside the organization but have an interest in
 
 ---
 
-### Summary
-Stakeholders play a critical role in shaping the QuickKart Clone's success. Effective collaboration and alignment of their interests ensure a seamless user experience, compliance, and operational success.
+
