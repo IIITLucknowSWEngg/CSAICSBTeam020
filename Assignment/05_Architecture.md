@@ -203,8 +203,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 ## Key Components
 ### Detailed Explanation of Key Components for Flipkart Clone
 
----
-
 #### **1. User, Seller, and Admin Devices**
 - **Users**:
   - Access via web browsers and mobile apps.
@@ -219,7 +217,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Monitor inventory, user activities, seller compliance, and key metrics.
   - Perform critical tasks like flagging suspicious activities or updating platform-wide configurations.
 
----
 
 #### **2. Load Balancers**
 - **Purpose**: Distribute incoming requests across backend servers to ensure:
@@ -233,7 +230,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Direct user traffic to the least busy server.
   - Manage surges during sales events (e.g., "Big Billion Day").
 
----
 
 #### **3. Backend Servers**
 - **Microservices Architecture**:
@@ -246,7 +242,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - **Recommendations**: AI-powered algorithms analyze user behavior to suggest products.
   - **Payment Processing**: Secure transactions via integrated gateways like Razorpay or Stripe.
 
----
 
 #### **4. Databases**
 - **Primary Databases**:
@@ -257,8 +252,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - **Products**: Catalogs with categories, inventory levels, and pricing.
   - **Orders**: Tracks status (pending, shipped, delivered), payment details, and delivery estimates.
   - **Analytics**: Logs user interactions for business insights.
-
----
 
 #### **5. Third-Party Services**
 - **Payment Gateway**:
@@ -274,8 +267,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Stores static assets (e.g., images, CSS, videos).
   - Examples: AWS S3 or Google Cloud Storage.
 
----
-
 #### **6. Content Delivery Network (CDN)**
 - **Purpose**: Accelerates content delivery and minimizes server load by caching assets closer to users.
 - **Key Features**:
@@ -287,7 +278,6 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 - **Use Case in Flipkart Clone**:
   - Improves loading times for users accessing the platform from various locations.
   - Reduces latency during high-traffic periods, such as festive sales.
-
 ---
 
 ### **Summary**
