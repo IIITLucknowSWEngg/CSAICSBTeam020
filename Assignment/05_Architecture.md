@@ -209,7 +209,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Core features: Browse products, search, view product details, add items to the cart, place orders, and track deliveries.
   - User interface designed for seamless navigation and responsiveness.
 - **Sellers**:
-  - Manage their stores via a dedicated **Seller App**.
+  - This app allows them to upload and manage products,track orders,manage inventory,view analytics,receive notifications
   - Features include uploading product details, managing inventory, and processing orders.
   - Integration with analytics tools to monitor sales performance.
 - **Admins**:
@@ -267,7 +267,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Stores static assets (e.g., images, CSS, videos).
   - Examples: AWS S3 or Google Cloud Storage.
 
-#### ****6. Content Delivery Network (CDN)****
+#### **6. Content Delivery Network (CDN)**
 - **Purpose**: Accelerates content delivery and minimizes server load by caching assets closer to users.
 - **Key Features**:
   - **Edge Servers**: Serve static files (CSS, JavaScript, product images) from regional servers.
