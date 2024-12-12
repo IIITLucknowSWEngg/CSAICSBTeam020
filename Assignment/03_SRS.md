@@ -56,7 +56,7 @@ The scope of the QuickKart e-commerce platform is to provide a feature-rich, use
 
 ## 2.1. Product Perspective
 
-This system is an **E-commerce Platform** designed to facilitate the buying and selling of products online. The system allows multiple user roles, including **customers**, **vendors**, **admins**, and **delivery agents**, to interact with the platform. The primary functionality of the platform includes browsing products, placing orders, managing inventory, processing payments, and tracking orders. The system will also allow vendors to manage their product listings and view sales analytics.
+This system is an **E-commerce Platform** designed to facilitate the buying and selling of products online. The system allows multiple user roles, including **customers**, **vendors** and **admins** to interact with the platform. The primary functionality of the platform includes browsing products, placing orders, managing inventory, processing payments, and tracking orders. The system will also allow vendors to manage their product listings and view sales analytics.
 
 The system will be a **web-based application** with a **responsive design**, supporting modern browsers and mobile devices. It will be developed using **ReactJS** for the frontend, **Node.js** for the backend, and **MySQL** for the database. The application will be integrated with third-party services for payment processing (e.g., Stripe, Razorpay) and cloud-based storage (e.g., AWS S3 for product images).
 
