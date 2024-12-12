@@ -187,10 +187,7 @@ Sends:
 - Order confirmations and status updates.
 - Promotional emails and SMS alerts. Use batch processing for notifications to improve performance during high-demand periods.
 
-#### 4.2.7 Recommendation Engine
-Uses machine learning to suggest products based on:
-- User purchase history.
-- Browsing behavior and preferences. The engine should be scalable and leverage cloud resources for processing large datasets.
+
 
 ---
 
