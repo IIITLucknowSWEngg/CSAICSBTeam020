@@ -8,7 +8,7 @@ We, as the users of the QuickKart Application, need a platform that is easy to u
 ### 1.2 Scope
 The QuickKart Application should meet the needs of three primary user groups:
 
-- **Customers**: People like me who will buy products.
+- **Customers**: People  who will buy products.
 - **Vendors (Sellers)**: Businesses or individuals who will sell products on the platform.
 - **Admins**: The people who will manage the platform and ensure everything runs smoothly.
 
