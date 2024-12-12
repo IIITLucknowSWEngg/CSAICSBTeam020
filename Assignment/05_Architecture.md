@@ -267,7 +267,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Stores static assets (e.g., images, CSS, videos).
   - Examples: AWS S3 or Google Cloud Storage.
 
-#### **6. Content Delivery Network (CDN)**
+#### ****6. Content Delivery Network (CDN)****
 - **Purpose**: Accelerates content delivery and minimizes server load by caching assets closer to users.
 - **Key Features**:
   - **Edge Servers**: Serve static files (CSS, JavaScript, product images) from regional servers.
