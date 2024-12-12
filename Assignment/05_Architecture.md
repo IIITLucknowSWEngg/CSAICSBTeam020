@@ -240,7 +240,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - **Product Search**: Efficient querying using ElasticSearch for full-text search, sorting, and filtering.
   - **Order Management**: Coordinates order placement, payment validation, and delivery tracking.
   - **Recommendations**: AI-powered algorithms analyze user behavior to suggest products.
-  - **Payment Processing**: Secure transactions via integrated gateways like Razorpay or Stripe.
+  - **Payment Processing**: Secure transactions via integrated gateways like gpay.
 
 
 #### **4. Databases**
