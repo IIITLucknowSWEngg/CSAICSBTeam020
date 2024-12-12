@@ -14,8 +14,7 @@
 The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities.
 
 ### 1.2 Scope
-
-The scope of the QuickKart e-commerce platform is to provide a feature-rich, user-friendly, and secure online shopping experience for customers, vendors, admins, and delivery agents. The platform aims to streamline the entire shopping process, from product browsing to payment and delivery. The key features of the system are as follows:
+The scope of the QuickKart e-commerce platform is to provide a feature-rich, user-friendly, and secure online shopping experience for customers, vendors, and admins. The platform aims to streamline the entire shopping process, from product browsing to payment and delivery. The key features of the system are as follows: Delivery, payment, and map-related services are integrated through third-party providers.
 
 ### Customer Features:
 - **Product Browsing & Search**: Customers can browse and search for products by categories, filters, and keywords.
@@ -35,10 +34,7 @@ The scope of the QuickKart e-commerce platform is to provide a feature-rich, use
 - **Product Moderation**: Admins can approve, reject, or modify product listings based on platform policies.
 - **Report Generation**: Admins can generate reports related to sales, revenue, user activities, and platform performance.
 
-### Delivery Agent Features:
-- **Order Status Update**: Delivery agents can update the status of orders and provide real-time delivery notifications to customers.
 
-The platform will be accessible via web browsers and mobile devices, ensuring a responsive and intuitive experience for all users. It will integrate secure payment gateways and external delivery services to ensure reliable transactions and timely deliveries.
 
 ### **1.3 Definitions, Acronyms, and Abbreviations**
 
@@ -68,7 +64,6 @@ The system will consist of the following main modules:
 1. **Customer Module**: Enables customers to browse products, place orders, manage accounts, and track orders.
 2. **Vendor Module**: Allows vendors to add, update, and manage their products, as well as track inventory and view sales.
 3. **Admin Module**: Provides administrative functions to manage users, monitor system activities, and generate reports.
-4. **Delivery Agent Module**: Allows delivery agents to update the status of orders and manage deliveries.
 
 The system will be scalable to handle multiple product listings, user accounts, and order transactions. It will be secure, with encrypted user data and payment transactions, and will be designed to comply with data protection regulations.
 
@@ -100,8 +95,10 @@ The E-commerce Platform will offer the following key features:
 - **Order Tracking for Customers**:
   - Customers can track the status of their orders, including real-time updates on shipping and delivery.
 
-- **Delivery Agent Support**:
-  - Delivery agents can view the list of orders assigned to them and update order statuses (e.g., "Shipped", "Out for Delivery", "Delivered").
+ - **Delivery Agent Support**:
+   - Delivery agents, managed through a third-party service, can view the list of orders assigned to them and update order statuses (e.g., "Shipped", "Out for 
+   Delivery", "Delivered").
+
 
 ## 2.3. User Classes and Characteristics
 
@@ -118,9 +115,6 @@ The system will have different types of users, each with specific roles and resp
 - **Admins**: 
   - Manage users (customers and vendors), handle orders, returns, refunds, and generate reports.
   - Monitor platform performance and ensure smooth operations.
-
-- **Delivery Agents**: 
-  - Deliver products and update the order status at each stage of delivery.
 
 ## 2.4. Operating Environment
 
@@ -254,19 +248,6 @@ The platform will be optimized for both desktop and mobile devices, ensuring a s
 
 ---
 
-## 3.4. Delivery Agent Use Cases:
-
-### 1. Update Order Status:
-- **Description**: Delivery agents should be able to update the status of orders they are delivering.
-- **Technical Implementation**:
-  - Delivery agents will use a mobile-friendly interface to update order statuses.
-  - Updates will be pushed to the backend and reflected in real-time on customer order tracking pages.
-
-### 2. Track Deliveries:
-- **Description**: Delivery agents should be able to view the details of orders assigned to them, including the customer’s address and order status.
-- **Technical Implementation**:
-  - Delivery agents will use a dedicated React Native mobile app to view and manage deliveries.
-  - Order details will be fetched from the backend via REST APIs.
 
 
 ## 4. Non-Functional Requirements
