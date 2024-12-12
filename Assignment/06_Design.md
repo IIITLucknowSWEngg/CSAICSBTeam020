@@ -3,10 +3,10 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-The purpose of this Software Design Description (SDD) is to provide a detailed design for the QuickKart (Flipkart clone) e-commerce platform. This document describes the software's architecture, components, interfaces, and their interactions to ensure that the implementation meets the system's functional and non-functional requirements, particularly in terms of performance and scalability.
+The purpose of this Software Design Description (SDD) is to provide a detailed design for the QuickKart (Flipkart  Competitor) e-commerce platform. This document describes the software's architecture, components, interfaces, and their interactions to ensure that the implementation meets the system's functional and non-functional requirements, particularly in terms of performance and scalability.
 
 ### 1.2 Scope
-The Flipkart clone system is an e-commerce platform that enables users to browse, purchase, and pay for products online. Sellers can list and manage products on the platform, while administrators oversee operations. The system includes a mobile and web application, backend API services, payment processing, real-time notifications, and integration with services like courier systems and SMS gateways.
+The Flipkart Competitor system is an e-commerce platform that enables users to browse, purchase, and pay for products online. Sellers can list and manage products on the platform, while administrators oversee operations. The system includes a mobile and web application, backend API services, payment processing, real-time notifications, and integration with services like courier systems and SMS gateways.
 
 ---
 
@@ -301,4 +301,4 @@ Sends:
 
 ## 8. Conclusion
 
-This Software Design Description outlines the architecture, modules, and interfaces for the Flipkart clone e-commerce platform. Its modular design ensures scalability, high availability, and robust security, making it suitable for handling large-scale operations efficiently. The implementation strategies for performance requirements ensure that the system can effectively manage high traffic and order volumes, providing a seamless experience for users.
+This Software Design Description outlines the architecture, modules, and interfaces for the Flipkart Competitor e-commerce platform. Its modular design ensures scalability, high availability, and robust security, making it suitable for handling large-scale operations efficiently. The implementation strategies for performance requirements ensure that the system can effectively manage high traffic and order volumes, providing a seamless experience for users.
