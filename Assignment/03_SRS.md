@@ -133,7 +133,7 @@ The platform will be optimized for both desktop and mobile devices, ensuring a s
 ## 2.6. Assumptions and Dependencies
 
 - The system assumes the availability of third-party services (e.g., payment gateways and cloud storage).
-- ALl users must have access to an internet connection for interacting with the platform.
+- All the users must have access to an internet connection for interacting with the platform.
 - The platform will assume that all users have access to devices with a modern web browser for accessing the system.
 
 ---
