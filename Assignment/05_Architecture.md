@@ -226,9 +226,9 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 - **Implementation**:
   - Tools like AWS Elastic Load Balancer or Nginx.
   - Features include health checks, SSL termination, and traffic routing.
-- **Use Cases in Flipkart Clone**:
+- **Use Cases in Flipkart Competitor**:
   - Direct user traffic to the least busy server.
-  - Manage surges during sales events (e.g., "Big Billion Day").
+  - Manage surges during sales events 
 
 
 #### **3. Backend Servers**
@@ -236,7 +236,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Separate services for user management, product search, orders, payments, and recommendations.
   - Each service scales independently to meet demand.
 - **Core Services**:
-  - **User Management**: Authentication (e.g., OAuth/JWT), user registration, and profile updates.
+  - **User Management**: Authentication ,user registration, and profile updates.
   - **Product Search**: Efficient querying using ElasticSearch for full-text search, sorting, and filtering.
   - **Order Management**: Coordinates order placement, payment validation, and delivery tracking.
   - **Recommendations**: AI-powered algorithms analyze user behavior to suggest products.
@@ -245,8 +245,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 
 #### **4. Databases**
 - **Primary Databases**:
-  - Relational DB (e.g., PostgreSQL/MySQL): Manages structured data like user accounts and orders.
-  - NoSQL DB (e.g., MongoDB/Redis): Used for caching and handling unstructured data.
+  - Relational DB (e.g. MySQL): Manages structured data like user accounts and orders
 - **Data Storage**:
   - **Users**: Stores profiles, order history, and saved addresses.
   - **Products**: Catalogs with categories, inventory levels, and pricing.
