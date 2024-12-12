@@ -41,36 +41,26 @@ QuickKart replicates the core functionalities of Flipkart, providing a platform 
 - **Order History**: View past orders with details like date, product, and invoice.
 - **Returns and Refunds**: Simplified return process with options for refunds or replacements.
 
-### 7. Notifications
 
-- **Real-Time Alerts**: Notifications for order updates, discounts, offers, and personalized recommendations.
-- **Customizable Preferences**: Users can configure notification settings (email, SMS, push notifications).
-
-### 8. Admin Panel
+### 7. Admin Panel
 
 - **Product Management**: Add, update, or remove products from the catalog. Manage inventory and track stock levels.
 - **User Management**: View, suspend, or delete user accounts.
 - **Order Monitoring**: Oversee and manage order processing, returns, and refunds.
 - **Analytics Dashboard**: Insights into sales, user behavior, and product performance metrics.
 
-### 9. Analytics and Reporting
+### 8. Analytics and Reporting
 
 - **Customer Insights**: Analyze user demographics, preferences, and purchase patterns.
 - **Sales Metrics**: Track product performance, revenue, and category-wise sales data.
 - **Feedback Analysis**: Monitor user ratings and reviews to improve the shopping experience.
-
-### 10. Wishlist and Favorites
-
-- **Wishlist Creation**: Save favorite products to a wishlist for later purchase.
-- **Price Alerts**: Notify users of price drops on wishlist items.
-
 
 
 ## Technologies Used
 
 - **Frontend**: React, HTML5, CSS3, JavaScript
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB
+- **Database**: MySQL
 - **Authentication**: JSON Web Tokens (JWT)
 - **Storage**: AWS S3 (for product images)
 - **Notifications**: Firebase Cloud Messaging
