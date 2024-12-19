@@ -1,10 +1,9 @@
 # QuickKart (Flipkart Clone) Project Stakeholders
 
-
-
 ---
 
 ## Internal Stakeholders
+
 These are individuals or groups directly involved in the project and typically part of the organization.
 
 | **Stakeholder**               | **Role**                                              | **Responsibilities**                                             | **Impact**                                                    |
@@ -24,17 +23,21 @@ These are individuals or groups directly involved in the project and typically p
 ---
 
 ## External Stakeholders
+
 These are individuals or groups outside the organization but have an interest in or are impacted by the project.
 
 | **Stakeholder**               | **Role**                                              | **Responsibilities**                                             | **Impact**                                                    |
 |-------------------------------|------------------------------------------------------|------------------------------------------------------------------|---------------------------------------------------------------|
-| **End Users**                  | Customers using the Flipkart platform                | Providing feedback on usability, product selection, and features  | High - Satisfaction directly influences success and app adoption |
-| **Vendors ( sellers )**                    | Businesses listing products on the platform          | Listing products, managing inventory, ensuring quality            | High - Determines the variety and quality of platform offerings  |
+| **Customer (End User)**                  | Customers using the Flipkart platform                | Providing feedback on usability, product selection, and features  | High - Satisfaction directly influences success and app adoption |
+| **Vendors (sellers)**                    | Businesses listing products on the platform          | Listing products, managing inventory, ensuring quality            | High - Determines the variety and quality of platform offerings  |
 | **Admins**                  | Manage the platform's operations and user access        | Overseeing user accounts, managing permissions, ensuring security  | High - Critical for maintaining platform integrity and user trust |
 | **Logistics and Delivery Partners** | Handles order delivery and return management        | Ensuring timely and accurate delivery, managing reverse logistics | High - Directly impacts user satisfaction and retention          |
 | **Third-party Service Providers** | External companies offering infrastructure and services | Providing cloud hosting, payment gateways, analytics, etc.        | Medium - Supports platform scalability and reliability          |
-| **Government and Regulatory Bodies** | Regulates compliance and legal operations         | Monitoring adherence to consumer laws, taxation, and labor laws    | Medium - Impacts legal operations and business compliance        |
 
 ---
 
+## Regulatory Stakeholders
 
+| **Stakeholder** | **Role** | **Responsibilities** | **Impact** |
+|-----------------|----------|---------------------|------------|
+| **Government and Regulatory Bodies** | Regulates compliance and legal operations | Monitoring adherence to consumer laws, taxation, and labor laws | Medium - Impacts legal operations and business compliance |

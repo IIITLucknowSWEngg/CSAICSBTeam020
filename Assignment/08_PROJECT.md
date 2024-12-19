@@ -1,6 +1,7 @@
 # QuickKart - Flipkart Competitor
 
 ## Overview
+
 QuickKart replicates the core functionalities of Flipkart, providing a platform for users to browse, search, and purchase products seamlessly. The application includes robust features such as personalized recommendations, order tracking, advanced search capabilities, and secure checkout, delivering a comprehensive e-commerce experience.
 
 ## Features
@@ -73,7 +74,9 @@ QuickKart replicates the core functionalities of Flipkart, providing a platform 
 - **AR Integration**: Virtual try-ons for fashion or furniture products.
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 ## Contributing
+
 Contributions are welcome! Please open an issue to discuss proposed changes or submit a pull request.

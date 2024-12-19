@@ -4,7 +4,6 @@
 
 **Version:** 1.0  
 
-
 ---
 
 ## **1. Introduction**
@@ -14,27 +13,29 @@
 The purpose of this Software Requirements Specification (SRS) document is to define the functional, non-functional, and system requirements for **QuickKart**, an e-commerce platform similar to Flipkart. This platform will facilitate online shopping, allowing users to browse, search, and purchase products while enabling sellers to list and manage their inventory. An admin dashboard will allow administrators to moderate platform activities.
 
 ### 1.2 Scope
+
 The scope of the QuickKart e-commerce platform is to provide a feature-rich, user-friendly, and secure online shopping experience for customers, vendors, and admins. The platform aims to streamline the entire shopping process, from product browsing to payment and delivery. The key features of the system are as follows: Delivery, payment, and map-related services are integrated through third-party providers.
 
-### Customer Features:
+### Customer Features
+
 - **Product Browsing & Search**: Customers can browse and search for products by categories, filters, and keywords.
 - **Shopping Cart & Checkout**: Customers can add items to their cart, view their cart, and complete the checkout process securely.
 - **Order Tracking**: Customers can track the status of their orders in real-time.
 - **Product Reviews**: Customers can leave reviews and ratings on products they have purchased.
 - **Account Management**: Customers can create accounts, update personal details, and manage their preferences.
 
-### Vendor Features:
+### Vendor Features
+
 - **Product Listing**: Vendors can list, update, and manage their products on the platform.
 - **Inventory Management**: Vendors can manage stock levels, monitor sales, and update product availability.
 - **Sales Tracking**: Vendors can track their sales and generate performance reports.
 
-### Admin Features:
+### Admin Features
+
 - **Order Management**: Admins can view, process, and manage customer orders, including refunds and returns.
 - **User Management**: Admins can manage user accounts, monitor activities, and resolve disputes.
 - **Product Moderation**: Admins can approve, reject, or modify product listings based on platform policies.
 - **Report Generation**: Admins can generate reports related to sales, revenue, user activities, and platform performance.
-
-
 
 ### **1.3 Definitions, Acronyms, and Abbreviations**
 
@@ -61,6 +62,7 @@ This system is an **E-commerce Platform** designed to facilitate the buying and 
 The system will be a **web-based application** with a **responsive design**, supporting modern browsers and mobile devices. It will be developed using **ReactJS** for the frontend, **Node.js** for the backend, and **MySQL** for the database. The application will be integrated with third-party services for payment processing (e.g., Stripe, Razorpay) and cloud-based storage (e.g., AWS S3 for product images).
 
 The system will consist of the following main modules:
+
 1. **Customer Module**: Enables customers to browse products, place orders, manage accounts, and track orders.
 2. **Vendor Module**: Allows vendors to add, update, and manage their products, as well as track inventory and view sales.
 3. **Admin Module**: Provides administrative functions to manage users, monitor system activities, and generate reports.
@@ -71,7 +73,7 @@ The system will be scalable to handle multiple product listings, user accounts, 
 
 The E-commerce Platform will offer the following key features:
 
-- **User Management**: 
+- **User Management**:
   - Customers can create, update, and delete their accounts.
   - Admins can manage user roles, including creating, suspending, or deleting customer and vendor accounts.
 
@@ -95,24 +97,23 @@ The E-commerce Platform will offer the following key features:
 - **Order Tracking for Customers**:
   - Customers can track the status of their orders, including real-time updates on shipping and delivery.
 
- - **Delivery Agent Support**:
-   - Delivery agents, managed through a third-party service, can view the list of orders assigned to them and update order statuses (e.g., "Shipped", "Out for 
+- **Delivery Agent Support**:
+  - Delivery agents, managed through a third-party service, can view the list of orders assigned to them and update order statuses (e.g., "Shipped", "Out for
    Delivery", "Delivered").
-
 
 ## 2.3. User Classes and Characteristics
 
 The system will have different types of users, each with specific roles and responsibilities:
 
-- **Customers**: 
+- **Customers**:
   - Browse products, add items to the cart, place orders, track orders, and leave product reviews.
   - Manage their personal accounts and view order history.
 
-- **Vendors**: 
+- **Vendors**:
   - Add and manage products, track inventory, view sales data, and manage order fulfillment.
   - View orders related to their products and interact with customers for returns or refunds.
 
-- **Admins**: 
+- **Admins**:
   - Manage users (customers and vendors), handle orders, returns, refunds, and generate reports.
   - Monitor platform performance and ensure smooth operations.
 
@@ -138,213 +139,241 @@ The platform will be optimized for both desktop and mobile devices, ensuring a s
 
 ---
 
-
 ## 3. Functional Requirements
 
-## 3.1. Customer Use Cases:
+## 3.1 Customer Use Cases
 
-### 1. Browse Products:
+### 1. Browse Products
+
 - **Description**: Customers must be able to search and filter products by category, price, rating, etc.
-- **Technical Implementation**: 
-  - Implement search functionality with Elasticsearch for fast product search and filtering.
-  - Use REST APIs to retrieve product data from the backend.
-  - Frontend will use ReactJS with hooks and state management (e.g., Redux or Context API) to manage the state of the product list.
-  - Display product details with images, descriptions, and reviews using Material UI for the user interface.
+- **Steps for Implementation**:
+  1. Implement search functionality with **Elasticsearch** for fast product search and filtering.
+  2. Use **REST APIs** to retrieve product data from the backend.
+  3. Frontend will be built using **ReactJS** with hooks and state management (e.g., **Redux** or **Context API**) to handle product list state.
+  4. Product details, such as images, descriptions, and reviews, will be displayed using **Material UI** for the user interface.
 
-### 2. Place Orders:
+### 2. Place Orders
+
 - **Description**: Customers can add products to their cart, modify quantities, and proceed to checkout.
-- **Technical Implementation**:
-  - Implement a cart system in the frontend using ReactJS and manage the cart state locally.
-  - Backend will handle cart data via REST APIs, with user-specific sessions stored in a Redis database.
-  - The checkout process will integrate a payment gateway (e.g., Stripe or Razorpay).
-  - Order data will be stored in a **MySQL** database, including product details, customer details, and payment status.
+- **Steps for Implementation**:
+  1. Implement a cart system in the frontend using **ReactJS** with local state management.
+  2. Manage cart data through **REST APIs**; store session data in a **Redis** database.
+  3. Integrate a payment gateway (e.g., **Stripe** or **Razorpay**) for payment processing.
+  4. Store order data, including product details, customer details, and payment status, in a **MySQL** database.
 
-### 3. Order Tracking:
+### 3. Order Tracking
+
 - **Description**: Customers must be able to view the status of their orders (e.g., "Placed", "Shipped", "Out for Delivery", "Delivered").
-- **Technical Implementation**:
-  - The order status will be updated in real-time using WebSockets for live tracking.
-  - A separate table for order status will be maintained in the **MySQL** database, and updates will be pushed via a backend service written in **Node.js**.
+- **Steps for Implementation**:
+  1. Implement real-time updates using **WebSockets** to track order status.
+  2. Maintain a table in the **MySQL** database to store order statuses.
+  3. Use a backend service written in **Node.js** to push updates for live tracking.
 
-### 4. Product Reviews:
-- **Description**: After receiving the product, customers should be able to leave a review with a star rating and a textual description.
-- **Technical Implementation**:
-  - Reviews will be stored in a dedicated table in **MySQL** with foreign keys to products and customers.
-  - The frontend will use React components to allow customers to leave reviews and display the average product rating dynamically.
+### 4. Product Reviews
 
-### 5. Account Management:
+- **Description**: After receiving a product, customers should be able to leave a review with a star rating and a textual description.
+- **Steps for Implementation**:
+  1. Store reviews in a dedicated table in **MySQL**, linked to products and customers through foreign keys.
+  2. Use **React** components in the frontend to allow customers to submit reviews and display the average rating for products.
+
+### 5. Account Management
+
 - **Description**: Customers should be able to create an account, log in, update personal details, and change passwords.
-- **Technical Implementation**:
-  - User authentication will be handled using JWT (JSON Web Tokens) and OAuth2 for secure login.
-  - Personal details will be stored in **MySQL**, and password management will use BCrypt for encryption.
+- **Steps for Implementation**:
+  1. Implement user authentication using **JWT (JSON Web Tokens)** and **OAuth2** for secure login.
+  2. Store personal details in the **MySQL** database.
+  3. Use **BCrypt** for securely encrypting passwords.
 
-### 6. View Offers and Discounts:
+### 6. View Offers and Discounts
+
 - **Description**: The system should display any ongoing discounts or promotional offers on the homepage or product pages.
-- **Technical Implementation**:
-  - Promotional offers will be stored in a **MySQL** database.
-  - The frontend will display offers using dynamic content rendering based on API responses.
-  - Integration with third-party APIs (if needed) for tracking promotional events.
+- **Steps for Implementation**:
+  1. Store promotional offers in a **MySQL** database.
+  2. Dynamically render offers on the frontend based on responses from **API** calls.
+  3. Integrate with third-party APIs (if needed) to track and display promotional events.
 
 ---
 
-## 3.2. Vendor Use Cases:
+## 3.2 Vendor Use Cases
 
-### 1. List Products:
+### 1. List Products
+
 - **Description**: Vendors should be able to add new products with descriptions, prices, and images.
-- **Technical Implementation**:
-  - Vendors will use a React-based admin panel to add products.
-  - Product data will be stored in a **MySQL** database, and image upload functionality will be handled by AWS S3 or similar cloud storage.
+- **Steps for Implementation**:
+  1. Vendors use a **React**-based admin panel to add products.
+  2. Store product data in the **MySQL** database.
+  3. Manage image uploads via **AWS S3** or similar cloud storage solutions.
 
-### 2. Update Product Details:
-- **Description**: Vendors should be able to update product details like description, price, stock availability, and images.
-- **Technical Implementation**:
-  - Vendors can update product details through a ReactJS-based dashboard that communicates with a **Node.js** backend via REST APIs.
-  - Data validation and updates will occur in the **MySQL** database.
+### 2. Update Product Details
 
-### 3. Track Sales and Inventory:
-- **Description**: The system should allow vendors to view real-time sales data and track inventory levels for each product.
-- **Technical Implementation**:
-  - Real-time sales data will be handled by the backend (**Node.js**) and stored in **MySQL**.
-  - Inventory levels will be tracked in a separate inventory table, and updates will be reflected on the vendor dashboard.
+- **Description**: Vendors should be able to update product details such as description, price, stock availability, and images.
+- **Steps for Implementation**:
+  1. Provide a **ReactJS**-based dashboard for vendors to update product details.
+  2. Data validation and updates will be handled through **REST APIs**.
+  3. Updates will be reflected in the **MySQL** database.
 
-### 4. Manage Orders:
-- **Description**: Vendors should be able to view all orders related to their products, including order status (e.g., pending, shipped, completed).
-- **Technical Implementation**:
-  - Order information will be displayed to the vendor through a custom ReactJS admin interface.
-  - Data will be fetched from the backend via RESTful APIs and stored in the **MySQL** database.
+### 3. Track Sales and Inventory
+
+- **Description**: Vendors should be able to view real-time sales data and track inventory levels for each product.
+- **Steps for Implementation**:
+  1. Store real-time sales data in the backend using **Node.js**.
+  2. Maintain inventory data in a separate table in the **MySQL** database.
+  3. Reflect updates to inventory levels on the vendor dashboard.
+
+### 4. Manage Orders
+
+- **Description**: Vendors should be able to view orders related to their products, including order status (e.g., pending, shipped, completed).
+- **Steps for Implementation**:
+  1. Display order information to vendors via a custom **ReactJS** admin interface.
+  2. Fetch order data from the backend via **RESTful APIs**.
+  3. Maintain order data in the **MySQL** database for easy retrieval and management.
 
 ---
 
-## 3.3. Admin Use Cases:
+## 3.3 Admin Use Cases
 
-### 1. Process Orders:
+### 1. Process Orders
+
 - **Description**: Admins must be able to manage customer orders, including approving, canceling, or modifying them.
-- **Technical Implementation**:
-  - Admins will access an admin panel built with ReactJS for real-time management of orders.
-  - The backend will handle order state transitions and maintain status history in **MySQL**.
+- **Steps for Implementation**:
+  1. Admins will access an admin panel built with **ReactJS**.
+  2. Use **REST APIs** to handle the backend order state transitions.
+  3. Maintain order status history in the **MySQL** database.
 
-### 2. Handle Returns and Refunds:
-- **Description**: Admins should be able to process product returns, verify customer complaints, and initiate refunds where necessary.
-- **Technical Implementation**:
-  - Admins will use the ReactJS interface to handle returns.
-  - Refunds will be processed via third-party payment gateways, and transaction logs will be maintained in **MySQL**.
+### 2. Handle Returns and Refunds
 
-### 3. Monitor Sales and Generate Reports:
+- **Description**: Admins should be able to process product returns, verify customer complaints, and initiate refunds if necessary.
+- **Steps for Implementation**:
+  1. Admins will use a **ReactJS** interface to process returns.
+  2. Refunds will be processed through third-party payment gateways (e.g., **Stripe** or **Razorpay**).
+  3. Maintain transaction logs and related data in the **MySQL** database.
+
+### 3. Monitor Sales and Generate Reports
+
 - **Description**: Admins should be able to view and generate sales reports, including total revenue, sales by vendor, and overall performance.
-- **Technical Implementation**:
-  - Reports will be generated via the backend using SQL queries and returned to the frontend via REST APIs.
-  - Admins will view reports in a custom ReactJS dashboard with data visualization tools like Chart.js or D3.js.
+- **Steps for Implementation**:
+  1. Backend will use SQL queries to generate sales data.
+  2. Admins will receive the generated reports via **REST APIs**.
+  3. Use **ReactJS** on the frontend to display sales reports with tools like **Chart.js** or **D3.js** for data visualization.
 
-### 4. Manage Users:
-- **Description**: Admins should be able to create, suspend, or delete user accounts, including vendors, customers, and delivery agents.
-- **Technical Implementation**:
-  - User management will be handled via a secure admin panel.
-  - Data will be stored in **MySQL**, and user roles will be managed with role-based access control (RBAC) implemented in the backend.
+### 4. Manage Users
 
-### 5. Generate Reports:
-- **Description**: Admins must be able to generate detailed reports related to sales, orders, and user activity.
-- **Technical Implementation**:
-  - Admins will use custom ReactJS pages to filter and view reports.
-  - Reports will be generated on the server-side and returned as downloadable files (e.g., CSV or PDF).
+- **Description**: Admins should be able to create, suspend, or delete user accounts, including customers, vendors, and delivery agents.
+- **Steps for Implementation**:
+  1. Admins will use a secure interface to manage users.
+  2. Store and manage user data in the **MySQL** database.
+  3. Implement **role-based access control (RBAC)** on the backend for managing user roles and permissions.
+
+### 5. Generate Reports
+
+- **Description**: Admins should be able to generate detailed reports related to sales, orders, and user activity.
+- **Steps for Implementation**:
+  1. Admins will use custom **ReactJS** pages to filter and view specific reports.
+  2. Reports will be generated server-side and made available for download as **CSV** or **PDF** files.
 
 ---
-
-
 
 ## 4. Non-Functional Requirements
 
 ### 4.1. Performance
+
 - **Response Time**: The system must be able to respond to user actions (such as browsing products or placing orders) within 2 seconds under normal conditions.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use caching mechanisms (e.g., Redis) for frequently accessed data (product details, order statuses).
     - Implement pagination for product listings and search results to reduce load on the server.
     - Use a Content Delivery Network (CDN) for serving static assets (images, CSS, JS).
 
 - **Throughput**: The system should support thousands of concurrent users, especially during peak times such as promotions or sales events.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Deploy the application on a scalable cloud platform (e.g., AWS, Azure) using auto-scaling features to handle traffic spikes.
     - Implement load balancing across multiple servers.
 
 - **Scalability**: The system must be able to scale horizontally (adding more servers) to accommodate increased traffic as the user base grows.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use microservices architecture for scalability, enabling independent scaling of components like product catalog, order management, and user accounts.
     - Deploy on Kubernetes for automated container management.
 
 ### 4.2. Availability
+
 - **Uptime**: The system should guarantee 99.9% uptime, excluding scheduled maintenance periods.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use redundant cloud infrastructure (e.g., multi-region deployment on AWS).
     - Implement database replication for failover.
 
 - **Backup and Recovery**: The system should back up data daily to ensure it can be recovered in the event of a failure.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use cloud backup services (e.g., AWS S3) to store daily backups.
     - Implement automated backup and restoration processes.
 
 ### 4.3. Security
+
 - **Data Encryption**: All sensitive data, such as passwords and payment information, must be encrypted both in transit (via HTTPS) and at rest (using AES or similar encryption standards).
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Implement SSL/TLS encryption for secure HTTP communication.
     - Store passwords securely using bcrypt hashing.
 
 - **Authentication**: The system must implement secure authentication using JWT (JSON Web Tokens) for user login sessions.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Implement JWT-based authentication in the Spring Boot backend for stateless user sessions.
     - Use OAuth2 for social logins (e.g., Google, Facebook).
 
 - **Authorization**: Each user (customer, vendor, admin, delivery agent) must have access to specific areas of the platform based on their role.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Implement role-based access control (RBAC) in the backend using Spring Security.
     - Define roles such as `CUSTOMER`, `VENDOR`, `ADMIN`, `DELIVERY_AGENT`.
 
 ### 4.4. Usability
+
 - **User Interface**: The platform must have an intuitive, responsive design, ensuring that users can easily navigate the website on both desktop and mobile devices.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - The frontend will be built using ReactJS with responsive design using CSS frameworks like Bootstrap or Material UI.
     - Use React Router for single-page application (SPA) routing.
 
 - **Error Handling**: The system should display user-friendly error messages in case of failures (e.g., product not found, payment declined).
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use error boundaries in React for graceful handling of frontend errors.
     - Implement centralized logging (e.g., using ELK Stack or Sentry) for backend errors.
 
 - **Multi-Language Support**: The system should support multiple languages for a wider user base, especially in regions with diverse linguistic demographics.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use React-Intl or i18next for internationalization (i18n) in the frontend.
     - Support language switching via a language dropdown in the UI.
 
 ### 4.5. Maintainability
+
 - **Code Quality**: The codebase should follow standard best practices (e.g., clear documentation, proper commenting, modular design) to allow for easier maintenance and future updates.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Follow the SOLID principles for backend code structure.
     - Use Prettier and ESLint for frontend code formatting and linting.
 
 - **Monitoring**: The system should include tools for monitoring uptime, performance metrics, and error tracking.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use tools like Prometheus and Grafana for monitoring backend performance.
     - Implement error tracking using Sentry for logging frontend and backend errors.
 
 ### 4.6. Reliability
+
 - **Fault Tolerance**: The system must be able to recover from server crashes and continue operating with minimal disruption.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use cloud-native services with built-in fault tolerance (e.g., AWS RDS for databases with failover capabilities).
     - Implement health checks and retries for critical microservices.
 
 - **Redundancy**: Critical components such as the database and application server should be configured with redundancy to prevent downtime.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Use database replication for PostgreSQL (e.g., master-slave setup).
     - Ensure high availability for web servers using load balancing (e.g., AWS Elastic Load Balancer).
 
 ### 4.7. Compliance
+
 - **Data Protection**: The system should comply with relevant data protection regulations such as the **General Data Protection Regulation (GDPR)**, especially concerning user data storage and processing.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Ensure that all user data is processed according to GDPR guidelines, including user consent management.
     - Provide users with the option to download or delete their data.
 
 - **Payment Gateway Compliance**: Integration with payment systems should comply with **Payment Card Industry Data Security Standard (PCI DSS)** requirements to ensure secure handling of payment information.
-  - **Technical Specification**: 
+  - **Technical Specification**:
     - Integrate with PCI-compliant payment gateways such as Stripe or Razorpay.
     - Ensure tokenization and encryption of payment information.
-
 
 ---
 

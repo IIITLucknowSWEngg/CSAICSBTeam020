@@ -3,9 +3,11 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
+
 We, as the users of the QuickKart Application, need a platform that is easy to use, allowing us to browse, purchase, and manage products seamlessly. The app must be available on both web and mobile devices so that we can access it from anywhere at any time.
 
 ### 1.2 Scope
+
 The QuickKart Application should meet the needs of three primary user groups:
 
 - **Customers**: People  who will buy products.
@@ -41,6 +43,7 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
 ## 3. Characteristics
 
 ### 3.1 Customers
+
 - **Who we are**: Anyone who wants to buy products for personal or business use.
 - **What we know**: Basic knowledge of browsing on mobile apps and websites.
 - **What we need**:
@@ -50,6 +53,7 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
   - Notifications about deals and promotions.
 
 ### 3.2 Vendors (Sellers)
+
 - **Who we are**: Businesses or people listing products for sale.
 - **What we know**: Some experience with online tools like dashboards.
 - **What we need**:
@@ -58,6 +62,7 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
   - Support for managing returns and refunds.
 
 ### 3.3 Admins
+
 - **Who we are**: People who monitor the platform and keep it running smoothly.
 - **What we know**: More advanced skills for managing the platform's tools and user interactions.
 - **What we need**:
@@ -65,151 +70,145 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
   - Access to reports and system performance.
   - A way to handle disputes and moderate content.
 
-## 4. Use Cases
+## 4. Requirements
 
-### 4.1 Customer Use Cases
+### 4.1 Customer Requirements
 
-#### Use Case 1: Browsing Products
-- **Goal**: As a customer, I want to browse products by category, apply filters, and view product details.
-- **Preconditions**: User is logged into the application.
-- **Postconditions**: User successfully finds products by applying filters and viewing details.
-- **Basic Flow**:
-  1. User opens the product catalog.
-  2. User applies filters (e.g., price, rating, category).
-  3. User clicks on a product to view its details.
+#### Requirement 1: Browsing Products
 
-#### Use Case 2: Placing an Order
-- **Goal**: As a customer, I want to add products to my cart and proceed with checkout.
-- **Preconditions**: User is logged in and has added products to the shopping cart.
-- **Postconditions**: User has successfully placed the order.
-- **Basic Flow**:
-  1. User views the cart and clicks "Checkout."
-  2. User selects a payment method and enters details.
-  3. User receives an email confirmation with the order details.
+- **Goal**: The system must allow customers to browse products by category, apply filters, and view product details.
+- **Preconditions**: The customer must be logged into the system.
+- **Postconditions**: The customer should successfully find products by applying filters and viewing their details.
+- **Description**:
+  - Users should be able to open the product catalog.
+  - Users should apply various filters (e.g., price, rating, category) to refine their search.
+  - Users should be able to select and view detailed information about any product.
 
-#### Use Case 3: Tracking Orders
-- **Goal**: As a customer, I want to track the status of my order in real-time.
-- **Preconditions**: The customer has placed an order.
-- **Postconditions**: The customer is updated with real-time delivery status via third-party logistics.
-- **Basic Flow**:
-  1. User logs into their account.
-  2. User navigates to the "Order History" section.
-  3. User selects the order they wish to track.
-  4. User views real-time updates provided by the third-party logistics service.
+#### Requirement 2: Placing an Order
 
-#### Use Case 4: Reviewing Products
-- **Goal**: As a customer, I want to leave a review for a product I’ve purchased.
-- **Preconditions**: User has purchased a product.
-- **Postconditions**: Review is successfully submitted and visible to other customers.
-- **Basic Flow**:
-  1. User logs into their account.
-  2. User navigates to the product they purchased.
-  3. User submits a rating and review.
+- **Goal**: The system must allow customers to add products to their cart and proceed with checkout.
+- **Preconditions**: The customer must be logged in and have products in their shopping cart.
+- **Postconditions**: The customer has successfully placed an order.
+- **Description**:
+  - Users should be able to view their cart and click on "Checkout."
+  - Users should choose a payment method and provide the necessary payment information.
+  - An order confirmation email should be sent to the customer after placing the order.
 
-#### Use Case 5: Managing Account
-- **Goal**: As a customer, I want to update my personal information and preferences.
-- **Preconditions**: User is logged in.
-- **Postconditions**: User’s information is updated.
-- **Basic Flow**:
-  1. User logs into their account.
-  2. User navigates to the "Account Settings" section.
-  3. User updates their profile information (name, email, password, etc.).
-  4. User saves changes.
+#### Requirement 3: Tracking Orders
 
-#### Use Case 6: Viewing Offers or Discounts
-- **Goal**: As a customer, I want to view available offers and discounts on products.
-- **Preconditions**: User is logged in.
-- **Postconditions**: User is able to see current offers and discounts.
-- **Basic Flow**:
-  1. User navigates to the "Offers" or "Discounts" section.
-  2. User views the list of available offers.
+- **Goal**: The system must allow customers to track the status of their order in real-time.
+- **Preconditions**: The customer must have placed an order.
+- **Postconditions**: The customer should receive real-time updates about their delivery status.
+- **Description**:
+  - The customer should be able to log into their account and navigate to "Order History."
+  - The system should provide real-time tracking updates via third-party logistics services for the selected order.
 
-### 4.2 Vendor Use Cases
+#### Requirement 4: Reviewing Products
 
-#### Use Case 1: Listing Products
-- **Goal**: As a vendor, I want to list products for sale on the platform.
-- **Preconditions**: Vendor is logged in.
-- **Postconditions**: Product is listed on the platform for sale.
-- **Basic Flow**:
-  1. Vendor logs into their vendor portal.
-  2. Vendor fills in product details (name, description, price, etc.).
-  3. Vendor submits the product for review.
+- **Goal**: The system must allow customers to leave a review for any purchased product.
+- **Preconditions**: The customer must have purchased the product.
+- **Postconditions**: The review must be successfully submitted and visible to other customers.
+- **Description**:
+  - Users should log into their account and navigate to the product they purchased.
+  - Customers should submit ratings and leave detailed product reviews.
 
-#### Use Case 2: Updating Product Details
-- **Goal**: As a vendor, I want to update details of my listed products.
-- **Preconditions**: Vendor is logged in, and product is already listed.
-- **Postconditions**: Product details are updated.
-- **Basic Flow**:
-  1. Vendor logs into their vendor portal.
-  2. Vendor selects a product to update.
-  3. Vendor modifies the product details (price, description, etc.).
-  4. Vendor saves the updated information.
+#### Requirement 5: Managing Account
 
-#### Use Case 3: Tracking Sales
-- **Goal**: As a vendor, I want to track my sales performance.
-- **Preconditions**: Vendor is logged in.
-- **Postconditions**: Vendor successfully tracks sales and revenue.
-- **Basic Flow**:
-  1. Vendor logs into their vendor portal.
-  2. Vendor navigates to the "Sales" section.
-  3. Vendor views the sales report.
+- **Goal**: The system must allow customers to update their personal information and preferences.
+- **Preconditions**: The customer must be logged in.
+- **Postconditions**: The system should successfully update the customer’s information.
+- **Description**:
+  - Customers should be able to navigate to "Account Settings."
+  - Users can update their profile details, including name, email, and password, and save these changes.
 
-#### Use Case 4: Managing Inventory
-- **Goal**: As a vendor, I want to manage my product inventory (e.g., updating stock levels).
-- **Preconditions**: Vendor is logged in.
-- **Postconditions**: Vendor successfully updates inventory.
-- **Basic Flow**:
-  1. Vendor logs into their vendor portal.
-  2. Vendor navigates to the product inventory section.
-  3. Vendor updates stock levels and availability.
-  4. Vendor saves the changes.
+#### Requirement 6: Viewing Offers or Discounts
 
-### 4.3 Admin Use Cases
+- **Goal**: The system must allow customers to view available offers and discounts on products.
+- **Preconditions**: The customer must be logged in.
+- **Postconditions**: The customer should be able to see available offers and discounts.
+- **Description**:
+  - Users should navigate to the "Offers" or "Discounts" section.
+  - Users should be able to view a list of available discounts and offers on products.
 
-#### Use Case 1: Processing Orders
-- **Goal**: As an admin, I want to process customer orders and resolve issues.
-- **Preconditions**: Admin is logged in.
-- **Postconditions**: Order is processed, and any issues are resolved.
-- **Basic Flow**:
-  1. Admin logs into the admin panel.
-  2. Admin reviews pending orders.
-  3. Admin processes the orders and handles any issues (e.g., cancellations, returns).
+### 4.2 Vendor Requirements
 
-#### Use Case 2: Handling Returns and Refunds
-- **Goal**: As an admin, I want to process product returns and refunds.
-- **Preconditions**: Return request has been initiated by a customer.
-- **Postconditions**: Return or refund is successfully processed.
-- **Basic Flow**:
-  1. Admin logs into the admin panel.
-  2. Admin reviews return requests.
-  3. Admin processes the return or refund and updates the order status.
+#### Requirement 1: Listing Products
 
-#### Use Case 3: Monitoring Sales
-- **Goal**: As an admin, I want to monitor sales and revenue trends across the platform.
-- **Preconditions**: Admin is logged in.
-- **Postconditions**: Admin has an up-to-date view of platform-wide sales data.
-- **Basic Flow**:
-  1. Admin logs into the admin panel.
-  2. Admin navigates to the "Sales" section.
-  3. Admin views the sales and revenue reports.
+- **Goal**: The system must allow vendors to list products for sale.
+- **Preconditions**: The vendor must be logged into the platform.
+- **Postconditions**: The product is successfully listed on the platform.
+- **Description**:
+  - Vendors should log into their vendor portal and fill in product details (name, description, price, etc.).
+  - Vendors must submit products for review and approval to ensure they meet platform standards.
 
-#### Use Case 4: Managing Users
-- **Goal**: As an admin, I want to manage user accounts and resolve any issues.
-- **Preconditions**: Admin is logged in.
+#### Requirement 2: Updating Product Details
+
+- **Goal**: The system must allow vendors to update the details of their listed products.
+- **Preconditions**: The vendor must be logged in and the product must already be listed.
+- **Postconditions**: The product details are updated in the system.
+- **Description**:
+  - Vendors should be able to select a product and modify its information, including price and description.
+
+#### Requirement 3: Tracking Sales
+
+- **Goal**: The system must allow vendors to track their sales performance.
+- **Preconditions**: The vendor must be logged in.
+- **Postconditions**: The vendor is able to track their sales and view the generated revenue.
+- **Description**:
+  - Vendors should log into their portal and view sales reports and revenue generated.
+
+#### Requirement 4: Managing Inventory
+
+- **Goal**: The system must allow vendors to manage their product inventory.
+- **Preconditions**: The vendor must be logged in.
+- **Postconditions**: The vendor’s inventory is successfully updated.
+- **Description**:
+  - Vendors should be able to update stock levels and availability for their listed products.
+
+### 4.3 Admin Requirements
+
+#### Requirement 1: Processing Orders
+
+- **Goal**: The system must allow admins to process customer orders and resolve issues.
+- **Preconditions**: The admin must be logged in.
+- **Postconditions**: The order is processed, and any issues are resolved.
+- **Description**:
+  - Admins should log into the admin panel, review pending orders, and process them.
+  - They are responsible for resolving any issues such as cancellations, returns, or inventory mismatches.
+
+#### Requirement 2: Handling Returns and Refunds
+
+- **Goal**: The system must allow admins to process product returns and issue refunds.
+- **Preconditions**: A return request has been initiated by the customer.
+- **Postconditions**: The return or refund is successfully processed.
+- **Description**:
+  - Admins should log into the admin panel and review return requests from customers.
+  - Admins can approve and process the return or refund and update the order status.
+
+#### Requirement 3: Monitoring Sales
+
+- **Goal**: The system must allow admins to monitor sales and revenue across the platform.
+- **Preconditions**: The admin must be logged in.
+- **Postconditions**: Admin will have an up-to-date overview of platform-wide sales data.
+- **Description**:
+  - Admins should navigate to the "Sales" section in the admin panel and view comprehensive sales and revenue reports.
+
+#### Requirement 4: Managing Users
+
+- **Goal**: The system must allow admins to manage user accounts and resolve related issues.
+- **Preconditions**: The admin must be logged in.
 - **Postconditions**: Admin successfully manages user accounts.
-- **Basic Flow**:
-  1. Admin logs into the admin panel.
-  2. Admin views the list of users (customers, vendors).
-  3. Admin updates user roles, suspends accounts, or resolves disputes.
+- **Description**:
+  - Admins can view customer and vendor user lists.
+  - Admins can modify roles, suspend accounts, or resolve disputes, such as user complaints.
 
-#### Use Case 5: Generating Reports
-- **Goal**: As an admin, I want to generate reports for sales, products, and users.
-- **Preconditions**: Admin is logged in.
-- **Postconditions**: Admin generates reports.
-- **Basic Flow**:
-  1. Admin logs into the admin panel.
-  2. Admin selects the type of report to generate (sales, inventory, users, etc.).
-  3. Admin downloads or views the generated report.
+#### Requirement 5: Generating Reports
+
+- **Goal**: The system must allow admins to generate reports for sales, products, and user activity.
+- **Preconditions**: The admin must be logged in.
+- **Postconditions**: The system generates the selected report.
+- **Description**:
+  - Admins should be able to generate and download reports for various data types, such as sales, user activities, or product information.
 
 ## 5. Acceptance Criteria
 
@@ -225,4 +224,3 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
 ## 6. Conclusion
 
 This document summarizes the QuickKart Application requirements. By following these guidelines, we will ensure that the platform meets our needs—delivering a secure, easy-to-use, and scalable solution for customers, vendors, and admins, with delivery services fully outsourced to third-party logistics providers.
-
