@@ -3,10 +3,10 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
-The purpose of this Software Design Description (SDD) is to provide a detailed design for the QuickKart (Flipkart clone) e-commerce platform. This document describes the software's architecture, components, interfaces, and their interactions to ensure that the implementation meets the system's functional and non-functional requirements, particularly in terms of performance and scalability.
+The purpose of this Software Design Description (SDD) is to provide a detailed design for the QuickKart (Flipkart  Competitor) e-commerce platform. This document describes the software's architecture, components, interfaces, and their interactions to ensure that the implementation meets the system's functional and non-functional requirements, particularly in terms of performance and scalability.
 
 ### 1.2 Scope
-The Flipkart clone system is an e-commerce platform that enables users to browse, purchase, and pay for products online. Sellers can list and manage products on the platform, while administrators oversee operations. The system includes a mobile and web application, backend API services, payment processing, real-time notifications, and integration with services like courier systems and SMS gateways.
+The Flipkart Competitor system is an e-commerce platform that enables users to browse, purchase, and pay for products online. Sellers can list and manage products on the platform, while administrators oversee operations. The system includes a mobile and web application, backend API services, payment processing, real-time notifications, and integration with services like courier systems and SMS gateways.
 
 ---
 
@@ -83,7 +83,7 @@ The Flipkart clone system is an e-commerce platform that enables users to browse
 
 ### 3.3 Databases
 
-- **PostgreSQL**:
+- **SQL**:
   Stores structured data such as user profiles, products, orders, and transactions. Optimize database queries and use indexing to handle large volumes of read and write operations efficiently.
 
 - **Redis**:
@@ -187,10 +187,7 @@ Sends:
 - Order confirmations and status updates.
 - Promotional emails and SMS alerts. Use batch processing for notifications to improve performance during high-demand periods.
 
-#### 4.2.7 Recommendation Engine
-Uses machine learning to suggest products based on:
-- User purchase history.
-- Browsing behavior and preferences. The engine should be scalable and leverage cloud resources for processing large datasets.
+
 
 ---
 
@@ -304,4 +301,4 @@ Uses machine learning to suggest products based on:
 
 ## 8. Conclusion
 
-This Software Design Description outlines the architecture, modules, and interfaces for the Flipkart clone e-commerce platform. Its modular design ensures scalability, high availability, and robust security, making it suitable for handling large-scale operations efficiently. The implementation strategies for performance requirements ensure that the system can effectively manage high traffic and order volumes, providing a seamless experience for users.
+This Software Design Description outlines the architecture, modules, and interfaces for the Flipkart Competitor e-commerce platform. Its modular design ensures scalability, high availability, and robust security, making it suitable for handling large-scale operations efficiently. The implementation strategies for performance requirements ensure that the system can effectively manage high traffic and order volumes, providing a seamless experience for users.

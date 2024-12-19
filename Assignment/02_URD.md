@@ -6,14 +6,13 @@
 We, as the users of the QuickKart Application, need a platform that is easy to use, allowing us to browse, purchase, and manage products seamlessly. The app must be available on both web and mobile devices so that we can access it from anywhere at any time.
 
 ### 1.2 Scope
-The QuickKart Application should meet the needs of four primary user groups:
+The QuickKart Application should meet the needs of three primary user groups:
 
-- **Customers**: People like me who will buy products.
+- **Customers**: People  who will buy products.
 - **Vendors (Sellers)**: Businesses or individuals who will sell products on the platform.
 - **Admins**: The people who will manage the platform and ensure everything runs smoothly.
-- **Delivery Agents**: The ones who will physically deliver the products to us, the customers.
 
-We need these key features to be part of the application:
+Key features required:
 
 - **User Accounts**: We need to easily sign up, log in, and manage our profiles.
 - **Product Catalog**: We want a well-organized catalog to find products easily.
@@ -22,7 +21,8 @@ We need these key features to be part of the application:
 - **Vendor Portal**: Vendors need to manage their products and orders without hassle.
 - **Admin Panel**: Admins need a way to monitor activities and resolve issues.
 - **Customer Support**: We need an easy way to get help via a chatbot or support tickets.
-- **Delivery Management**: The delivery agents need to get real-time updates on orders and routes.
+
+Delivery services will be entirely managed by third-party logistics providers, who will handle the physical movement of products from vendors to customers.
 
 The platform must be accessible and easy to use, whether we're on a mobile phone, tablet, or desktop.
 
@@ -34,12 +34,11 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
 | User               | A customer browsing or purchasing products.                  |
 | Vendor             | A person or business listing products for sale.              |
 | Admin              | A person who manages the platform's operations.              |
-| Delivery Agent     | The person responsible for delivering the order.             |
 | Cart               | A place to store products before purchasing.                 |
 | UI                 | How the platform looks and feels to us (User Interface).     |
 | UX                 | Our overall experience while using the platform.             |
 
-## 3. User Characteristics
+## 3. Characteristics
 
 ### 3.1 Customers
 - **Who we are**: Anyone who wants to buy products for personal or business use.
@@ -51,130 +50,179 @@ The platform must be accessible and easy to use, whether we're on a mobile phone
   - Notifications about deals and promotions.
 
 ### 3.2 Vendors (Sellers)
-- **Who they are**: Businesses or people listing products for sale.
-- **What they know**: Some experience with online tools like dashboards.
-- **What they need**:
+- **Who we are**: Businesses or people listing products for sale.
+- **What we know**: Some experience with online tools like dashboards.
+- **What we need**:
   - A simple way to list products and update details.
   - Tools to manage inventory, sales, and orders.
   - Support for managing returns and refunds.
-  - Communication tools to work with delivery agents for shipping.
 
 ### 3.3 Admins
-- **Who they are**: People who monitor the platform and keep it running smoothly.
-- **What they know**: More advanced skills for managing the platform's tools and user interactions.
-- **What they need**:
+- **Who we are**: People who monitor the platform and keep it running smoothly.
+- **What we know**: More advanced skills for managing the platform's tools and user interactions.
+- **What we need**:
   - Real-time tools to monitor user activity.
   - Access to reports and system performance.
   - A way to handle disputes and moderate content.
 
-### 3.4 Delivery Agents
-- **Who they are**: People or companies that deliver the products to customers.
-- **What they know**: Basic knowledge of delivery apps.
-- **What they need**:
-  - Clear instructions for deliveries.
-  - Route optimization for faster deliveries.
-  - A way to update the status of deliveries.
-
 ## 4. Use Cases
 
-### Use Case 1: Browsing Products (Customer)
-- **Goal**: I want to browse through categories, use filters, and find products I like.
-- **Steps**:
-  1. I open the product catalog.
-  2. I use filters like price or rating.
-  3. I select a product and see its details.
+### 4.1 Customer Use Cases
 
-### Use Case 2: Placing an Order (Customer)
-- **Goal**: I want to add products to my cart and checkout quickly.
-- **Steps**:
-  1. I go to my cart and click "Checkout."
-  2. I choose my payment method and enter the details.
-  3. My order is confirmed, and I get an email with details.
-  4. The delivery agent takes care of my order.
+#### Use Case 1: Browsing Products
+- **Goal**: As a customer, I want to browse products by category, apply filters, and view product details.
+- **Preconditions**: User is logged into the application.
+- **Postconditions**: User successfully finds products by applying filters and viewing details.
+- **Basic Flow**:
+  1. User opens the product catalog.
+  2. User applies filters (e.g., price, rating, category).
+  3. User clicks on a product to view its details.
 
-### Use Case 3: Listing Products (Vendor)
-- **Goal**: I want to list my products easily so customers can buy them.
-- **Steps**:
-  1. I log into my vendor portal.
-  2. I add my product details (name, price, description, etc.).
-  3. I submit the product for review.
+#### Use Case 2: Placing an Order
+- **Goal**: As a customer, I want to add products to my cart and proceed with checkout.
+- **Preconditions**: User is logged in and has added products to the shopping cart.
+- **Postconditions**: User has successfully placed the order.
+- **Basic Flow**:
+  1. User views the cart and clicks "Checkout."
+  2. User selects a payment method and enters details.
+  3. User receives an email confirmation with the order details.
 
-### Use Case 4: Resolving Disputes (Admin)
-- **Goal**: I want to handle disputes between customers and vendors efficiently.
-- **Steps**:
-  1. I see the details of the dispute.
-  2. I contact both parties.
-  3. I resolve the issue and update the system.
+#### Use Case 3: Tracking Orders
+- **Goal**: As a customer, I want to track the status of my order in real-time.
+- **Preconditions**: The customer has placed an order.
+- **Postconditions**: The customer is updated with real-time delivery status via third-party logistics.
+- **Basic Flow**:
+  1. User logs into their account.
+  2. User navigates to the "Order History" section.
+  3. User selects the order they wish to track.
+  4. User views real-time updates provided by the third-party logistics service.
 
-### Use Case 5: Updating Order Status (Delivery Agent)
-- **Goal**: I want to update my order’s status as I deliver it.
-- **Steps**:
-  1. I log into the app.
-  2. I pick up the order and update the status.
-  3. I continue to update as the order moves along its route.
+#### Use Case 4: Reviewing Products
+- **Goal**: As a customer, I want to leave a review for a product I’ve purchased.
+- **Preconditions**: User has purchased a product.
+- **Postconditions**: Review is successfully submitted and visible to other customers.
+- **Basic Flow**:
+  1. User logs into their account.
+  2. User navigates to the product they purchased.
+  3. User submits a rating and review.
 
-## 5. Functional Requirements
+#### Use Case 5: Managing Account
+- **Goal**: As a customer, I want to update my personal information and preferences.
+- **Preconditions**: User is logged in.
+- **Postconditions**: User’s information is updated.
+- **Basic Flow**:
+  1. User logs into their account.
+  2. User navigates to the "Account Settings" section.
+  3. User updates their profile information (name, email, password, etc.).
+  4. User saves changes.
 
-### 5.1 User Registration & Authentication
-- **Customer**: Login via email, Google, or Facebook.
-- **Vendor**: Registration with business details and GSTIN.
-- **Admin**: Admin credentials with two-factor authentication.
-- **Delivery Agent**: Account for delivery updates.
+#### Use Case 6: Viewing Offers or Discounts
+- **Goal**: As a customer, I want to view available offers and discounts on products.
+- **Preconditions**: User is logged in.
+- **Postconditions**: User is able to see current offers and discounts.
+- **Basic Flow**:
+  1. User navigates to the "Offers" or "Discounts" section.
+  2. User views the list of available offers.
 
-### 5.2 Product Catalog
-- **Customer**: Browse, filter, and view product details.
-- **Vendor**: List, update, or remove products.
+### 4.2 Vendor Use Cases
 
-### 5.3 Shopping Cart & Checkout
-- **Customer**: Add/remove products, view total, apply coupons, choose payment methods.
+#### Use Case 1: Listing Products
+- **Goal**: As a vendor, I want to list products for sale on the platform.
+- **Preconditions**: Vendor is logged in.
+- **Postconditions**: Product is listed on the platform for sale.
+- **Basic Flow**:
+  1. Vendor logs into their vendor portal.
+  2. Vendor fills in product details (name, description, price, etc.).
+  3. Vendor submits the product for review.
 
-### 5.4 Order Management
-- **Customer**: View order history, cancel or return orders.
-- **Vendor**: View and manage customer orders.
-- **Delivery Agent**: Update order status.
+#### Use Case 2: Updating Product Details
+- **Goal**: As a vendor, I want to update details of my listed products.
+- **Preconditions**: Vendor is logged in, and product is already listed.
+- **Postconditions**: Product details are updated.
+- **Basic Flow**:
+  1. Vendor logs into their vendor portal.
+  2. Vendor selects a product to update.
+  3. Vendor modifies the product details (price, description, etc.).
+  4. Vendor saves the updated information.
 
-## 6. Non-Functional Requirements
+#### Use Case 3: Tracking Sales
+- **Goal**: As a vendor, I want to track my sales performance.
+- **Preconditions**: Vendor is logged in.
+- **Postconditions**: Vendor successfully tracks sales and revenue.
+- **Basic Flow**:
+  1. Vendor logs into their vendor portal.
+  2. Vendor navigates to the "Sales" section.
+  3. Vendor views the sales report.
 
-### 6.1 Performance
-- The app should load in 3 seconds under normal conditions.
-- It should support 50,000+ users at the same time.
+#### Use Case 4: Managing Inventory
+- **Goal**: As a vendor, I want to manage my product inventory (e.g., updating stock levels).
+- **Preconditions**: Vendor is logged in.
+- **Postconditions**: Vendor successfully updates inventory.
+- **Basic Flow**:
+  1. Vendor logs into their vendor portal.
+  2. Vendor navigates to the product inventory section.
+  3. Vendor updates stock levels and availability.
+  4. Vendor saves the changes.
 
-### 6.2 Security
-- **Data Security**: All personal and payment data must be encrypted.
-- **Fraud Prevention**: Use tools to detect fraudulent transactions.
+### 4.3 Admin Use Cases
 
-### 6.3 Scalability
-- The system should be able to grow as more users and products join.
+#### Use Case 1: Processing Orders
+- **Goal**: As an admin, I want to process customer orders and resolve issues.
+- **Preconditions**: Admin is logged in.
+- **Postconditions**: Order is processed, and any issues are resolved.
+- **Basic Flow**:
+  1. Admin logs into the admin panel.
+  2. Admin reviews pending orders.
+  3. Admin processes the orders and handles any issues (e.g., cancellations, returns).
 
-### 6.4 Usability
-- The platform should work seamlessly on mobile, tablet, and desktop.
-- **Accessibility**: We need features like screen reader support for users with disabilities.
+#### Use Case 2: Handling Returns and Refunds
+- **Goal**: As an admin, I want to process product returns and refunds.
+- **Preconditions**: Return request has been initiated by a customer.
+- **Postconditions**: Return or refund is successfully processed.
+- **Basic Flow**:
+  1. Admin logs into the admin panel.
+  2. Admin reviews return requests.
+  3. Admin processes the return or refund and updates the order status.
 
-## 7. Assumptions & Dependencies
+#### Use Case 3: Monitoring Sales
+- **Goal**: As an admin, I want to monitor sales and revenue trends across the platform.
+- **Preconditions**: Admin is logged in.
+- **Postconditions**: Admin has an up-to-date view of platform-wide sales data.
+- **Basic Flow**:
+  1. Admin logs into the admin panel.
+  2. Admin navigates to the "Sales" section.
+  3. Admin views the sales and revenue reports.
 
-- **Third-Party APIs**: Payment gateways (Razorpay, PayPal), Firebase for notifications.
-- **Delivery Agents**: Integration with third-party delivery services.
-- **Internet**: A stable internet connection is required.
+#### Use Case 4: Managing Users
+- **Goal**: As an admin, I want to manage user accounts and resolve any issues.
+- **Preconditions**: Admin is logged in.
+- **Postconditions**: Admin successfully manages user accounts.
+- **Basic Flow**:
+  1. Admin logs into the admin panel.
+  2. Admin views the list of users (customers, vendors).
+  3. Admin updates user roles, suspends accounts, or resolves disputes.
 
-## 8. Acceptance Criteria
+#### Use Case 5: Generating Reports
+- **Goal**: As an admin, I want to generate reports for sales, products, and users.
+- **Preconditions**: Admin is logged in.
+- **Postconditions**: Admin generates reports.
+- **Basic Flow**:
+  1. Admin logs into the admin panel.
+  2. Admin selects the type of report to generate (sales, inventory, users, etc.).
+  3. Admin downloads or views the generated report.
+
+## 5. Acceptance Criteria
 
 | Requirement        | Acceptance Criteria                                     |
 |--------------------|----------------------------------------------------------|
 | Registration       | We can sign up, log in, and reset passwords.             |
 | Catalog            | We can browse and filter products.                       |
 | Checkout           | We can complete payments securely.                       |
-| Order Tracking     | We can track orders in real-time.                        |
+| Order Tracking     | We can track orders in real-time via third-party services.|
 | Admin Panel        | Admins can monitor activities and resolve disputes.      |
-| Delivery Agent     | Delivery agents can update order status.                |
+| Vendor Portal      | Vendors can manage products and orders.                  |
 
-## 9. Risks
+## 6. Conclusion
 
-| Risk               | Mitigation                                                 |
-|--------------------|------------------------------------------------------------|
-| Data Breach        | Regular security audits and encryption.                   |
-| Payment Failure    | Use backup payment gateways.                              |
-| Vendor Abuse       | Perform KYC checks for vendors.                           |
-| Delivery Delays    | Real-time tracking and notifications.                     |
+This document summarizes the QuickKart Application requirements. By following these guidelines, we will ensure that the platform meets our needs—delivering a secure, easy-to-use, and scalable solution for customers, vendors, and admins, with delivery services fully outsourced to third-party logistics providers.
 
-## 10. Conclusion
-This document summarizes the QuickKart Application requirements. By following these guidelines, we will ensure that the platform meets our needs—delivering a secure, easy-to-use, and scalable solution for customers, vendors, admins, and delivery agents.
