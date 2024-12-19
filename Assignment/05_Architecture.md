@@ -49,6 +49,7 @@ The System Context Diagram provides an overview of how users and external system
 The Container Diagram outlines the primary containers within the Flipkart Competitor, divided into **User**, **Seller**, and **Admin** roles:  
 
 ### **User**
+
 ```plantuml
 @startuml
 title Flipkart  Competitor System
@@ -102,6 +103,7 @@ APIGateway --> AnalyticsService : Track User Activities
 - **Databases**: Stores data related to user accounts, order history, preferences, and payment details.  
 
 ### **Seller**
+
 ```plantuml
 @startuml
 !define RECTANGLE rect
@@ -136,6 +138,7 @@ Admin --> "«API»\nSeller API Gateway" : Monitor Seller Activities
 - **Databases**: Stores seller data, product information, stock levels, and sales data.  
 
 ### **Admin**
+
 ```plantuml
 @startuml
 !define RECTANGLE rect
@@ -202,7 +205,8 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 
 ## Key Components
 
-#### **1. User, Seller, and Admin Devices**
+### **1. User, Seller, and Admin Devices**
+
 - **Users**:
   - Access via web browsers and mobile apps.
   - Core features: Browse products, search, view product details, add items to the cart, place orders, and track deliveries.
@@ -218,6 +222,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 
 
 #### **2. Load Balancers**
+
 - **Purpose**: Distribute incoming requests across backend servers to ensure:
   - High availability.
   - Scalability.
@@ -231,6 +236,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 
 
 #### **3. Backend Servers**
+
 - **Microservices Architecture**:
   - Separate services for user management, product search, orders, payments, and recommendations.
   - Each service scales independently to meet demand.
@@ -243,6 +249,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 
 
 #### **4. Databases**
+
 - **Primary Databases**:
   - Relational DB (e.g. MySQL): Manages structured data like user accounts and orders
 - **Data Storage**:
@@ -252,6 +259,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - **Analytics**: Logs user interactions for business insights.
 
 #### **5. Third-Party Services**
+
 - **Payment Gateway**:
   - Ensures secure, real-time payment processing.
   - Supports multiple payment methods (credit cards, UPI, wallets).
@@ -266,6 +274,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
   - Examples: AWS S3 or Google Cloud Storage.
 
 #### **6. Content Delivery Network (CDN)**
+
 - **Purpose**: Accelerates content delivery and minimizes server load by caching assets closer to users.
 - **Key Features**:
   - **Edge Servers**: Serve static files (CSS, JavaScript, product images) from regional servers.
@@ -279,6 +288,7 @@ The Deployment Diagram outlines the architecture of the Flipkart  Competitor, hi
 ---
 
 ### **Summary**
+
 The architecture is designed to ensure:
 1. **Scalability**: Microservices and load balancers adapt to traffic surges.
 2. **Reliability**: Redundant systems and real-time monitoring mitigate failures.
